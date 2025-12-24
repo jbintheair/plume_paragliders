@@ -1,0 +1,1836 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLUME Paragliders — Dossier de Présentation BPI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Charte graphique PLUME */
+            --turquoise: #5588A6;
+            --turquoise-light: #5588A6;
+            --turquoise-dark: #0C4A6E;
+            --gold: #C97D18;
+            --gold-light: #ED8C0C;
+            --gold-dark: #824E0A;
+            --white: #FFFFFF;
+            --cream: #f8f8f7;
+            --gray-50: #f5f5f5;
+            --gray-100: #e8e8e8;
+            --gray-200: #C5C5C5;
+            --gray-400: #9a9a9a;
+            --gray-500: #6a6a6a;
+            --gray-600: #3A3A3A;
+            --gray-800: #1a1a1a;
+            --black: #0F2430;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 400;
+            background: var(--white);
+            color: var(--gray-800);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 1.2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--gray-100);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 0.8rem 4rem;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+
+        .nav-logo img { height: 36px; }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--gray-600);
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover { color: var(--turquoise); }
+
+        /* Sections */
+        section {
+            min-height: 100vh;
+            padding: 7rem 6rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .section-number {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 6rem;
+            font-weight: 300;
+            color: var(--turquoise);
+            opacity: 0.08;
+            position: absolute;
+            top: 4rem;
+            left: 6rem;
+            line-height: 1;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 500;
+            color: var(--black);
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--turquoise-dark);
+        }
+
+        p {
+            font-size: 1rem;
+            max-width: 700px;
+            color: var(--gray-600);
+        }
+
+        .highlight { color: var(--turquoise-dark); font-weight: 500; }
+        .gold { color: var(--gold); font-weight: 500; }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            padding: 0;
+            background: url('https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/Generated%20Image%20December%2018%2C%202025%20-%2012_41AM.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.2) 100%);
+            pointer-events: none;
+        }
+
+        #hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%; left: -10%;
+            width: 50%; height: 80%;
+            background: radial-gradient(ellipse, rgba(201,162,39,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            animation: fadeInUp 1s ease-out;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-logo {
+            width: 220px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-tagline {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--turquoise-dark);
+            margin-bottom: 0.8rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+            color: var(--gray-600);
+            font-weight: 400;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.5rem 1.5rem;
+            border: none;
+            color: var(--gray-500);
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            background: transparent;
+            opacity: 0.6;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gray-500);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .scroll-indicator span {
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        .scroll-indicator::after {
+            content: '';
+            width: 1px;
+            height: 35px;
+            background: linear-gradient(to bottom, var(--turquoise), transparent);
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(8px); }
+        }
+
+        /* Backgrounds */
+        .bg-cream { background: var(--cream); }
+        .bg-white { background: var(--white); }
+        
+        /* Innovation Section Background */
+        #innovation {
+            background: linear-gradient(135deg, rgba(15, 36, 48, 0.4) 0%, rgba(15, 36, 48, 0.5) 100%),
+                        url('https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/Generated%20Image%20November%2030%2C%202025%20-%202_17AM.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        #innovation .section-number {
+            color: var(--white);
+            opacity: 0.1;
+        }
+        
+        #innovation h2 {
+            color: var(--white);
+        }
+        
+        #innovation > p {
+            color: rgba(255, 255, 255, 0.85);
+        }
+        
+        #innovation .innovation-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Vision Section */
+        .vision-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .vision-card {
+            padding: 2rem;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .vision-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 3px; height: 0;
+            background: var(--turquoise);
+            transition: height 0.3s ease;
+        }
+
+        .vision-card:hover {
+            border-color: var(--turquoise);
+            box-shadow: 0 8px 30px rgba(8,145,178,0.08);
+        }
+
+        .vision-card:hover::before { height: 100%; }
+
+        .vision-card h4 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.2rem;
+            color: var(--gold);
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
+
+        .vision-card p { font-size: 0.95rem; }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .team-member {
+            padding: 2rem;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-left: 3px solid var(--turquoise);
+        }
+
+        .team-header {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .team-avatar {
+            width: 70px; height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--turquoise);
+            flex-shrink: 0;
+        }
+
+        .team-title h4 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.3rem;
+            color: var(--black);
+            margin-bottom: 0.2rem;
+        }
+
+        .team-role {
+            color: var(--turquoise-dark);
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .team-details {
+            font-size: 0.9rem;
+            color: var(--gray-500);
+            line-height: 1.6;
+        }
+
+        .team-highlights {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .team-highlights span {
+            display: inline-block;
+            margin: 0.2rem 0.3rem 0.2rem 0;
+            padding: 0.25rem 0.6rem;
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            font-size: 0.75rem;
+            color: var(--gray-600);
+        }
+
+        .team-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2.5rem;
+            padding: 2rem;
+            background: var(--white);
+            border: 1px solid var(--turquoise);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .stat { text-align: center; min-width: 100px; }
+
+        .stat-number {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 2.2rem;
+            color: var(--turquoise);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 0.3rem;
+        }
+
+        /* Market Section */
+        .market-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2.5rem;
+            align-items: start;
+        }
+        
+        .market-image-container {
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+        }
+        
+        .market-image {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .market-image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            background: linear-gradient(transparent, rgba(15, 36, 48, 0.85));
+            color: var(--white);
+        }
+        
+        .market-image-overlay p {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.9rem;
+            margin: 0;
+            font-style: italic;
+        }
+        
+        .market-data {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .market-kpis {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .kpi {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+        }
+
+        .kpi:hover {
+            border-color: var(--turquoise);
+            transform: translateY(-3px);
+        }
+
+        .kpi-value {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 2rem;
+            color: var(--turquoise);
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+
+        .kpi-label { font-size: 0.85rem; color: var(--gray-500); }
+
+        .kpi-trend {
+            display: inline-block;
+            margin-top: 0.6rem;
+            padding: 0.25rem 0.6rem;
+            background: rgba(8,145,178,0.1);
+            color: var(--turquoise-dark);
+            font-size: 0.7rem;
+            font-weight: 500;
+        }
+
+        .market-context {
+            padding: 1.5rem;
+            background: var(--gray-50);
+            border-left: 3px solid var(--gold);
+        }
+
+        .market-context p { max-width: 100%; }
+
+        /* Innovation Section */
+        .innovation-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .innovation-card {
+            padding: 1.8rem;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .innovation-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.07);
+            border-color: var(--turquoise);
+        }
+
+        .innovation-icon { 
+            width: 48px; 
+            height: 48px; 
+            margin-bottom: 1rem;
+            color: var(--turquoise);
+        }
+        
+        .innovation-icon svg {
+            width: 100%;
+            height: 100%;
+            fill: currentColor;
+        }
+
+        .innovation-card h4 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.15rem;
+            margin-bottom: 0.6rem;
+            color: var(--black);
+        }
+
+        .innovation-card p { font-size: 0.85rem; line-height: 1.6; }
+
+        .innovation-tag {
+            position: absolute;
+            top: 1rem; right: 1rem;
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.2rem 0.5rem;
+            background: var(--gold);
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        /* Production Section */
+        .production-content {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 3rem;
+            margin-top: 2.5rem;
+            align-items: start;
+        }
+
+        .production-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border: 1px solid var(--gray-200);
+        }
+
+        .production-details h4 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--turquoise-dark);
+        }
+
+        .production-details p {
+            margin-bottom: 1.5rem;
+        }
+
+        .gamme-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+        }
+
+        .gamme-table th, .gamme-table td {
+            padding: 0.9rem;
+            text-align: left;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .gamme-table th {
+            font-weight: 500;
+            color: var(--turquoise-dark);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: var(--gray-50);
+        }
+
+        .gamme-table td { font-size: 0.9rem; color: var(--gray-600); }
+
+        .production-info {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: var(--gray-50);
+            font-size: 0.85rem;
+            color: var(--gray-600);
+        }
+
+        .production-info strong { color: var(--turquoise-dark); }
+
+        /* Business Model Section */
+        .business-schema {
+            position: relative;
+            margin: 3rem auto;
+            max-width: 1000px;
+            min-height: 320px;
+        }
+        
+        .schema-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .schema-row.top-row {
+            justify-content: flex-end;
+            padding-right: 5%;
+        }
+        
+        .schema-row.middle-row {
+            position: relative;
+        }
+        
+        .schema-row.bottom-row {
+            justify-content: center;
+            margin-top: -1rem;
+        }
+        
+        .schema-node {
+            text-align: center;
+            padding: 1.2rem 1.8rem;
+            background: var(--white);
+            border: 2px solid var(--gray-300);
+            border-radius: 30px;
+            min-width: 140px;
+            position: relative;
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+        
+        .schema-node:hover {
+            border-color: var(--turquoise);
+            box-shadow: 0 8px 25px rgba(85, 136, 166, 0.15);
+        }
+        
+        .schema-node h4 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1rem;
+            color: var(--black);
+            margin: 0;
+            font-weight: 600;
+        }
+        
+        .schema-node .node-detail {
+            font-size: 0.75rem;
+            color: var(--turquoise);
+            font-weight: 600;
+            margin-top: 0.3rem;
+        }
+        
+        .schema-node.highlight-node {
+            border-color: var(--turquoise);
+            background: linear-gradient(135deg, rgba(85, 136, 166, 0.08) 0%, var(--white) 100%);
+        }
+        
+        .schema-node.plume-node {
+            border-color: var(--gold);
+            background: linear-gradient(135deg, rgba(201, 125, 24, 0.08) 0%, var(--white) 100%);
+        }
+        
+        .schema-node.plume-node .node-detail {
+            color: var(--gold);
+        }
+        
+        .schema-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .schema-svg path, .schema-svg line {
+            fill: none;
+            stroke: var(--gray-400);
+            stroke-width: 2;
+        }
+        
+        .schema-svg .arrow-head {
+            fill: var(--gray-400);
+        }
+        
+        .schema-legend {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: var(--gray-500);
+        }
+        
+        .schema-legend span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .legend-line {
+            width: 30px;
+            height: 2px;
+            background: var(--gray-400);
+        }
+        
+        .legend-icon {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .business-advantages {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .advantage {
+            padding: 1.5rem;
+            border-left: 2px solid var(--gold);
+            background: var(--white);
+        }
+
+        .advantage h5 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            color: var(--black);
+        }
+
+        .advantage p { font-size: 0.85rem; }
+
+        .business-numbers {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+            padding: 2rem;
+            background: var(--gray-50);
+        }
+
+        .business-number {
+            text-align: center;
+        }
+
+        .business-number .value {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.8rem;
+            color: var(--turquoise);
+        }
+
+        .business-number .label {
+            font-size: 0.75rem;
+            color: var(--gray-500);
+            margin-top: 0.3rem;
+        }
+
+        /* Chiffres Section */
+        #chiffres {
+            background: linear-gradient(135deg, rgba(12, 74, 110, 0.75) 0%, rgba(85, 136, 166, 0.65) 100%),
+                        url('https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/Generated%20Image%20November%2030%2C%202025%20-%201_39AM.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+        }
+
+        #chiffres .section-number { color: var(--white); opacity: 0.1; }
+        #chiffres h2, #chiffres h3 { color: var(--white); }
+        #chiffres p { color: rgba(255,255,255,0.85); }
+
+        .chiffres-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .chiffre-card {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .chiffre-value {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 3rem;
+            color: var(--white);
+            line-height: 1;
+        }
+
+        .chiffre-unit { font-size: 1.3rem; }
+        .chiffre-label { margin-top: 0.6rem; font-size: 0.9rem; color: rgba(255,255,255,0.8); }
+
+        .projections {
+            margin-top: 2rem;
+            padding: 1.5rem 2rem;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .projections h4 {
+            color: var(--white);
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .projections-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .projections-table th, .projections-table td {
+            padding: 0.6rem 0.8rem;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .projections-table th {
+            color: rgba(255,255,255,0.7);
+            font-weight: 400;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .projections-table td {
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        /* Financement Section */
+        .financement-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2.5rem;
+        }
+
+        .financement-sources {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .source {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.2rem;
+            background: var(--gray-50);
+            border-left: 3px solid var(--turquoise);
+        }
+
+        .source-name { font-size: 0.9rem; color: var(--gray-600); }
+
+        .source-amount {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.4rem;
+            color: var(--turquoise);
+        }
+
+        .source-detail {
+            font-size: 0.75rem;
+            color: var(--gray-400);
+            margin-top: 0.2rem;
+        }
+
+        .total-financement {
+            margin-top: 1rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(8,145,178,0.1) 0%, rgba(8,145,178,0.02) 100%);
+            border: 2px solid var(--turquoise);
+            text-align: center;
+        }
+
+        .total-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--gray-500);
+            margin-bottom: 0.4rem;
+        }
+
+        .total-value {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 2.5rem;
+            color: var(--turquoise);
+        }
+
+        .utilisation-fonds h4 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 1.2rem;
+            color: var(--gold);
+        }
+
+        .fonds-list { list-style: none; }
+
+        .fonds-list li {
+            padding: 0.7rem 0;
+            border-bottom: 1px solid var(--gray-200);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+
+        .fonds-list li::before { content: '→'; color: var(--turquoise); }
+
+        /* Roadmap Section */
+        .timeline {
+            position: relative;
+            margin-top: 3rem;
+            padding-left: 2.5rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--turquoise), var(--turquoise-light), var(--gray-200));
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem; top: 0.2rem;
+            width: 10px; height: 10px;
+            background: var(--turquoise);
+            border-radius: 50%;
+            transform: translateX(-4px);
+            box-shadow: 0 0 0 3px rgba(8,145,178,0.2);
+        }
+
+        .timeline-date {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.2rem;
+            color: var(--turquoise);
+            margin-bottom: 0.2rem;
+        }
+
+        .timeline-content h4 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.1rem;
+            color: var(--black);
+            margin-bottom: 0.2rem;
+        }
+
+        .timeline-content p { font-size: 0.85rem; }
+
+        /* Contact Section */
+        #contact {
+            min-height: auto;
+            padding: 5rem 6rem;
+            background: var(--black);
+            color: var(--white);
+            text-align: center;
+        }
+
+        #contact h2 { color: var(--white); margin-bottom: 0.8rem; }
+        #contact p { color: var(--gray-400); max-width: 100%; }
+
+        .contact-address {
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            color: var(--gray-400);
+            font-size: 0.95rem;
+        }
+
+        .contact-address svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--gray-500);
+            flex-shrink: 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-top: 2.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-card {
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 4px;
+            text-align: left;
+        }
+
+        .contact-card-name {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-card-role {
+            font-size: 0.75rem;
+            color: var(--turquoise);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.2rem;
+        }
+
+        .contact-card-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--gray-400);
+            font-size: 0.9rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .contact-card-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-card-item svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--gray-500);
+            flex-shrink: 0;
+        }
+
+        .contact-card-item a {
+            color: var(--gray-400);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-card-item a:hover {
+            color: var(--turquoise-light);
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+        }
+
+        .contact-cta { margin-top: 2rem; }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            background: var(--turquoise);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            border: 1px solid #000000;
+            border-radius: 15px;
+        }
+
+        .btn-primary:hover {
+            background: var(--turquoise-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(8,145,178,0.3);
+        }
+
+        /* Footer */
+        footer {
+            padding: 1.5rem 6rem;
+            background: var(--black);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer img { height: 30px; opacity: 0.8; }
+        footer p { font-size: 0.75rem; color: var(--gray-500); }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            section { padding: 5rem 3rem; }
+            nav { padding: 1rem 2rem; }
+            .nav-links { display: none; }
+            .business-advantages, .chiffres-grid, .business-numbers { grid-template-columns: repeat(2, 1fr); }
+            .team-grid { grid-template-columns: 1fr; }
+            .market-content { grid-template-columns: 1fr; }
+            .market-image { height: 350px; }
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 4rem 1.5rem; }
+            h2 { font-size: 2rem; }
+            .section-number { font-size: 4rem; left: 1.5rem; }
+            .vision-grid, .production-content, .financement-grid { grid-template-columns: 1fr; }
+            .market-kpis, .business-advantages, .chiffres-grid, .business-numbers { grid-template-columns: 1fr; }
+            .innovation-grid { grid-template-columns: 1fr; }
+            .team-stats { gap: 1rem; }
+            .contact-item { display: block; margin: 0.5rem 0; }
+            .market-image { height: 280px; }
+            .business-schema { min-height: auto; }
+            .schema-svg { display: none; }
+            .schema-row { flex-direction: column; gap: 1rem; margin-bottom: 1rem; }
+            .schema-row.top-row { padding-right: 0; }
+            .schema-node { margin: 0 !important; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-logo"><img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/LOGO%20V3%20bi%20color.png" alt="PLUME"></div>
+        <ul class="nav-links">
+            <li><a href="#vision">Vision</a></li>
+            <li><a href="#equipe">Équipe</a></li>
+            <li><a href="#marche">Marché</a></li>
+            <li><a href="#avantages">Avantages</a></li>
+            <li><a href="#innovation">Innovation</a></li>
+            <li><a href="#production">Production</a></li>
+            <li><a href="#gamme">Gamme</a></li>
+            <li><a href="#business">B2B2C</a></li>
+            <li><a href="#b2c-ecoles">Écoles</a></li>
+            <li><a href="#financement">Financement</a></li>
+            <li><a href="#communication">Com</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/LOGO%20V3%20Black.png" alt="PLUME Paragliders" class="hero-logo">
+            <p class="hero-tagline">Magic is Light</p>
+            <p class="hero-subtitle">Marque française et innovante de parapente</p>
+            <div class="hero-badge">Dossier de présentation</div>
+        </div>
+        <div class="scroll-indicator"><span>Découvrir</span></div>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision">
+        <span class="section-number">01</span>
+        <h2 class="fade-in">Notre Vision</h2>
+        <p class="fade-in">PLUME Paragliders est une nouvelle marque française de parapente avec une mission claire : <span class="highlight">devenir le leader mondial du parapente léger</span>.</p>
+        
+        <div class="vision-grid fade-in">
+            <div class="vision-card">
+                <h4>Le problème</h4>
+                <p>Le parapente est souvent perçu comme complexe, coûteux, dangereux et réservé aux pratiquants confirmés. L'équipement traditionnel est lourd et intimidant pour les débutants.</p>
+            </div>
+            <div class="vision-card">
+                <h4>Notre solution</h4>
+                <p>Développer des ailes légères, plus intuitives, plus faciles et plus pratiques. La légèreté ouvre des portes dans l'outdoor et élargit le marché à de nouveaux publics : alpinistes, trail runners, grimpeurs.</p>
+            </div>
+            <div class="vision-card">
+                <h4>Notre ambition</h4>
+                <p>Réinventer la distribution du parapente grâce à un modèle B2B2C innovant et capitaliser sur notre expertise unique dans le segment léger pour atteindre 1000 ailes/an d'ici 2030.</p>
+            </div>
+            <div class="vision-card">
+                <h4>Nos valeurs</h4>
+                <p><span class="gold">Empathie</span> — Culture du feedback clients et en interne<br>
+                <span class="gold">Innovation</span> — Solutions nouvelles et différenciantes<br>
+                <span class="gold">Partage</span> — Rendre le vol accessible à tous<br>
+                <span class="gold">Qualité</span> — Produits beaux et bien finis</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="equipe" class="bg-cream">
+        <span class="section-number">02</span>
+        <h2 class="fade-in">L'Équipe Fondatrice</h2>
+        <p class="fade-in">Une équipe complémentaire avec une expertise unique dans le parapente.</p>
+
+        <div class="team-grid fade-in">
+            <div class="team-member">
+                <div class="team-header">
+                    <img src="https://raw.githubusercontent.com/jbintheair/jbphotoportrait1/refs/heads/main/jb-200pxinternet.jpg" alt="Jean-Baptiste Chandelier" class="team-avatar">
+                    <div class="team-title">
+                        <h4>Jean-Baptiste Chandelier</h4>
+                        <p class="team-role">Co-fondateur • 55% du capital</p>
+                    </div>
+                </div>
+                <p class="team-details">
+                    <strong>Direction, Conception, Marketing, Commercial</strong><br><br>
+                    Parapentiste le plus influent de sa génération, 15 ans d'athlète professionnel et autant en conception chez Dudek (2012-2020) puis Skywalk (2020-2025). Créateur de l'aile la plus légère au monde : 986g (Run & Fly). Contributions aux ailes kitesurf des JO et au champion du monde de paramoteur.
+                </p>
+                <div class="team-highlights">
+                    <span>500K abonnés</span>
+                    <span>60M+ vues</span>
+                    <span>Sponsor Adidas</span>
+                    <span>Sponsor Salewa</span>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="team-header">
+                    <img src="https://raw.githubusercontent.com/jbintheair/thomaspb2/refs/heads/main/tom-200pxjpegweb.jpg" alt="Thomas Pierre-Bes" class="team-avatar">
+                    <div class="team-title">
+                        <h4>Thomas Pierre-Bes</h4>
+                        <p class="team-role">Co-fondateur • 45% du capital</p>
+                    </div>
+                </div>
+                <p class="team-details">
+                    <strong>Conception, Logistique, Web Design</strong><br><br>
+                    Expert en conception et laboratoire de test. Compétences solides en marketing, web design et optimisation produit. Gestion de la chaîne logistique et des relations fournisseurs.
+                </p>
+                <div class="team-highlights">
+                    <span>Conception</span>
+                    <span>Laboratoire</span>
+                    <span>Marketing</span>
+                    <span>Logistique</span>
+                </div>
+            </div>
+        </div>
+
+        <p class="fade-in" style="margin-top: 2rem;"><strong>Collaborateurs :</strong> Jim Nougarolles, Manu Laly, Yann Freund (pilote drone/vidéo)</p>
+
+        <div class="team-stats fade-in">
+            <div class="stat"><div class="stat-number">15</div><div class="stat-label">ans de conception</div></div>
+            <div class="stat"><div class="stat-number">5</div><div class="stat-label">ans de vente</div></div>
+            <div class="stat"><div class="stat-number">1000+</div><div class="stat-label">pilotes formés</div></div>
+            <div class="stat"><div class="stat-number">15</div><div class="stat-label">ans athlète pro</div></div>
+            <div class="stat"><div class="stat-number">500K</div><div class="stat-label">abonnés</div></div>
+            <div class="stat"><div class="stat-number">60M+</div><div class="stat-label">vues vidéos</div></div>
+        </div>
+    </section>
+
+    <!-- Market Section -->
+    <section id="marche">
+        <span class="section-number">03</span>
+        <h2 class="fade-in">Le Marché du Parapente</h2>
+        <p class="fade-in">Un marché stable et profitable, porté par le segment léger en forte croissance.</p>
+
+        <div class="market-content fade-in">
+            <div class="market-image-container">
+                <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/Generated%20Image%20December%2018%2C%202025%20-%201_05AM.jpeg" alt="Parapente léger en montagne" class="market-image">
+            </div>
+            
+            <div class="market-data">
+                <div class="market-kpis">
+                    <div class="kpi"><div class="kpi-value">98M€</div><div class="kpi-label">Marché mondial 2024</div></div>
+                    <div class="kpi"><div class="kpi-value">37 783</div><div class="kpi-label">Ailes vendues en 2024</div></div>
+                    <div class="kpi"><div class="kpi-value">74%</div><div class="kpi-label">Part de l'Europe</div></div>
+                    <div class="kpi"><div class="kpi-value">+71%</div><div class="kpi-label">Croissance segment Light</div><div class="kpi-trend">en 5 ans</div></div>
+                </div>
+
+                <div class="market-context">
+                    <p><strong>Opportunité de marché :</strong> Le segment léger est le plus dynamique du marché. Les pratiquants outdoor (alpinistes, trail runners, grimpeurs) recherchent des équipements légers pour combiner leurs activités avec le vol. PLUME se positionne sur ce segment à forte croissance avec une expertise unique.</p>
+                </div>
+
+                <a href="https://raw.githubusercontent.com/jbintheair/NeawBrand/main/The%20market%20for%20paragliding%20equipment%202024%20(Revised%203%20Aug).pdf" target="_blank" download class="btn-primary" style="display: inline-block; margin-top: 1.5rem; text-decoration: none;">
+                    ↓ Télécharger le rapport complet du marché 2024
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avantages Concurrentiels Section -->
+    <section id="avantages" class="bg-cream">
+        <span class="section-number">04</span>
+        <h2 class="fade-in">Avantages Concurrentiels</h2>
+        <p class="fade-in">Des atouts uniques qui positionnent PLUME comme leader du parapente léger.</p>
+
+        <div class="vision-grid fade-in">
+            <div class="vision-card">
+                <h4>🎬 Leader en Communication</h4>
+                <p>Plus de <span class="highlight">15 ans de leadership</span> en communication dans le monde du parapente. Une visibilité et une crédibilité inégalées avec 500K abonnés et 60M+ de vues.</p>
+            </div>
+            <div class="vision-card">
+                <h4>🪶 Expertise Design Light</h4>
+                <p>Leader du segment léger depuis <span class="highlight">8 ans</span> avec la création de la voile la plus légère du monde. Plus de 5 ans de collaboration avec des ingénieurs en structure ont forgé une expertise technique <span class="highlight">que le milieu n'a pas</span>.</p>
+            </div>
+            <div class="vision-card">
+                <h4>🧠 Réseau & Expertise Uniques</h4>
+                <p><span class="gold">Conception :</span> 15 ans avec Allemands, Autrichiens, Polonais, Français — une vision multiculturelle unique.<br>
+                <span class="gold">Communication :</span> Partenariats Adidas, Red Bull, Salewa, North Face — réseau d'athlètes mondial.<br>
+                <span class="gold">Écoles :</span> 20 ans dans le milieu, moniteur diplômé — réseau de partenaires énorme.</p>
+            </div>
+            <div class="vision-card">
+                <h4>🔄 Système B2B2C Innovant</h4>
+                <p>Un nouveau modèle de vente qui <span class="highlight">fluidifie le réseau</span> de distribution et empêche les concurrences déloyales grâce à l'exclusivité géographique.</p>
+            </div>
+        </div>
+
+        <div class="team-stats fade-in" style="margin-top: 2.5rem;">
+            <div class="stat"><div class="stat-number">🏆</div><div class="stat-label">Réseau d'athlètes premium</div></div>
+            <div class="stat"><div class="stat-number">15+</div><div class="stat-label">Années d'expérience</div></div>
+            <div class="stat"><div class="stat-number">N°1</div><div class="stat-label">Segment Ultra Light</div></div>
+            <div class="stat"><div class="stat-number">Unique</div><div class="stat-label">Modèle B2B2C</div></div>
+        </div>
+
+        <p class="fade-in" style="margin-top: 2rem; text-align: center;"><strong>Réseau d'athlètes :</strong> Accès privilégié à un réseau d'ambassadeurs de haut niveau (North Face, Adidas, Salewa, Red Bull) — un avantage impossible à reproduire.</p>
+    </section>
+
+    <!-- Innovation Section -->
+    <section id="innovation">
+        <span class="section-number">05</span>
+        <h2 class="fade-in">Innovation</h2>
+        <p class="fade-in">Une approche globale de l'innovation : produit, process et distribution.</p>
+
+        <div class="innovation-grid fade-in">
+            <div class="innovation-card">
+                <div class="innovation-tag">Produit</div>
+                <div class="innovation-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C8.5 2 5.5 4.5 4 8c-1.5 3.5-1 7 1 10l7 4 7-4c2-3 2.5-6.5 1-10-1.5-3.5-4.5-6-8-6zm0 2c2.5 0 4.7 1.8 6 4.5.8 1.7 1 3.5.5 5.2L12 17.5l-6.5-3.8c-.5-1.7-.3-3.5.5-5.2C7.3 5.8 9.5 4 12 4zm0 3c-1.5 0-2.8.8-3.5 2-.7 1.2-.7 2.8 0 4 .7 1.2 2 2 3.5 2s2.8-.8 3.5-2c.7-1.2.7-2.8 0-4-.7-1.2-2-2-3.5-2z"/>
+                    </svg>
+                </div>
+                <h4>Innovation Conception Parapente</h4>
+                <p>Nouveaux systèmes uniques et hybrides, inspirés du parakite et de la monosurface. Technologies innovantes pour augmenter la résistance, alléger le poids et rendre le matériel plus sûr et plus intuitif.</p>
+            </div>
+            <div class="innovation-card">
+                <div class="innovation-tag">Process</div>
+                <div class="innovation-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v10c0 1.1-.9 2-2 2h-6v2h2v2H8v-2h2v-2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm0 2v10h16V6H4zm2 2h3v2H6V8zm5 0h7v2h-7V8zm-5 4h5v2H6v-2zm7 0h5v2h-5v-2z"/>
+                    </svg>
+                </div>
+                <h4>Logiciel Propriétaire</h4>
+                <p>Développement interne d'outils de calcul pour optimiser le poids des ailes et accélérer le lancement en production avec une précision inégalée.</p>
+            </div>
+            <div class="innovation-card">
+                <div class="innovation-tag">Distribution</div>
+                <div class="innovation-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                    </svg>
+                </div>
+                <h4>Modèle B2B2C + IA</h4>
+                <p>Première dans le parapente : vente en ligne directe avec intégration obligatoire des écoles partenaires. Conseil assisté par intelligence artificielle.</p>
+            </div>
+            <div class="innovation-card">
+                <div class="innovation-tag">Sécurité</div>
+                <div class="innovation-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 2.18l7 3.12v5.7c0 4.54-3.13 8.78-7 9.88-3.87-1.1-7-5.34-7-9.88v-5.7l7-3.12zm-1 5.82v6h2v-6h-2zm0-4v2h2V5h-2z"/>
+                    </svg>
+                </div>
+                <h4>ACS — Anti Collapse System</h4>
+                <p>Brevet déposé. Système mécanique innovant pour éviter les fermetures de voile. Une avancée majeure en sécurité passive.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Production Section -->
+    <section id="production" class="bg-cream">
+        <span class="section-number">06</span>
+        <h2 class="fade-in">Production & Partenaire</h2>
+        <p class="fade-in">Un partenariat exclusif avec une usine de référence en Asie.</p>
+
+        <div class="production-content fade-in">
+            <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/IMG_3486.jpeg" alt="Usine A&C" class="production-image">
+            <div class="production-details">
+                <h4>Usine A&C — Asie</h4>
+                <p>Je travaille avec l'usine A&C depuis 5 ans, d'abord chez Skywalk où j'ai pu apprécier leur qualité de fabrication exceptionnelle. Après avoir mis en concurrence 4 usines en Europe et en Asie pour PLUME, c'est naturellement vers A&C que je me suis tourné. Je suis très heureux de pouvoir continuer cette collaboration de confiance avec eux.</p>
+                
+                <div class="production-info" style="margin-top: 1.5rem;">
+                    <strong>Délai de production :</strong> 1 mois<br>
+                    <strong>Capacité :</strong> Accepte une production de 0 à +1 000 voiles par an<br>
+                    <strong>Qualité :</strong> Contrôle qualité rigoureux, certification EN
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gamme Parapente Section -->
+    <section id="gamme">
+        <span class="section-number">07</span>
+        <h2 class="fade-in">La Gamme Parapente</h2>
+        <p class="fade-in">Une offre complète pour tous les profils de pilotes et tous les usages.</p>
+
+        <div class="production-content fade-in">
+            <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/Generated%20Image%20November%2030%2C%202025%20-%201_39AM.jpeg" alt="Gamme PLUME Paragliders" class="production-image" style="height: 400px; object-fit: cover;">
+            <div class="production-details">
+                <h4>Trois lignes pour trois philosophies</h4>
+                <p>Chaque gamme répond à des besoins spécifiques, du pilote débutant au pratiquant expert recherchant la légèreté absolue.</p>
+                
+                <table class="gamme-table" style="width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>Catégorie</th>
+                            <th>Classic 38gr</th>
+                            <th>Light 38gr/27gr</th>
+                            <th>Ultra Light 27gr<br><small style="font-weight: 400; font-size: 0.65rem; color: var(--gold); text-transform: none;">Voiles les plus légères du monde</small></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>mix Parakite</strong></td>
+                            <td>—</td>
+                            <td>Pk Light</td>
+                            <td>Pk Ultra</td>
+                        </tr>
+                        <tr>
+                            <td><strong>EN-A hybrid</strong></td>
+                            <td>—</td>
+                            <td>EN-A Light</td>
+                            <td>EN-A Ultra</td>
+                        </tr>
+                        <tr>
+                            <td><strong>EN-A+</strong></td>
+                            <td>EN-A</td>
+                            <td>EN-A Light</td>
+                            <td>EN-A Ultra</td>
+                        </tr>
+                        <tr>
+                            <td><strong>EN-B</strong></td>
+                            <td>—</td>
+                            <td>EN-B Light</td>
+                            <td>EN-B Ultra</td>
+                        </tr>
+                        <tr>
+                            <td><strong>EN-C</strong></td>
+                            <td>—</td>
+                            <td>EN-C Light</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Single skin</strong></td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>Single skin Ultra</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="business-numbers fade-in" style="margin-top: 2.5rem;">
+            <div class="business-number"><div class="value">800gr</div><div class="label">Voile la plus légère au monde</div></div>
+            <div class="business-number"><div class="value">Ultra</div><div class="label">Les plus légères du marché</div></div>
+            <div class="business-number"><div class="value">Light</div><div class="label">Marché ayant grossi de 75% en 5 ans</div></div>
+            <div class="business-number"><div class="value">6</div><div class="label">Catégories de voiles</div></div>
+        </div>
+    </section>
+
+    <!-- Business Model Section -->
+    <section id="business" class="bg-cream">
+        <span class="section-number">08</span>
+        <h2 class="fade-in">Modèle Commercial B2B2C</h2>
+        <p class="fade-in">Une innovation majeure dans la distribution du parapente.</p>
+
+        <div class="business-schema fade-in" style="text-align: center;">
+            <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/Generated%20Image%20December%2018%2C%202025%20-%2010_35AM.jpeg" alt="Schéma du modèle B2B2C PLUME" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+        </div>
+
+        <h3 class="fade-in">Avantages du modèle</h3>
+        <div class="business-advantages fade-in">
+            <div class="advantage"><h5>Automatisation des ventes</h5><p>Les écoles génèrent des ventes en saison comme hors saison avec une logistique simplifiée.</p></div>
+            <div class="advantage"><h5>Exclusivité géographique</h5><p>Chaque école partenaire bénéficie d'un secteur exclusif, créant un effet d'opportunité limitée.</p></div>
+            <div class="advantage"><h5>Modèle en deux temps</h5><p>Les écoles acquièrent à -30% du prix public, équipent leur pack école, revendent aux élèves.</p></div>
+        </div>
+
+        <div class="business-numbers fade-in">
+            <div class="business-number"><div class="value">2 833€</div><div class="label">Prix moyen HT</div></div>
+            <div class="business-number"><div class="value">1 022€</div><div class="label">Coût de revient</div></div>
+            <div class="business-number"><div class="value">1 274€</div><div class="label">Marge brute / aile</div></div>
+            <div class="business-number"><div class="value">~50%</div><div class="label">Flotte démo / ventes</div></div>
+        </div>
+
+        <p class="fade-in" style="margin-top: 2rem; font-size: 0.9rem;"><strong>Cycle de trésorerie favorable :</strong> Clients paient immédiatement sur le site — Fournisseurs payés 3 semaines après livraison.</p>
+    </section>
+
+    <!-- B2C Voiles Écoles Section -->
+    <section id="b2c-ecoles">
+        <span class="section-number">09</span>
+        <h2 class="fade-in">Modèle B2C — Voiles Écoles</h2>
+        <p class="fade-in">Un circuit de distribution dédié exclusivement à l'enseignement et la formation des élèves.</p>
+
+        <div class="business-schema fade-in" style="text-align: center;">
+            <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/Generated%20Image%20December%2018%2C%202025%20-%2010_47AM.jpeg" alt="Schéma du modèle B2C Voiles Écoles PLUME" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+        </div>
+
+        <h3 class="fade-in">Spécificités du modèle Écoles</h3>
+        <div class="business-advantages fade-in">
+            <div class="advantage"><h5>Voiles dédiées formation</h5><p>Ailes spécialement conçues pour l'enseignement : robustes, tolérantes et adaptées aux premiers vols des élèves.</p></div>
+            <div class="advantage"><h5>Vente directe aux écoles</h5><p>Circuit B2C simplifié : les écoles commandent directement pour équiper leur flotte pédagogique.</p></div>
+            <div class="advantage"><h5>Renouvellement régulier</h5><p>Les voiles écoles subissent une usure importante. Cycle de renouvellement prévisible pour les partenaires.</p></div>
+        </div>
+
+        <div class="business-numbers fade-in">
+            <div class="business-number"><div class="value">-30%</div><div class="label">Prix écoles vs public</div></div>
+            <div class="business-number"><div class="value">EN-A</div><div class="label">Homologation école</div></div>
+            <div class="business-number"><div class="value">1 an</div><div class="label">Renouvellement (système PLUME)</div></div>
+            <div class="business-number"><div class="value">100%</div><div class="label">Usage formation</div></div>
+        </div>
+
+        <p class="fade-in" style="margin-top: 2rem; font-size: 0.9rem;"><strong>Avantage clé :</strong> Les écoles partenaires bénéficient de conditions préférentielles et d'un SAV prioritaire pour assurer la continuité de leur activité de formation.</p>
+    </section>
+
+    <!-- Chiffres Section -->
+    <section id="chiffres">
+        <span class="section-number">10</span>
+        <h2 class="fade-in">Chiffres Clés</h2>
+        <p class="fade-in">Les indicateurs essentiels du business plan.</p>
+
+        <div class="chiffres-grid fade-in">
+            <div class="chiffre-card"><div class="chiffre-value">55<span class="chiffre-unit">%</span></div><div class="chiffre-label">Marge brute par aile</div></div>
+            <div class="chiffre-card"><div class="chiffre-value">228</div><div class="chiffre-label">Ailes / an — Seuil de rentabilité</div></div>
+            <div class="chiffre-card"><div class="chiffre-value">1000</div><div class="chiffre-label">Objectif ailes / an (2030)</div></div>
+        </div>
+
+        <div class="projections fade-in">
+            <h4>Scénario réaliste — Projection des ventes</h4>
+            <table class="projections-table">
+                <thead>
+                    <tr><th>2025</th><th>2026</th><th>2027</th><th>2028</th><th>2029</th><th>2030</th><th>2031</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>0</td><td>75</td><td>250</td><td>550</td><td>800</td><td>1000</td><td>1000</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p class="fade-in" style="margin-top: 1.5rem; text-align: center; font-size: 0.85rem;">Charges fixes annuelles : 195 249€ — Stock cible : 50% des ventes annuelles</p>
+    </section>
+
+    <!-- Financement Section -->
+    <section id="financement" class="bg-cream">
+        <span class="section-number">11</span>
+        <h2 class="fade-in">Plan de Financement</h2>
+        <p class="fade-in">Une structure financière solide pour assurer le développement.</p>
+
+        <div class="financement-grid fade-in">
+            <div>
+                <div class="financement-sources">
+                    <div class="source">
+                        <div>
+                            <span class="source-name">Capital social</span>
+                            <div class="source-detail">JB 55K€ + Thomas 45K€</div>
+                        </div>
+                        <span class="source-amount">100 000 €</span>
+                    </div>
+                    <div class="source">
+                        <div>
+                            <span class="source-name">Apport en compte courant</span>
+                            <div class="source-detail">JB + Thomas</div>
+                        </div>
+                        <span class="source-amount">89 000 €</span>
+                    </div>
+                    <div class="source">
+                        <div>
+                            <span class="source-name">Emprunt bancaire</span>
+                            <div class="source-detail">4 ans • 4.5% • Assurance 0.36%</div>
+                        </div>
+                        <span class="source-amount">189 000 €</span>
+                    </div>
+                    <div class="source">
+                        <div>
+                            <span class="source-name">Avoir EURL JB Chandelier</span>
+                            <div class="source-detail">2027 • Marketing & tests</div>
+                        </div>
+                        <span class="source-amount">50 000 €</span>
+                    </div>
+                </div>
+                <div class="total-financement">
+                    <div class="total-label">Financement Total</div>
+                    <div class="total-value">428 000 €</div>
+                </div>
+            </div>
+            <div class="utilisation-fonds">
+                <h4>Utilisation des fonds</h4>
+                <ul class="fonds-list">
+                    <li>Recherche & Développement (prototypes, tests)</li>
+                    <li>Homologation EN (pré-série, certification)</li>
+                    <li>Constitution du stock initial</li>
+                    <li>Développement de la plateforme web B2B2C</li>
+                    <li>Marketing et lancement commercial</li>
+                    <li>Trésorerie de fonctionnement</li>
+                    <li>Prototypages de l'ACS</li>
+                </ul>
+                <p style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--gray-500);"><strong>Remboursement emprunt :</strong> 52 400€/an (2026-2029)</p>
+            </div>
+        </div>
+
+        <div class="fade-in" style="text-align: center; margin-top: 2.5rem;">
+            <a href="https://raw.githubusercontent.com/jbintheair/NeawBrand/main/PLUME%20business%20plan%20BPI%202025%2012%2023.pdf" target="_blank" download class="btn-primary" style="text-decoration: none;">
+                ↓ Télécharger le Business Plan complet
+            </a>
+        </div>
+    </section>
+
+    <!-- Communication Section -->
+    <section id="communication">
+        <span class="section-number">12</span>
+        <h2 class="fade-in">Stratégie Communication</h2>
+        <p class="fade-in">Une visibilité unique dans l'industrie grâce à un réseau d'influence exceptionnel.</p>
+
+        <div class="vision-grid fade-in" style="margin-top: 2.5rem;">
+            <div class="vision-card">
+                <img src="https://raw.githubusercontent.com/jbintheair/jbphotoportrait1/refs/heads/main/jb-200pxinternet.jpg" alt="Jean-Baptiste Chandelier" style="width: 120px; height: 120px; object-fit: cover; object-position: top; border-radius: 50%; float: right; margin-left: 1rem; margin-bottom: 0.5rem;">
+                <h4>🎯 Réseau JB Chandelier</h4>
+                <p>Activation immédiate de ma communauté construite en 15 ans : <strong>500 000 abonnés</strong> sur les réseaux sociaux et <strong>60 millions de vues</strong> sur mes vidéos. Une audience passionnée de vol libre, prête à découvrir PLUME.</p>
+                <div style="margin-top: 1rem; display: flex; gap: 1rem;">
+                    <a href="https://www.instagram.com/jbchandelier/" target="_blank" style="color: var(--turquoise); text-decoration: none; font-size: 1.5rem;" title="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="https://www.facebook.com/jbchandelier" target="_blank" style="color: var(--turquoise); text-decoration: none; font-size: 1.5rem;" title="Facebook">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/Jbchandelier" target="_blank" style="color: var(--turquoise); text-decoration: none; font-size: 1.5rem;" title="YouTube">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="vision-card">
+                <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/Capture%20d'%C3%A9cran%202025-12-21%20175218.png" alt="Benjamin Védrines" style="width: 120px; height: 120px; object-fit: cover; object-position: top; border-radius: 50%; float: right; margin-left: 1rem; margin-bottom: 0.5rem;">
+                <h4>🚀 Benjamin Védrines</h4>
+                <p><strong>L'alpiniste le plus rapide de tous les temps en très haute altitude</strong> — et aussi un excellent parapentiste. Piolet d'Or 2025, record K2 sans O₂, première au Jannu Est... Benjamin incarne parfaitement la synergie entre alpinisme et voile légère. <strong>Centaines de milliers de followers</strong>, ambassadeur idéal pour PLUME.</p>
+                <div style="margin-top: 1rem; display: flex; gap: 1rem;">
+                    <a href="https://www.instagram.com/benjaminvedrines/" target="_blank" style="color: var(--turquoise); text-decoration: none; font-size: 1.5rem;" title="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="https://www.facebook.com/benjaminvedrines" target="_blank" style="color: var(--turquoise); text-decoration: none; font-size: 1.5rem;" title="Facebook">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=eN_79TvC26k" target="_blank" style="color: var(--turquoise); text-decoration: none; font-size: 1.5rem;" title="YouTube">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="vision-card">
+                <h4>🏆 Réseau d'Athlètes</h4>
+                <p>Constitution d'une team d'athlètes ambassadeurs issus de différentes disciplines : parapente, alpinisme, trail, escalade. Activation de notre réseau d'athlètes <strong>North Face, Adidas, Salewa, Red Bull</strong>... Des visages authentiques pour incarner les valeurs de légèreté et de liberté de PLUME.</p>
+            </div>
+            <div class="vision-card">
+                <h4>🎁 Programme Ambassadeurs</h4>
+                <p>Système de récompenses pour transformer nos clients en ambassadeurs actifs. Avantages exclusifs, réductions et accès privilégiés pour ceux qui partagent leur expérience PLUME.</p>
+            </div>
+        </div>
+
+        <h3 class="fade-in" style="margin-top: 3rem;">Stratégie Réseaux Sociaux</h3>
+        <div class="business-advantages fade-in">
+            <div class="advantage">
+                <h5>Concours & Challenges</h5>
+                <p>Organisation de concours réguliers incitant les pilotes à partager leurs vols PLUME. User-generated content pour une communication authentique et virale.</p>
+            </div>
+            <div class="advantage">
+                <h5>Contenu Inspirant</h5>
+                <p>Vidéos spectaculaires, behind-the-scenes de la conception, témoignages pilotes. Du contenu qui fait rêver et positionne PLUME comme la marque du vol léger.</p>
+            </div>
+            <div class="advantage">
+                <h5>Communauté Engagée</h5>
+                <p>Animation d'une communauté active avec des événements, des rencontres pilotes et des sessions de vol partagées. Créer le sentiment d'appartenir à la famille PLUME.</p>
+            </div>
+        </div>
+
+        <div class="business-numbers fade-in" style="margin-top: 2.5rem;">
+            <div class="business-number"><div class="value">500K</div><div class="label">Abonnés réseaux sociaux</div></div>
+            <div class="business-number"><div class="value">60M+</div><div class="label">Vues vidéos</div></div>
+            <div class="business-number"><div class="value">15 ans</div><div class="label">De présence médiatique</div></div>
+            <div class="business-number"><div class="value">0€</div><div class="label">Coût d'acquisition initial</div></div>
+        </div>
+
+        <p class="fade-in" style="margin-top: 2rem; font-size: 0.9rem; text-align: center;"><strong>Avantage concurrentiel majeur :</strong> Une notoriété et une crédibilité déjà établies dans le milieu du parapente, impossibles à reproduire par un concurrent.</p>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="bg-cream">
+        <span class="section-number">13</span>
+        <h2 class="fade-in">Roadmap</h2>
+        <p class="fade-in">Les étapes clés du développement de PLUME.</p>
+
+        <div class="timeline fade-in">
+            <div class="timeline-item">
+                <div class="timeline-date">Décembre 2025</div>
+                <div class="timeline-content">
+                    <h4>Création de la société</h4>
+                    <p>Constitution de la SAS PLUME Paragliders, apports des associés, siège social à Briançon (zone ZFRR — avantages fiscaux).</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">T1 2026</div>
+                <div class="timeline-content">
+                    <h4>R&D, Prototypes & Homologation</h4>
+                    <p>Lancement des premiers prototypes avec l'usine A&C. Tests en vol, itérations, validation des concepts. Pré-série pour certification EN.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">T2-T3 2026</div>
+                <div class="timeline-content">
+                    <h4>Lancement commercial — Gamme Classic</h4>
+                    <p>Sortie de la gamme Classic. Premières ventes, déploiement du réseau d'écoles partenaires. Plateforme web opérationnelle.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">T4 2026</div>
+                <div class="timeline-content">
+                    <h4>Sortie Gamme Ultra</h4>
+                    <p>Lancement de la gamme Ultra Light. Extension de l'offre vers les pratiquants exigeants. Objectif 75 ailes sur l'année.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2027</div>
+                <div class="timeline-content">
+                    <h4>Extension de la gamme</h4>
+                    <p>Sorties de produits complémentaires à différents niveaux de performance (EN-B, EN-C). Objectif 250 ailes. Apport EURL JB Chandelier.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2028</div>
+                <div class="timeline-content">
+                    <h4>Réseau européen complet</h4>
+                    <p>100% du réseau d'écoles partenaires déployé en Europe. Consolidation des ventes. Objectif 550 ailes.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2029-2030</div>
+                <div class="timeline-content">
+                    <h4>Montée en gamme & Leadership</h4>
+                    <p>Positionnement haut de gamme, augmentation des prix et des marges. Montée vers 1000 ailes/an. Position de leader sur le segment léger premium en Europe.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="fade-in">Contact</h2>
+        <p class="fade-in">PLUME Paragliders</p>
+        
+        <div class="contact-address fade-in">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            <span>3bis route de Gap, 05100 Briançon</span>
+        </div>
+
+        <div class="contact-grid fade-in">
+            <div class="contact-card">
+                <div class="contact-card-name">Jean-Baptiste Chandelier</div>
+                <div class="contact-card-role">Co-fondateur</div>
+                <div class="contact-card-item">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                    <a href="mailto:jbchandelier@plumeparagliders.com">jbchandelier@plumeparagliders.com</a>
+                </div>
+                <div class="contact-card-item">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    </svg>
+                    <a href="tel:+33679856426">06 79 85 64 26</a>
+                </div>
+            </div>
+            <div class="contact-card">
+                <div class="contact-card-name">Thomas-Pierre Besse</div>
+                <div class="contact-card-role">Co-fondateur</div>
+                <div class="contact-card-item">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                    <a href="mailto:tom.pierrebes@plumeparagliders.com">tom.pierrebes@plumeparagliders.com</a>
+                </div>
+                <div class="contact-card-item">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    </svg>
+                    <a href="tel:+33638935549">06 38 93 55 49</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/LOGO%20V3%20White.png" alt="PLUME">
+        <p>© 2025 PLUME Paragliders — Tous droits réservés</p>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 80));
+
+        // Fade in on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        fadeElements.forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
+
