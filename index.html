@@ -71,14 +71,34 @@
         .nav-links a {
             color: var(--gray-600);
             text-decoration: none;
-            font-size: 0.75rem;
+            font-size: 0.85rem;
             font-weight: 500;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            border: 2px solid transparent;
         }
 
-        .nav-links a:hover { color: var(--turquoise); }
+        .nav-links a:hover { 
+            color: var(--turquoise); 
+            border-color: var(--turquoise);
+        }
+
+        .nav-links a.active {
+            color: var(--white);
+            background: var(--turquoise);
+            border-color: var(--turquoise);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
 
         /* Sections */
         section {
@@ -540,6 +560,27 @@
         }
 
         .innovation-card p { font-size: 0.85rem; line-height: 1.6; }
+
+        .innovation-card .btn-patent {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: var(--turquoise);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .innovation-card .btn-patent:hover {
+            background: var(--turquoise-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(8,145,178,0.3);
+        }
 
         .innovation-tag {
             position: absolute;
@@ -1132,7 +1173,13 @@
         @media (max-width: 1200px) {
             section { padding: 5rem 3rem; }
             nav { padding: 1rem 2rem; }
-            .nav-links { display: none; }
+            .nav-links { 
+                gap: 1rem;
+            }
+            .nav-links a {
+                font-size: 0.7rem;
+                padding: 0.5rem 0.8rem;
+            }
             .business-advantages, .chiffres-grid, .business-numbers { grid-template-columns: repeat(2, 1fr); }
             .team-grid { grid-template-columns: 1fr; }
             .market-content { grid-template-columns: 1fr; }
@@ -1143,6 +1190,15 @@
             section { padding: 4rem 1.5rem; }
             h2 { font-size: 2rem; }
             .section-number { font-size: 4rem; left: 1.5rem; }
+            nav { flex-direction: column; gap: 1rem; padding: 0.8rem 1rem; }
+            .nav-links {
+                gap: 0.5rem;
+            }
+            .nav-links a {
+                font-size: 0.65rem;
+                padding: 0.4rem 0.6rem;
+                letter-spacing: 0.05em;
+            }
             .vision-grid, .production-content, .financement-grid { grid-template-columns: 1fr; }
             .market-kpis, .business-advantages, .chiffres-grid, .business-numbers { grid-template-columns: 1fr; }
             .innovation-grid { grid-template-columns: 1fr; }
@@ -1155,6 +1211,550 @@
             .schema-row.top-row { padding-right: 0; }
             .schema-node { margin: 0 !important; }
         }
+
+        /* =====================================================
+           NOUVELLE ARCHITECTURE PAGES INNOVATION
+           ===================================================== */
+        
+        /* Hero Section Innovation - Titre avec image de fond */
+        .innovation-hero {
+            position: relative;
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 2rem;
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+        
+        .innovation-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(180deg, rgba(15, 36, 48, 0.65) 0%, rgba(15, 36, 48, 0.80) 100%);
+            z-index: 1;
+        }
+        
+        .innovation-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+        
+        .innovation-hero h2 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 3.2rem;
+            font-weight: 300;
+            color: var(--white);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .innovation-hero-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 400;
+            margin-bottom: 2rem;
+        }
+        
+        .innovation-hero-keywords {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .keyword-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 30px;
+            color: var(--white);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .keyword-badge strong {
+            color: var(--gold-light);
+            font-size: 1.1rem;
+        }
+        
+        /* Section Problème */
+        .innovation-problem {
+            padding: 4rem 6rem;
+            background: var(--cream);
+        }
+        
+        .innovation-problem h3 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.8rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .innovation-problem h3::before {
+            content: '⚡';
+            font-size: 1.4rem;
+        }
+        
+        .problem-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        
+        .problem-card {
+            padding: 2rem;
+            background: var(--white);
+            border-left: 4px solid var(--gold);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        
+        .problem-card h4 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.1rem;
+            color: var(--turquoise-dark);
+            margin-bottom: 0.8rem;
+        }
+        
+        .problem-card p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--gray-600);
+        }
+        
+        /* Section Solution Simplifiée */
+        .innovation-solution {
+            padding: 4rem 6rem;
+            background: var(--white);
+        }
+        
+        .innovation-solution h3 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.8rem;
+            color: var(--turquoise);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .innovation-solution h3::before {
+            content: '💡';
+            font-size: 1.4rem;
+        }
+        
+        .solution-highlight {
+            padding: 2.5rem;
+            background: linear-gradient(135deg, rgba(85, 136, 166, 0.08) 0%, rgba(85, 136, 166, 0.02) 100%);
+            border-left: 4px solid var(--turquoise);
+            margin-bottom: 2rem;
+        }
+        
+        .solution-highlight p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--gray-800);
+            max-width: 100%;
+        }
+        
+        .solution-benefits {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .benefit-item {
+            padding: 1.5rem;
+            background: var(--gray-50);
+            text-align: center;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+        
+        .benefit-icon {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .benefit-item h4 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1rem;
+            color: var(--turquoise-dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .benefit-item p {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+        }
+        
+        /* Section Description Technique */
+        .innovation-technical {
+            padding: 4rem 6rem;
+            background: var(--cream);
+        }
+        
+        .innovation-technical h3 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.8rem;
+            color: var(--turquoise-dark);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .innovation-technical h3::before {
+            content: '🔧';
+            font-size: 1.4rem;
+        }
+        
+        .technical-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        
+        .technical-grid.single-column {
+            grid-template-columns: 1fr;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .technical-item {
+            padding: 2rem;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .technical-item::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 4px;
+            background: linear-gradient(90deg, var(--turquoise), var(--gold));
+        }
+        
+        .technical-item:hover {
+            border-color: var(--turquoise);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+        
+        .technical-item h4 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.15rem;
+            color: var(--turquoise-dark);
+            margin-bottom: 1rem;
+        }
+        
+        .technical-item p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: var(--gray-600);
+        }
+        
+        .technical-item ul {
+            margin-top: 1rem;
+            padding-left: 1.2rem;
+        }
+        
+        .technical-item li {
+            font-size: 0.9rem;
+            line-height: 1.8;
+            color: var(--gray-600);
+        }
+        
+        /* Section Timeline */
+        .innovation-timeline {
+            padding: 4rem 6rem;
+            background: var(--white);
+        }
+        
+        .innovation-timeline h3 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.8rem;
+            color: var(--turquoise-dark);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .innovation-timeline h3::before {
+            content: '📅';
+            font-size: 1.4rem;
+        }
+        
+        .timeline-subtitle {
+            color: var(--gray-500);
+            font-size: 0.95rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .timeline-container {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            padding: 2rem 0;
+        }
+        
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0; right: 40px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--turquoise) 0%, var(--gold) 50%, var(--gray-300) 100%);
+            transform: translateY(-50%);
+        }
+        
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            border: 12px solid transparent;
+            border-left: 20px solid var(--gray-400);
+        }
+        
+        .timeline-step {
+            position: relative;
+            flex: 1;
+            text-align: center;
+            padding: 0 1rem;
+        }
+        
+        .timeline-dot {
+            width: 24px;
+            height: 24px;
+            background: var(--turquoise);
+            border-radius: 50%;
+            margin: 0 auto;
+            border: 4px solid var(--white);
+            box-shadow: 0 0 0 3px var(--turquoise);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .timeline-dot.completed {
+            background: var(--turquoise);
+        }
+        
+        .timeline-dot.current {
+            background: var(--gold);
+            box-shadow: 0 0 0 3px var(--gold);
+            animation: pulse 2s infinite;
+        }
+        
+        .timeline-dot.future {
+            background: var(--gray-300);
+            box-shadow: 0 0 0 3px var(--gray-300);
+        }
+        
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 3px var(--gold); }
+            50% { box-shadow: 0 0 0 6px rgba(201, 125, 24, 0.3); }
+        }
+        
+        .timeline-card {
+            margin-top: 1.5rem;
+            padding: 1.2rem;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            border-top: 3px solid var(--turquoise);
+        }
+        
+        .timeline-card.current {
+            border-top-color: var(--gold);
+        }
+        
+        .timeline-card.future {
+            border-top-color: var(--gray-300);
+            opacity: 0.8;
+        }
+        
+        .timeline-date {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--turquoise);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .timeline-card.current .timeline-date {
+            color: var(--gold);
+        }
+        
+        .timeline-card h4 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1rem;
+            color: var(--black);
+            margin: 0.5rem 0;
+        }
+        
+        .timeline-card p {
+            font-size: 0.8rem;
+            color: var(--gray-600);
+            line-height: 1.5;
+        }
+        
+        .timeline-progress {
+            margin-top: 0.8rem;
+            background: var(--gray-200);
+            height: 6px;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .timeline-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--turquoise), var(--gold));
+            border-radius: 3px;
+            transition: width 0.5s ease;
+        }
+        
+        .timeline-progress-label {
+            font-size: 0.7rem;
+            color: var(--gray-500);
+            margin-top: 0.3rem;
+            text-align: right;
+        }
+        
+        /* Section Budget */
+        .innovation-budget {
+            padding: 4rem 6rem;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--white) 100%);
+        }
+        
+        .innovation-budget h3 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.8rem;
+            color: var(--turquoise-dark);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .innovation-budget h3::before {
+            content: '💰';
+            font-size: 1.4rem;
+        }
+        
+        .budget-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        
+        .budget-card {
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            border-top: 4px solid var(--turquoise);
+        }
+        
+        .budget-card.total {
+            border-top-color: var(--gold);
+        }
+        
+        .budget-card h4 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1rem;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.8rem;
+        }
+        
+        .budget-amount {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--turquoise);
+            margin-bottom: 1.5rem;
+        }
+        
+        .budget-card.total .budget-amount {
+            color: var(--gold);
+        }
+        
+        .budget-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        
+        .budget-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 1rem;
+            background: var(--gray-50);
+            border-radius: 4px;
+        }
+        
+        .budget-line-label {
+            font-size: 0.85rem;
+            color: var(--gray-600);
+        }
+        
+        .budget-line-amount {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--turquoise);
+        }
+        
+        .budget-card.total .budget-line-amount {
+            color: var(--gold);
+        }
+        
+        /* Responsive pour nouvelles sections */
+        @media (max-width: 1200px) {
+            .innovation-hero h2 { font-size: 2.5rem; }
+            .innovation-problem, .innovation-solution, .innovation-technical, .innovation-timeline, .innovation-budget {
+                padding: 3rem 3rem;
+            }
+            .technical-grid, .budget-grid { grid-template-columns: 1fr; }
+            .solution-benefits { grid-template-columns: repeat(2, 1fr); }
+            .timeline-container { flex-direction: column; gap: 2rem; }
+            .timeline-container::before { display: none; }
+            .timeline-container::after { display: none; }
+        }
+        
+        @media (max-width: 768px) {
+            .innovation-hero { min-height: 40vh; padding: 3rem 1.5rem; }
+            .innovation-hero h2 { font-size: 2rem; }
+            .innovation-problem, .innovation-solution, .innovation-technical, .innovation-timeline, .innovation-budget {
+                padding: 2.5rem 1.5rem;
+            }
+            .problem-content { grid-template-columns: 1fr; }
+            .solution-benefits { grid-template-columns: 1fr; }
+            .keyword-badge { font-size: 0.75rem; padding: 0.4rem 0.8rem; }
+        }
     </style>
 </head>
 <body>
@@ -1162,26 +1762,19 @@
     <nav id="navbar">
         <div class="nav-logo"><img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/LOGO%20V3%20bi%20color.png" alt="PLUME"></div>
         <ul class="nav-links">
-            <li><a href="#vision">Vision</a></li>
-            <li><a href="#equipe">Équipe</a></li>
-            <li><a href="#marche">Marché</a></li>
-            <li><a href="#avantages">Avantages</a></li>
-            <li><a href="#innovation">Innovation</a></li>
-            <li><a href="#production">Production</a></li>
-            <li><a href="#gamme">Gamme</a></li>
-            <li><a href="#business">B2B2C</a></li>
-            <li><a href="#b2c-ecoles">Écoles</a></li>
-            <li><a href="#financement">Financement</a></li>
-            <li><a href="#communication">Com</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#" class="tab-link active" data-tab="banque">Présentation Banque</a></li>
+            <li><a href="#" class="tab-link" data-tab="innovation">Présentation Innovation</a></li>
         </ul>
     </nav>
+
+    <!-- TAB: Présentation Banque -->
+    <div id="tab-banque" class="tab-content active">
 
     <!-- Hero Section -->
     <section id="hero">
         <div class="hero-content">
             <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/LOGO%20V3%20Black.png" alt="PLUME Paragliders" class="hero-logo">
-            <p class="hero-tagline">Magic is Light</p>
+            <p class="hero-tagline">Light is Magic</p>
             <p class="hero-subtitle">Marque française et innovante de parapente</p>
             <div class="hero-badge">Dossier de présentation</div>
         </div>
@@ -1194,6 +1787,10 @@
         <h2 class="fade-in">Notre Vision</h2>
         <p class="fade-in">PLUME Paragliders est une nouvelle marque française de parapente avec une mission claire : <span class="highlight">devenir le leader mondial du parapente léger</span>.</p>
         
+        <div class="fade-in" style="margin: 2.5rem 0;">
+            <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/Blow%20Summit%20cloud%20amazing.jpeg" alt="Vue sommet nuages - La vision PLUME" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto; border-radius: 12px; box-shadow: 0 12px 35px rgba(0,0,0,0.2);">
+        </div>
+        
         <div class="vision-grid fade-in">
             <div class="vision-card">
                 <h4>Le problème</h4>
@@ -1205,7 +1802,7 @@
             </div>
             <div class="vision-card">
                 <h4>Notre ambition</h4>
-                <p>Réinventer la distribution du parapente grâce à un modèle B2B2C innovant et capitaliser sur notre expertise unique dans le segment léger pour atteindre 1000 ailes/an d'ici 2030.</p>
+                <p>Devenir le leader mondial du marché du parapente léger en créant les ailes les plus légères du marché. Réinventer la distribution grâce à un modèle B2B2C innovant et capitaliser sur notre expertise unique pour atteindre 1000 ailes/an d'ici 2030.</p>
             </div>
             <div class="vision-card">
                 <h4>Nos valeurs</h4>
@@ -1328,7 +1925,7 @@
                 <span class="gold">Écoles :</span> 20 ans dans le milieu, moniteur diplômé — réseau de partenaires énorme.</p>
             </div>
             <div class="vision-card">
-                <h4>🔄 Système B2B2C Innovant</h4>
+                <h4>🔄 Système B2C2B Innovant</h4>
                 <p>Un nouveau modèle de vente qui <span class="highlight">fluidifie le réseau</span> de distribution et empêche les concurrences déloyales grâce à l'exclusivité géographique.</p>
             </div>
         </div>
@@ -1379,6 +1976,7 @@
                 </div>
                 <h4>Modèle B2B2C + IA</h4>
                 <p>Première dans le parapente : vente en ligne directe avec intégration obligatoire des écoles partenaires. Conseil assisté par intelligence artificielle.</p>
+                <a href="#business" class="btn-patent">En savoir plus</a>
             </div>
             <div class="innovation-card">
                 <div class="innovation-tag">Sécurité</div>
@@ -1389,6 +1987,7 @@
                 </div>
                 <h4>ACS — Anti Collapse System</h4>
                 <p>Brevet déposé. Système mécanique innovant pour éviter les fermetures de voile. Une avancée majeure en sécurité passive.</p>
+                <a href="https://band-era-f13.notion.site/ACS-Brevet-document-2ed020b3360f808190c3fc308cd1a18a?source=copy_link" target="_blank" rel="noopener noreferrer" class="btn-patent">Voir le dossier brevet</a>
             </div>
         </div>
     </section>
@@ -1423,65 +2022,58 @@
         <div class="production-content fade-in">
             <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/Generated%20Image%20November%2030%2C%202025%20-%201_39AM.jpeg" alt="Gamme PLUME Paragliders" class="production-image" style="height: 400px; object-fit: cover;">
             <div class="production-details">
-                <h4>Trois lignes pour trois philosophies</h4>
-                <p>Chaque gamme répond à des besoins spécifiques, du pilote débutant au pratiquant expert recherchant la légèreté absolue.</p>
+                <h4>100% Light — Un positionnement unique</h4>
+                <p>PLUME est la première marque à se positionner exclusivement sur les voiles légères. Deux gammes complémentaires : <span class="highlight">Light</span> pour l'accessibilité et <span class="highlight">Ultra Light</span> pour les voiles les plus légères du monde. Un ADN unique qui n'existe chez aucun concurrent.</p>
                 
-                <table class="gamme-table" style="width: 100%;">
-                    <thead>
-                        <tr>
-                            <th>Catégorie</th>
-                            <th>Classic 38gr</th>
-                            <th>Light 38gr/27gr</th>
-                            <th>Ultra Light 27gr<br><small style="font-weight: 400; font-size: 0.65rem; color: var(--gold); text-transform: none;">Voiles les plus légères du monde</small></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>mix Parakite</strong></td>
-                            <td>—</td>
-                            <td>Pk Light</td>
-                            <td>Pk Ultra</td>
-                        </tr>
-                        <tr>
-                            <td><strong>EN-A hybrid</strong></td>
-                            <td>—</td>
-                            <td>EN-A Light</td>
-                            <td>EN-A Ultra</td>
-                        </tr>
-                        <tr>
-                            <td><strong>EN-A+</strong></td>
-                            <td>EN-A</td>
-                            <td>EN-A Light</td>
-                            <td>EN-A Ultra</td>
-                        </tr>
-                        <tr>
-                            <td><strong>EN-B</strong></td>
-                            <td>—</td>
-                            <td>EN-B Light</td>
-                            <td>EN-B Ultra</td>
-                        </tr>
-                        <tr>
-                            <td><strong>EN-C</strong></td>
-                            <td>—</td>
-                            <td>EN-C Light</td>
-                            <td>—</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Single skin</strong></td>
-                            <td>—</td>
-                            <td>—</td>
-                            <td>Single skin Ultra</td>
-                        </tr>
-                    </tbody>
-                </table>
+<table class="gamme-table" style="width: 100%;">
+                                    <thead>
+                                        <tr>
+                                            <th>Catégorie</th>
+                                            <th>Light 38gr/27gr</th>
+                                            <th>Ultra Light 27gr<br><small style="font-weight: 400; font-size: 0.65rem; color: var(--gold); text-transform: none;">Voiles les plus légères du monde</small></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>mix Parakite</strong></td>
+                                            <td>Pk Light</td>
+                                            <td>Pk Ultra</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>EN-A hybrid</strong></td>
+                                            <td>EN-A Light</td>
+                                            <td>EN-A Ultra</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>EN-A+</strong></td>
+                                            <td>EN-A Light</td>
+                                            <td>EN-A Ultra</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>EN-B</strong></td>
+                                            <td>EN-B Light</td>
+                                            <td>EN-B Ultra</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>EN-C</strong></td>
+                                            <td>EN-C Light</td>
+                                            <td>—</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Single skin</strong></td>
+                                            <td>—</td>
+                                            <td>Single skin Ultra</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
             </div>
         </div>
 
         <div class="business-numbers fade-in" style="margin-top: 2.5rem;">
+            <div class="business-number"><div class="value">100%</div><div class="label">Voiles légères uniquement</div></div>
             <div class="business-number"><div class="value">800gr</div><div class="label">Voile la plus légère au monde</div></div>
-            <div class="business-number"><div class="value">Ultra</div><div class="label">Les plus légères du marché</div></div>
-            <div class="business-number"><div class="value">Light</div><div class="label">Marché ayant grossi de 75% en 5 ans</div></div>
-            <div class="business-number"><div class="value">6</div><div class="label">Catégories de voiles</div></div>
+            <div class="business-number"><div class="value">+75%</div><div class="label">Croissance segment Light en 5 ans</div></div>
+            <div class="business-number"><div class="value">Unique</div><div class="label">Positionnement sur le marché</div></div>
         </div>
     </section>
 
@@ -1765,7 +2357,1213 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    </div>
+    <!-- FIN TAB: Présentation Banque -->
+
+    <!-- TAB: Présentation Innovation -->
+    <div id="tab-innovation" class="tab-content">
+        
+        <!-- PAGE 1: Introduction / Hero Innovation -->
+        <section id="hero-innovation" style="height: 100vh; padding: 0; background: linear-gradient(135deg, rgba(12, 74, 110, 0.85) 0%, rgba(85, 136, 166, 0.75) 100%), url('https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/Generated%20Image%20November%2030%2C%202025%20-%202_17AM.jpeg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center;">
+            <div class="hero-content" style="color: white;">
+                <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/LOGO%20V3%20White.png" alt="PLUME Paragliders" class="hero-logo">
+                <p class="hero-tagline" style="color: rgba(255,255,255,0.9);">Innovation</p>
+                <p class="hero-subtitle" style="color: rgba(255,255,255,0.8);">Dossier de présentation — Projet BPI France</p>
+            </div>
+            <div class="scroll-indicator" style="color: rgba(255,255,255,0.7);"><span>Découvrir</span></div>
+        </section>
+
+        <!-- PAGE 2: Sommaire -->
+        <section id="innovation-sommaire" class="bg-cream">
+            <span class="section-number">01</span>
+            <h2 class="fade-in">Sommaire</h2>
+            <p class="fade-in">Découvrez les différents axes d'innovation de PLUME Paragliders.</p>
+            
+            <div class="vision-grid fade-in" style="margin-top: 3rem;">
+                <div class="vision-card" style="text-align: left;">
+                    <h4 style="display: flex; align-items: center; gap: 0.8rem;"><span style="background: var(--turquoise); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">01</span> Projet FUSION</h4>
+                    <p>Architecture Aérodynamique Hybride — Innovation de rupture combinant mono-surface et double surface.</p>
+                </div>
+                <div class="vision-card" style="text-align: left;">
+                    <h4 style="display: flex; align-items: center; gap: 0.8rem;"><span style="background: var(--turquoise); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">02</span> Aile CROSS-OVER</h4>
+                    <p>Première aile au monde à géométrie variable fusionnant parapente et parakite — Sortie Automne 2026.</p>
+                </div>
+                <div class="vision-card" style="text-align: left;">
+                    <h4 style="display: flex; align-items: center; gap: 0.8rem;"><span style="background: var(--turquoise); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">03</span> Architecture Numérique</h4>
+                    <p>Distribution hybride, Demo-Center autonome, Support IA auto-apprenant et R&D participative par la data.</p>
+                </div>
+                <div class="vision-card" style="text-align: left;">
+                    <h4 style="display: flex; align-items: center; gap: 0.8rem;"><span style="background: var(--turquoise); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">04</span> PLUME MIND — Solver Propriétaire</h4>
+                    <p>Logiciel interne de conception et dimensionnement fusionnant aérodynamisme et structure en temps réel.</p>
+                </div>
+                <div class="vision-card" style="text-align: left;">
+                    <h4 style="display: flex; align-items: center; gap: 0.8rem;"><span style="background: var(--gold); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">05</span> ACS — Brevet</h4>
+                    <p>Anti Collapse System : une innovation brevetée pour la sécurité.</p>
+                </div>
+                <div class="vision-card" style="text-align: left;">
+                    <h4 style="display: flex; align-items: center; gap: 0.8rem;"><span style="background: var(--gold); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">06</span> Budget Innovation</h4>
+                    <p>Plan de financement et utilisation des fonds pour l'innovation.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 3: Design - Projet FUSION -->
+        <section id="innovation-design" style="padding: 0;">
+            
+            <!-- 1. HERO - Titre avec image de fond -->
+            <div class="innovation-hero" style="background-image: url('https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/hybrid%20color%20full%202K.jpeg');">
+                <div class="innovation-hero-content fade-in">
+                    <h2>Hybride</h2>
+                    <p class="innovation-hero-subtitle">Architecture Aérodynamique Hybride — Sortie Printemps 2027</p>
+                    <div class="innovation-hero-keywords">
+                        <span class="keyword-badge"><strong>9</strong> prototypes</span>
+                        <span class="keyword-badge"><strong>-20%</strong> matière</span>
+                        <span class="keyword-badge"><strong>-15%</strong> coût</span>
+                        <span class="keyword-badge">Mono + Double surface</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 2. PROBLÈME À RÉSOUDRE -->
+            <div class="innovation-problem">
+                <h3>Le problème à résoudre</h3>
+                <div class="problem-content fade-in">
+                    <div class="problem-card">
+                        <h4>Mono-surface : légère mais limitée</h4>
+                        <p>Ultra-légère et accessible, cette technologie est pénalisée par une faible vitesse, un atterrissage brutal (pas d'arrondi possible) et une dégradation rapide des performances en conditions turbulentes.</p>
+                    </div>
+                    <div class="problem-card">
+                        <h4>Double surface : performante mais contraignante</h4>
+                        <p>Performante et rapide, mais lourde, volumineuse, coûteuse à produire et exigeante techniquement. Ces deux technologies sont aujourd'hui incompatibles.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 3. PRÉSENTATION SIMPLIFIÉE -->
+            <div class="innovation-solution">
+                <h3>Notre solution en bref</h3>
+                <div class="solution-highlight fade-in">
+                    <p>Notre objectif : créer une aile qui combine le meilleur des deux mondes. <strong>Légère comme une mono-surface</strong> au bout des ailes (stabilité, poids réduit), mais avec un <strong>centre performant en double surface</strong> (vitesse, plané, arrondi à l'atterrissage). Ce type de produit n'existe pas sur le marché — nous créons une nouvelle catégorie. C'est le principe de l'hybridation zonale : on garde le tissu là où il est utile, on le supprime là où il ne l'est pas.</p>
+                    
+                    <!-- Illustration visuelle de l'hybridation -->
+                    <div style="display: flex; flex-direction: column; align-items: center; margin-top: 2.5rem; gap: 1.5rem;">
+                        <!-- Ligne du haut : Mono + Classique -->
+                        <div style="display: flex; align-items: stretch; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                            <!-- Card Mono-surface -->
+                            <div style="background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); padding: 1.5rem; width: 380px; border: 1px solid #e0e0e0;">
+                                <div style="text-align: center; margin-bottom: 1rem;">
+                                    <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/mono%20surface.png" alt="Mono Surface" style="width: 100%; max-width: 320px; height: auto; border-radius: 10px;">
+                                </div>
+                                <h4 style="text-align: center; font-size: 1.2rem; color: var(--dark); margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 2px solid #eee;">Mono-surface</h4>
+                                <div style="display: flex; gap: 1rem;">
+                                    <div style="flex: 1; background: #e8f5e9; padding: 0.75rem; border-radius: 8px;">
+                                        <p style="color: #2e7d32; font-weight: 700; font-size: 0.8rem; margin-bottom: 0.5rem;">✓ AVANTAGES</p>
+                                        <ul style="color: #333; font-size: 0.85rem; line-height: 1.6; margin: 0; padding-left: 1rem;">
+                                            <li>Poids léger</li>
+                                            <li>Stabilité</li>
+                                            <li>Coût réduit</li>
+                                        </ul>
+                                    </div>
+                                    <div style="flex: 1; background: #ffebee; padding: 0.75rem; border-radius: 8px;">
+                                        <p style="color: #c62828; font-weight: 700; font-size: 0.8rem; margin-bottom: 0.5rem;">✗ INCONVÉNIENTS</p>
+                                        <ul style="color: #333; font-size: 0.85rem; line-height: 1.6; margin: 0; padding-left: 1rem;">
+                                            <li>Atterrissage difficile</li>
+                                            <li>Manque de vitesse</li>
+                                            <li>Peu performante</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Double surface -->
+                            <div style="background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); padding: 1.5rem; width: 380px; border: 1px solid #e0e0e0;">
+                                <div style="text-align: center; margin-bottom: 1rem;">
+                                    <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/parapente%20normal.png" alt="Parapente Classique" style="width: 100%; max-width: 320px; height: auto; border-radius: 10px;">
+                                </div>
+                                <h4 style="text-align: center; font-size: 1.2rem; color: var(--dark); margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 2px solid #eee;">Double surface</h4>
+                                <div style="display: flex; gap: 1rem;">
+                                    <div style="flex: 1; background: #e8f5e9; padding: 0.75rem; border-radius: 8px;">
+                                        <p style="color: #2e7d32; font-weight: 700; font-size: 0.8rem; margin-bottom: 0.5rem;">✓ AVANTAGES</p>
+                                        <ul style="color: #333; font-size: 0.85rem; line-height: 1.6; margin: 0; padding-left: 1rem;">
+                                            <li>Vitesse élevée</li>
+                                            <li>Performance</li>
+                                            <li>Bon atterrissage</li>
+                                        </ul>
+                                    </div>
+                                    <div style="flex: 1; background: #ffebee; padding: 0.75rem; border-radius: 8px;">
+                                        <p style="color: #c62828; font-weight: 700; font-size: 0.8rem; margin-bottom: 0.5rem;">✗ INCONVÉNIENTS</p>
+                                        <ul style="color: #333; font-size: 0.85rem; line-height: 1.6; margin: 0; padding-left: 1rem;">
+                                            <li>Coût élevé</li>
+                                            <li>Poids important</li>
+                                            <li>Technicité requise</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Flèche vers le bas -->
+                        <div style="font-size: 3rem; font-weight: 700; color: var(--gold);">↓</div>
+                        <!-- Résultat : Hybride -->
+                        <div style="text-align: center; background: linear-gradient(135deg, rgba(201, 125, 24, 0.08) 0%, rgba(201, 125, 24, 0.03) 100%); padding: 2rem; border-radius: 16px; max-width: 800px;">
+                            <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/parapente%20hybrid.png" alt="Parapente Hybride" style="width: 480px; height: auto; border-radius: 12px; box-shadow: 0 12px 35px rgba(0,0,0,0.15);">
+                            <h4 style="margin-top: 1.25rem; font-weight: 700; color: var(--gold); font-size: 1.4rem;">Création Hybride PLUME</h4>
+                            <p style="margin-top: 0.75rem; color: #444; font-size: 1rem; line-height: 1.5;">Le meilleur des deux mondes : les avantages d'un parapente classique, sans ses inconvénients.</p>
+                            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 1.25rem;">
+                                <span style="background: #e8f5e9; color: #2e7d32; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">💰 -15 à 20% sur le prix</span>
+                                <span style="background: #e8f5e9; color: #2e7d32; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">🪶 -15 à 20% sur le poids</span>
+                                <span style="background: #e8f5e9; color: #2e7d32; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">💨 Vitesse conservée</span>
+                                <span style="background: #e8f5e9; color: #2e7d32; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">🛡️ Sécurité passive exceptionnelle</span>
+                                <span style="background: #e8f5e9; color: #2e7d32; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">✈️ Bon atterrissage</span>
+                                <span style="background: #e8f5e9; color: #2e7d32; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">🛡️ Excellente stabilité</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="solution-benefits fade-in">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🪶</div>
+                        <h4>Plus légère</h4>
+                        <p>Suppression de matière en périphérie</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🛡️</div>
+                        <h4>Plus sûre</h4>
+                        <p>Sécurité passive augmentée — la voile la plus saine du marché</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">💰</div>
+                        <h4>Plus accessible</h4>
+                        <p>Coût de production réduit, prix plus abordable</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 4. DESCRIPTION TECHNIQUE -->
+            <div class="innovation-technical">
+                <h3>Description technique</h3>
+                <div class="technical-grid fade-in">
+                    <div class="technical-item">
+                        <h4>Centre de l'aile — Double Surface</h4>
+                        <p>On maintient un <strong>intrados</strong> (tissu inférieur) sur la zone de portance maximale, c'est-à-dire au centre de l'aile. Cette zone en double surface garantit :</p>
+                        <ul>
+                            <li>La vitesse et la finesse (capacité de plané)</li>
+                            <li>L'arrondi à l'atterrissage (sécurité active)</li>
+                            <li>La rigidité structurelle nécessaire</li>
+                        </ul>
+                    </div>
+                    <div class="technical-item">
+                        <h4>Bouts d'aile — Mono-Surface</h4>
+                        <p>On supprime l'intrados en périphérie, aux extrémités de l'aile. Cette configuration mono-surface en bouts d'aile permet :</p>
+                        <ul>
+                            <li>Réduction de l'inertie aux extrémités</li>
+                            <li>Augmentation de la stabilité pendulaire</li>
+                            <li>Allègement significatif de la structure globale</li>
+                        </ul>
+                    </div>
+                    <div class="technical-item">
+                        <h4>Impact industriel</h4>
+                        <p>L'innovation FUSION n'est pas qu'aérodynamique, elle est aussi économique :</p>
+                        <ul>
+                            <li><strong>-20% de tissu</strong> consommé par aile</li>
+                            <li><strong>-15 à 20%</strong> sur le coût de revient</li>
+                            <li>Prix de vente plus accessible pour démocratiser la pratique</li>
+                        </ul>
+                    </div>
+                    <div class="technical-item">
+                        <h4>Validation & Maturité</h4>
+                        <p>Après <strong>9 générations de prototypes</strong>, l'architecture FUSION a été validée en vol. Les tests ont confirmé les gains en stabilité, en poids et en performance par rapport aux solutions existantes.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 5. TIMELINE -->
+            <div class="innovation-timeline">
+                <h3>Historique & Feuille de route</h3>
+                <p class="timeline-subtitle">Du concept initial à la commercialisation</p>
+                
+                <div class="timeline-container fade-in">
+                    <div class="timeline-step">
+                        <div class="timeline-dot completed"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-date">2022-2024</div>
+                            <h4>R&D — 9 Prototypes</h4>
+                            <p>Exploration du concept, itérations successives, validation de l'architecture hybride.</p>
+                            <div class="timeline-progress">
+                                <div class="timeline-progress-bar" style="width: 100%;"></div>
+                            </div>
+                            <div class="timeline-progress-label">100% terminé</div>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot current"></div>
+                        <div class="timeline-card current">
+                            <div class="timeline-date">2026</div>
+                            <h4>Finalisation & Tests</h4>
+                            <p>Prototypes finaux, tests en vol intensifs, préparation homologation.</p>
+                            <div class="timeline-progress">
+                                <div class="timeline-progress-bar" style="width: 40%;"></div>
+                            </div>
+                            <div class="timeline-progress-label">40% en cours</div>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot future"></div>
+                        <div class="timeline-card future">
+                            <div class="timeline-date">Fin 2026</div>
+                            <h4>Homologation EN</h4>
+                            <p>Certification EN, création de la gamme (4 tailles).</p>
+                            <div class="timeline-progress">
+                                <div class="timeline-progress-bar" style="width: 0%;"></div>
+                            </div>
+                            <div class="timeline-progress-label">À venir</div>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot future"></div>
+                        <div class="timeline-card future">
+                            <div class="timeline-date">Printemps 2027</div>
+                            <h4>Commercialisation</h4>
+                            <p>Lancement commercial et production série.</p>
+                            <div class="timeline-progress">
+                                <div class="timeline-progress-bar" style="width: 0%;"></div>
+                            </div>
+                            <div class="timeline-progress-label">À venir</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 6. BUDGET -->
+            <div class="innovation-budget">
+                <h3>Budget du projet</h3>
+                <div class="budget-grid fade-in">
+                    <div class="budget-card">
+                        <h4>Budget 2026</h4>
+                        <div class="budget-amount">20 500 €</div>
+                        <div class="budget-details">
+                            <div class="budget-line">
+                                <span class="budget-line-label">3 Prototypes</span>
+                                <span class="budget-line-amount">3 000 €</span>
+                            </div>
+                            <div class="budget-line">
+                                <span class="budget-line-label">Homologation (shock test + vol)</span>
+                                <span class="budget-line-amount">5 000 €</span>
+                            </div>
+                            <div class="budget-line">
+                                <span class="budget-line-label">Création gamme (4 tailles)</span>
+                                <span class="budget-line-amount">3 500 €</span>
+                            </div>
+                            <div class="budget-line">
+                                <span class="budget-line-label">Design (2 mois)</span>
+                                <span class="budget-line-amount">5 000 €</span>
+                            </div>
+                            <div class="budget-line">
+                                <span class="budget-line-label">Tests aile (2 mois)</span>
+                                <span class="budget-line-amount">4 000 €</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="budget-card total">
+                        <h4>Total</h4>
+                        <div class="budget-amount">20 500 €</div>
+                        <div class="budget-details">
+                            <div class="budget-line">
+                                <span class="budget-line-label">Innovation intégrée à la gamme PLUME</span>
+                                <span class="budget-line-amount">—</span>
+                            </div>
+                            <div class="budget-line">
+                                <span class="budget-line-label">Pas de coût supplémentaire post-2026</span>
+                                <span class="budget-line-amount">—</span>
+                            </div>
+                            <div class="budget-line">
+                                <span class="budget-line-label">Mise sur le marché</span>
+                                <span class="budget-line-amount">Printemps 2027</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <!-- PAGE 4: Design Nouveau Parapente Concept - CROSS-OVER -->
+        <section id="innovation-nouveau-concept" style="padding: 0;">
+            
+            <!-- 1. HERO - Titre avec image de fond -->
+            <div class="innovation-hero" style="background-image: url('https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/Generated%20Image%20December%2018%2C%202025%20-%201_05AM.jpeg');">
+                <div class="innovation-hero-content fade-in">
+                    <h2>CROSS-OVER</h2>
+                    <p class="innovation-hero-subtitle">La Première Aile de Montagne à Géométrie Variable — Sortie Automne 2026</p>
+                    <div class="innovation-hero-keywords">
+                        <span class="keyword-badge"><strong>V3</strong> prototype</span>
+                        <span class="keyword-badge"><strong>TRL 5/6</strong> maturité</span>
+                        <span class="keyword-badge"><strong>x2</strong> fenêtre météo</span>
+                        <span class="keyword-badge">Parapente + Parakite</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 2. PROBLÈME À RÉSOUDRE -->
+            <div class="innovation-problem">
+                <h3>Le problème à résoudre</h3>
+                <div class="problem-content fade-in">
+                    <div class="problem-card">
+                        <h4>Parapente montagne : limité par le vent</h4>
+                        <p>Excellent décollage et atterrissage à l'arrêt (sans vent), mais dangereux si le vent forcit : pénétration nulle, risque de recul. Le pilote peut se retrouver bloqué au sommet ou en danger si la météo change brutalement.</p>
+                    </div>
+                    <div class="problem-card">
+                        <h4>Parakite : trop exigeant</h4>
+                        <p>Excellent dans le vent fort avec une forte pénétration, mais lourd, incapable de décoller sans vent, et avec un atterrissage exigeant (pas d'arrondi possible). Ces deux types d'ailes sont incompatibles.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 3. PRÉSENTATION SIMPLIFIÉE -->
+            <div class="innovation-solution">
+                <h3>Notre solution en bref</h3>
+                <div class="solution-highlight fade-in" style="display: flex; align-items: center; gap: 2.5rem;">
+                    <p style="flex: 1; margin: 0;">CROSS-OVER est la <strong>première aile au monde</strong> qui fusionne parapente et parakite. Grâce à un système mécanique innovant sur les élévateurs, l'aile peut <strong>changer de comportement en vol</strong> : mode "parapente" pour décoller sans vent et atterrir en douceur, mode "speed" pour foncer dans le vent fort. Une seule aile remplace deux équipements et <strong>double la fenêtre météo exploitable</strong>.</p>
+                    <div style="flex-shrink: 0;">
+                        <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/Generated%20Image%20January%2020%2C%202026%20-%206_29PM.jpeg" alt="Élévateur hybride CROSS-OVER" style="width: 280px; height: auto; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.15);" />
+                        <p style="font-size: 0.85rem; color: #666; text-align: center; margin-top: 0.8rem; font-style: italic;">Élévateur à géométrie variable</p>
+                    </div>
+                </div>
+                <div class="solution-benefits fade-in">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🏔️</div>
+                        <h4>Polyvalence totale</h4>
+                        <p>Une aile pour toutes les conditions</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🛡️</div>
+                        <h4>Sécurité accrue</h4>
+                        <p>Ne plus être bloqué par la météo</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🎿</div>
+                        <h4>Conçue pour l'alpinisme</h4>
+                        <p>Ultra-légère, compacte, efficace</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 4. DESCRIPTION TECHNIQUE -->
+            <div class="innovation-technical">
+                <h3>Description technique</h3>
+                <div class="technical-grid fade-in">
+                    <div class="technical-item">
+                        <h4>Cinématique à Géométrie Variable</h4>
+                        <p>Une architecture mécanique inédite d'élévateurs qui modifie le profil de l'aile en temps réel grâce à un <strong>mouflage à ratio 1/6</strong> (contre 1/3 sur parakite standard). Cette démultiplication crée une réponse de commande non-linéaire divisée en deux zones fonctionnelles.</p>
+                    </div>
+                    <div class="technical-item">
+                        <h4>Pilotage Bi-Mode</h4>
+                        <p><strong>Zone Haute — Mode "Speed" :</strong> Sur la première partie de la course, la commande modifie l'incidence pour activer un profil "Reflex". Résultat : forte pénétration, vitesse élevée, stabilité en turbulence.</p>
+                        <p style="margin-top: 0.8rem;"><strong>Zone Basse — Mode "Parapente" :</strong> En fin de course, la cinématique bascule pour agir sur le bord de fuite. Résultat : génération massive de portance, atterrissage en douceur.</p>
+                    </div>
+                    <div class="technical-item">
+                        <h4>Système Trim "LOCK & FLY"</h4>
+                        <p>Un verrouillage mécanique simplifie l'usage :</p>
+                        <ul>
+                            <li><strong>Position LOCK :</strong> Comportement 100% parapente pour thermique et accessibilité</li>
+                            <li><strong>Position OPEN :</strong> Libération du profil Reflex pour pilotage dynamique</li>
+                        </ul>
+                    </div>
+                    <div class="technical-item">
+                        <h4>Validation en vol</h4>
+                        <p>Les essais ont validé :</p>
+                        <ul>
+                            <li>Viabilité du ratio 1/6</li>
+                            <li>Capacité à décoller sans vent (pétole)</li>
+                            <li>Tenue en vents forts</li>
+                            <li>Progressivité des commandes optimisée</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 5. TIMELINE -->
+            <div class="innovation-timeline">
+                <h3>Historique & Feuille de route</h3>
+                <p class="timeline-subtitle">Du concept à la commercialisation</p>
+                
+                <div class="timeline-container fade-in">
+                    <div class="timeline-step">
+                        <div class="timeline-dot completed"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-date">2023-2024</div>
+                            <h4>R&D — Prototypes V1 à V2</h4>
+                            <p>Exploration du concept, validation du ratio 1/6, premiers tests en vol.</p>
+                            <div class="timeline-progress">
+                                <div class="timeline-progress-bar" style="width: 100%;"></div>
+                            </div>
+                            <div class="timeline-progress-label">100% terminé</div>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot current"></div>
+                        <div class="timeline-card current">
+                            <div class="timeline-date">2025-2026</div>
+                            <h4>Prototype V3 — Finalisation</h4>
+                            <p>Affinage progressivité, tension matériaux, préparation industrialisation.</p>
+                            <div class="timeline-progress">
+                                <div class="timeline-progress-bar" style="width: 70%;"></div>
+                            </div>
+                            <div class="timeline-progress-label">70% en cours</div>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot future"></div>
+                        <div class="timeline-card future">
+                            <div class="timeline-date">Mi-2026</div>
+                            <h4>Homologation & Gamme</h4>
+                            <p>Shock tests, création de 5 tailles, certification.</p>
+                            <div class="timeline-progress">
+                                <div class="timeline-progress-bar" style="width: 0%;"></div>
+                            </div>
+                            <div class="timeline-progress-label">À venir</div>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot future"></div>
+                        <div class="timeline-card future">
+                            <div class="timeline-date">Automne 2026</div>
+                            <h4>Commercialisation</h4>
+                            <p>Lancement commercial et production série.</p>
+                            <div class="timeline-progress">
+                                <div class="timeline-progress-bar" style="width: 0%;"></div>
+                            </div>
+                            <div class="timeline-progress-label">À venir</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 6. BUDGET -->
+            <div class="innovation-budget">
+                <h3>Budget du projet</h3>
+                <div class="budget-grid fade-in">
+                    <div class="budget-card">
+                        <h4>Budget 2026</h4>
+                        <div class="budget-amount">18 000 €</div>
+                        <div class="budget-details">
+                            <div class="budget-line">
+                                <span class="budget-line-label">3 Prototypes</span>
+                                <span class="budget-line-amount">3 000 €</span>
+                            </div>
+                            <div class="budget-line">
+                                <span class="budget-line-label">Homologation (shock test)</span>
+                                <span class="budget-line-amount">1 000 €</span>
+                            </div>
+                            <div class="budget-line">
+                                <span class="budget-line-label">Création gamme (5 tailles)</span>
+                                <span class="budget-line-amount">5 000 €</span>
+                            </div>
+                            <div class="budget-line">
+                                <span class="budget-line-label">Design (2 mois)</span>
+                                <span class="budget-line-amount">5 000 €</span>
+                            </div>
+                            <div class="budget-line">
+                                <span class="budget-line-label">Tests en vol (2 mois)</span>
+                                <span class="budget-line-amount">4 000 €</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="budget-card total">
+                        <h4>Total</h4>
+                        <div class="budget-amount">18 000 €</div>
+                        <div class="budget-details">
+                            <div class="budget-line">
+                                <span class="budget-line-label">Innovation intégrée à la gamme PLUME</span>
+                                <span class="budget-line-amount">—</span>
+                            </div>
+                            <div class="budget-line">
+                                <span class="budget-line-label">Pas de coût supplémentaire post-2026</span>
+                                <span class="budget-line-amount">—</span>
+                            </div>
+                            <div class="budget-line">
+                                <span class="budget-line-label">Mise sur le marché</span>
+                                <span class="budget-line-amount">Automne 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <!-- PAGE 5: Site Internet -->
+        <section id="innovation-site-internet" style="padding: 0;">
+            
+            <!-- 1. HERO - Titre avec image de fond -->
+            <div class="innovation-hero" style="background-image: linear-gradient(135deg, rgba(15, 36, 48, 0.55) 0%, rgba(85, 136, 166, 0.45) 100%), url('https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/Generated%20Image%20January%2021%2C%202026%20-%201_02AM.jpeg');">
+                <div class="innovation-hero-content fade-in">
+                    <h2>Architecture Numérique</h2>
+                    <p class="innovation-hero-subtitle">Distribution & Intelligence Produit — En production</p>
+                    <div class="innovation-hero-keywords">
+                        <span class="keyword-badge"><strong>4</strong> piliers</span>
+                        <span class="keyword-badge"><strong>B2C2B</strong> innovant</span>
+                        <span class="keyword-badge"><strong>IA</strong> auto-apprenante</span>
+                        <span class="keyword-badge">Low-code & API</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 2. PROBLÈME À RÉSOUDRE -->
+            <div class="innovation-problem">
+                <h3>Le problème à résoudre</h3>
+                <div class="problem-content fade-in">
+                    <div class="problem-card">
+                        <h4>Distribution complexe et conflictuelle</h4>
+                        <p>Dans le parapente, la vente directe (marque) et le réseau physique (écoles, revendeurs) sont souvent en conflit. Le client ne sait pas où acheter, les écoles perdent des commissions, et la marque n'a pas de visibilité sur son marché.</p>
+                    </div>
+                    <div class="problem-card">
+                        <h4>Essayer une aile est un parcours du combattant</h4>
+                        <p>Le verrou n°1 de l'achat de parapente : tester avant d'acheter. Logistique complexe, stocks éparpillés, pas de système centralisé. Résultat : des clients qui n'achètent pas faute d'avoir pu essayer.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 3. PRÉSENTATION SIMPLIFIÉE -->
+            <div class="innovation-solution">
+                <h3>Notre solution en bref</h3>
+                <div class="solution-highlight fade-in">
+                    <p>Nous avons développé une <strong>plateforme numérique propriétaire</strong> qui révolutionne la distribution du parapente. Au lieu d'opposer vente en ligne et réseau physique, notre système les <strong>réconcilie automatiquement</strong> : le client commande en ligne, et l'école partenaire la plus proche touche sa commission. Un système de <strong>Demo-Center automatisé</strong> permet de tester les ailes facilement, et une <strong>IA auto-apprenante</strong> répond aux questions techniques 24h/24.</p>
+                </div>
+                <div class="solution-benefits fade-in">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🤝</div>
+                        <h4>Écoles partenaires</h4>
+                        <p>Commission automatique sur chaque vente de leur zone</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🧪</div>
+                        <h4>Test facile</h4>
+                        <p>Réservation en ligne, caution automatique, expédition</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🤖</div>
+                        <h4>Support IA</h4>
+                        <p>Réponses instantanées, expertise qui s'enrichit</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 4. DESCRIPTION TECHNIQUE -->
+            <div class="innovation-technical">
+                <h3>Les 4 piliers techniques</h3>
+                <div class="technical-grid single-column fade-in">
+                    <div class="technical-item">
+                        <h4>1. Distribution Hybride B2C2B</h4>
+                        <p>Un <strong>algorithme de vente</strong> qui réconcilie vente directe et réseau physique. Le système attribue dynamiquement les ventes et commissions aux partenaires locaux selon la géolocalisation du client. Croissance digitale rapide tout en préservant le tissu économique des écoles.</p>
+                        <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/canva%20B2C2B.jpeg" alt="Schéma Modèle B2C2B" style="width: 100%; height: auto; display: block; margin: 1.5rem auto 0; border-radius: 8px;" />
+                    </div>
+                    <div class="technical-item">
+                        <h4>2. Demo-Center Autonome</h4>
+                        <p><strong>Digitalisation complète du flux de test</strong> : vérification de disponibilité, empreinte bancaire (caution), expédition et retour. Le code gère le stock de démonstration en autonomie, supprimant les frictions logistiques humaines.</p>
+                        <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/canva%20demo%20center.jpeg" alt="Présentation Demo Center" style="width: 100%; height: auto; display: block; margin: 1.5rem auto 0; border-radius: 8px;" />
+                    </div>
+                    <div class="technical-item">
+                        <h4>3. Support IA Auto-apprenant</h4>
+                        <p>Système de <strong>support hybride</strong> : l'IA répond en premier niveau ; si elle doute, la question est routée vers un expert. La réponse de l'expert est <strong>réinjectée dans le modèle</strong>, créant une base de connaissance qui s'enrichit à chaque interaction.</p>
+                        <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/SAV%20canva.jpeg" alt="Illustration SAV" style="width: 100%; height: auto; display: block; margin: 1.5rem auto 0; border-radius: 8px;" />
+                    </div>
+                    <div class="technical-item">
+                        <h4>4. R&D Participative (Product Loop)</h4>
+                        <p>Module de collecte statistique <strong>("Crowdsourcing")</strong> intégré. Le système agrège et quantifie les retours d'usage (comportement en vol, vieillissement) pour générer des <strong>tableaux de bord décisionnels</strong> qui orientent directement l'ingénierie.</p>
+                        <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/feedback%20learning.jpeg" alt="Schéma Feedback Learning" style="width: 100%; height: auto; display: block; margin: 1.5rem auto 0; border-radius: 8px;" />
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 5. TIMELINE -->
+            <div class="innovation-timeline">
+                <h3>Historique & Feuille de route</h3>
+                <p class="timeline-subtitle">Développement et déploiement de la plateforme</p>
+                
+                <div class="timeline-container fade-in">
+                    <div class="timeline-step">
+                        <div class="timeline-dot completed"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-date">2024-2025</div>
+                            <h4>Développement V1</h4>
+                            <p>Architecture technique, API, intégration B2C2B, premiers modules.</p>
+                            <div class="timeline-progress">
+                                <div class="timeline-progress-bar" style="width: 100%;"></div>
+                            </div>
+                            <div class="timeline-progress-label">100% terminé</div>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot current"></div>
+                        <div class="timeline-card current">
+                            <div class="timeline-date">2026</div>
+                            <h4>Déploiement & Itérations</h4>
+                            <p>Demo-Center, IA support, Product Loop, optimisations.</p>
+                            <div class="timeline-progress">
+                                <div class="timeline-progress-bar" style="width: 60%;"></div>
+                            </div>
+                            <div class="timeline-progress-label">60% en cours</div>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot future"></div>
+                        <div class="timeline-card future">
+                            <div class="timeline-date">2027+</div>
+                            <h4>Évolutions continues</h4>
+                            <p>Nouvelles fonctionnalités selon retours utilisateurs.</p>
+                            <div class="timeline-progress">
+                                <div class="timeline-progress-bar" style="width: 0%;"></div>
+                            </div>
+                            <div class="timeline-progress-label">Continu</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 6. BUDGET -->
+            <div class="innovation-budget">
+                <h3>Budget du projet</h3>
+                <div class="budget-grid fade-in">
+                    <div class="budget-card">
+                        <h4>Budget 2026</h4>
+                        <div class="budget-amount">16 200 €</div>
+                        <div class="budget-details">
+                            <div class="budget-line">
+                                <span class="budget-line-label">Temps de développement (6 mois)</span>
+                                <span class="budget-line-amount">15 000 €</span>
+                            </div>
+                            <div class="budget-line">
+                                <span class="budget-line-label">Outils Cursor AI (6 mois)</span>
+                                <span class="budget-line-amount">1 200 €</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="budget-card total">
+                        <h4>Budget Total</h4>
+                        <div class="budget-amount">~30 000 €</div>
+                        <div class="budget-details">
+                            <div class="budget-line">
+                                <span class="budget-line-label">Développement initial (2025)</span>
+                                <span class="budget-line-amount">~15 000 €</span>
+                            </div>
+                            <div class="budget-line">
+                                <span class="budget-line-label">Évolutions 2026</span>
+                                <span class="budget-line-amount">16 200 €</span>
+                            </div>
+                            <div class="budget-line">
+                                <span class="budget-line-label">Plateforme opérationnelle</span>
+                                <span class="budget-line-amount">En production</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <!-- PAGE 6: VOLET 1 - INNOVATION TECHNOLOGIQUE (R&D & PROCESS) -->
+        <section id="innovation-logiciels" style="padding: 0;">
+            
+            <!-- 1. HERO - Titre avec image de fond -->
+            <div class="innovation-hero" style="background-image: linear-gradient(135deg, rgba(12, 74, 110, 0.9) 0%, rgba(15, 36, 48, 0.85) 100%);">
+                <div class="innovation-hero-content fade-in">
+                    <h2>PLUME MIND</h2>
+                    <p class="innovation-hero-subtitle">Logiciel Propriétaire de Conception & Dimensionnement — En production</p>
+                    <div class="innovation-hero-keywords">
+                        <span class="keyword-badge"><strong>÷5</strong> temps de dev</span>
+                        <span class="keyword-badge"><strong>mm</strong> de précision</span>
+                        <span class="keyword-badge"><strong>EN/LTF</strong> pré-certif</span>
+                        <span class="keyword-badge">Aéro + Structure temps réel</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 2. PROBLÈME À RÉSOUDRE -->
+            <div class="innovation-problem">
+                <h3>Le problème à résoudre</h3>
+                <div class="problem-content fade-in">
+                    <div class="problem-card">
+                        <h4>Outils de conception inadaptés</h4>
+                        <p>L'ingénierie du parapente manque d'outils capables de coupler efficacement aérodynamisme (CFD) et structure. Les solutions existantes sont énergivores, lentes, et déconnectées de la réalité industrielle.</p>
+                    </div>
+                    <div class="problem-card">
+                        <h4>Précision critique pour le "Light"</h4>
+                        <p>Sur le segment des ailes ultra-légères, chaque gramme compte. Les méthodes manuelles traditionnelles ne permettent pas d'atteindre la précision nécessaire pour optimiser le poids sans compromettre la sécurité.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 3. PRÉSENTATION SIMPLIFIÉE -->
+            <div class="innovation-solution">
+                <h3>Notre solution en bref</h3>
+                <div class="solution-highlight fade-in">
+                    <p>PLUME MIND est un <strong>logiciel de conception interne</strong> qui fusionne en temps réel l'aérodynamisme et la structure. Au lieu de concevoir l'aile puis de calculer sa solidité ensuite (approche séquentielle), notre outil <strong>adapte automatiquement la structure</strong> selon les contraintes physiques. Résultat : des ailes plus légères, plus précises, développées <strong>5 fois plus vite</strong>, avec une <strong>précision au millimètre</strong>.</p>
+                </div>
+                <div class="solution-benefits fade-in">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">⚡</div>
+                        <h4>5x plus rapide</h4>
+                        <p>Développement accéléré drastiquement</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🎯</div>
+                        <h4>Précision absolue</h4>
+                        <p>Calage au millimètre près</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🛡️</div>
+                        <h4>Sécurité garantie</h4>
+                        <p>Pré-certification EN/LTF intégrée</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 4. DESCRIPTION TECHNIQUE -->
+            <div class="innovation-technical">
+                <h3>Les 3 piliers techniques</h3>
+                <div class="technical-grid fade-in">
+                    <div class="technical-item">
+                        <h4>1. Conception pilotée par l'effort</h4>
+                        <p>L'ingénieur définit les <strong>chemins d'efforts stratégiques</strong>. Le logiciel calcule instantanément :</p>
+                        <ul>
+                            <li>La géométrie idéale de chaque pièce</li>
+                            <li>La quantité de matière strictement nécessaire</li>
+                            <li>Le "Ballooning" (déformation 3D sous pression) pour garantir la forme aérodynamique parfaite</li>
+                        </ul>
+                    </div>
+                    <div class="technical-item">
+                        <h4>2. Algorithme de suspentage intelligent</h4>
+                        <p>Pour les lignes (suspentes), l'algorithme gère automatiquement :</p>
+                        <ul>
+                            <li><strong>Sélection automatique</strong> du matériau et diamètre optimal</li>
+                            <li><strong>Équilibrage</strong> de l'aile en intégrant la traînée des suspentes</li>
+                            <li><strong>Compensation micrométrique</strong> (élasticité, réduction d'arcs...)</li>
+                        </ul>
+                    </div>
+                    <div class="technical-item">
+                        <h4>3. Passerelle Design-to-Manufacture</h4>
+                        <p>Le logiciel génère directement les fichiers pour l'atelier :</p>
+                        <ul>
+                            <li><strong>Pré-certification</strong> : simulation des tests EN/LTF en amont</li>
+                            <li><strong>Fichiers de production</strong> : longueurs de coupe exactes, nomenclatures</li>
+                            <li><strong>Plans d'assemblage</strong> automatiques pour les suspentes</li>
+                        </ul>
+                        <p style="margin-top: 0.8rem;"><em>→ Zéro erreur humaine sur cette étape critique</em></p>
+                    </div>
+                    <div class="technical-item">
+                        <h4>Impact concurrentiel</h4>
+                        <p><strong>PLUME MIND divise par 5 le temps de développement</strong>, mais son atout majeur est la précision absolue.</p>
+                        <p style="margin-top: 0.8rem;">Il nous permet d'atteindre une justesse de calage et de dimensionnement <strong>impossible à obtenir avec des méthodes manuelles</strong>, garantissant une performance "Light" sans compromis sur la sécurité.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 5. TIMELINE -->
+            <div class="innovation-timeline">
+                <h3>Historique & Feuille de route</h3>
+                <p class="timeline-subtitle">Du développement à l'utilisation en production</p>
+                
+                <div class="timeline-container fade-in">
+                    <div class="timeline-step">
+                        <div class="timeline-dot completed"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-date">2024</div>
+                            <h4>Développement initial</h4>
+                            <p>Conception de l'architecture, premiers modules de calcul.</p>
+                            <div class="timeline-progress">
+                                <div class="timeline-progress-bar" style="width: 100%;"></div>
+                            </div>
+                            <div class="timeline-progress-label">100% terminé</div>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot completed"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-date">Fin 2024</div>
+                            <h4>Validation & Tests</h4>
+                            <p>Tests sur prototypes réels, validation des calculs.</p>
+                            <div class="timeline-progress">
+                                <div class="timeline-progress-bar" style="width: 100%;"></div>
+                            </div>
+                            <div class="timeline-progress-label">100% terminé</div>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot current"></div>
+                        <div class="timeline-card current">
+                            <div class="timeline-date">2025-2026</div>
+                            <h4>Production & Améliorations</h4>
+                            <p>Utilisation quotidienne, nouvelles fonctionnalités.</p>
+                            <div class="timeline-progress">
+                                <div class="timeline-progress-bar" style="width: 80%;"></div>
+                            </div>
+                            <div class="timeline-progress-label">80% opérationnel</div>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot future"></div>
+                        <div class="timeline-card future">
+                            <div class="timeline-date">Continu</div>
+                            <h4>Évolutions</h4>
+                            <p>Nouveaux modules selon besoins R&D.</p>
+                            <div class="timeline-progress">
+                                <div class="timeline-progress-bar" style="width: 0%;"></div>
+                            </div>
+                            <div class="timeline-progress-label">Continu</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 6. BUDGET -->
+            <div class="innovation-budget">
+                <h3>Budget du projet</h3>
+                <div class="budget-grid fade-in">
+                    <div class="budget-card">
+                        <h4>Budget 2026</h4>
+                        <div class="budget-amount">10 800 €</div>
+                        <div class="budget-details">
+                            <div class="budget-line">
+                                <span class="budget-line-label">Temps de développement (4 mois)</span>
+                                <span class="budget-line-amount">10 000 €</span>
+                            </div>
+                            <div class="budget-line">
+                                <span class="budget-line-label">Outils Cursor AI (4 mois)</span>
+                                <span class="budget-line-amount">800 €</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="budget-card total">
+                        <h4>Budget Total</h4>
+                        <div class="budget-amount">~25 000 €</div>
+                        <div class="budget-details">
+                            <div class="budget-line">
+                                <span class="budget-line-label">Développement initial (2024)</span>
+                                <span class="budget-line-amount">~15 000 €</span>
+                            </div>
+                            <div class="budget-line">
+                                <span class="budget-line-label">Évolutions 2026</span>
+                                <span class="budget-line-amount">10 800 €</span>
+                            </div>
+                            <div class="budget-line">
+                                <span class="budget-line-label">Logiciel opérationnel</span>
+                                <span class="budget-line-amount">En production</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <!-- PAGE 7: ACS - Anti Collapse System - VOLET 3 DEEPTECH -->
+        <section id="innovation-acs" style="padding: 0;">
+            
+            <!-- 1. HERO - Titre avec image de fond -->
+            <div class="innovation-hero" style="background-image: linear-gradient(rgba(15, 25, 40, 0.55), rgba(15, 25, 40, 0.55)), url('https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/ACS%20horizontal.jpeg'); background-size: cover; background-position: center;">
+                <div class="innovation-hero-content fade-in">
+                    <h2>ACS</h2>
+                    <p class="innovation-hero-subtitle">Anti-Collapse System — Innovation brevetée DeepTech</p>
+                    <div class="innovation-hero-keywords">
+                        <span class="keyword-badge"><strong>0,05s</strong> réaction</span>
+                        <span class="keyword-badge"><strong>14h+</strong> de vol</span>
+                        <span class="keyword-badge"><strong>TRL 5</strong> validé</span>
+                        <span class="keyword-badge">Brevet déposé</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 2. PROBLÈME À RÉSOUDRE -->
+            <div class="innovation-problem">
+                <h3>Le problème à résoudre</h3>
+                <div style="display: flex; gap: 2.5rem; align-items: flex-start;">
+                    <div class="fade-in" style="flex-shrink: 0;">
+                        <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/fermeture%20assymetrique.jpeg" alt="Fermeture asymétrique - danger en parapente" style="width: 320px; height: auto; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.15);" />
+                        <p style="font-size: 0.85rem; color: #666; text-align: center; margin-top: 0.8rem; font-style: italic;">Fermeture asymétrique en vol</p>
+                    </div>
+                    <div class="problem-content fade-in" style="flex: 1; display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div class="problem-card" style="margin: 0;">
+                            <h4>70% des accidents mortels</h4>
+                            <p>La fermeture de voile en vol (repli sur elle-même dû à la turbulence) est la cause principale des accidents graves en parapente. C'est un phénomène violent et imprévisible. Chaque année dans le monde, cela envoie <strong>environ 600 personnes à l'hôpital</strong> et cause <strong>60 décès</strong>.</p>
+                        </div>
+                        <div class="problem-card" style="margin: 0;">
+                            <h4>Le temps de réaction humain est insuffisant</h4>
+                            <p>Un pilote met plus d'une seconde à réagir à une fermeture. C'est souvent trop lent. Résultat : selon un sondage réalisé auprès de 1 000 pilotes de ma communauté, <strong>87% avouent ressentir du stress en vol</strong>, ce qui freine la démocratisation de la pratique.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 3. PRÉSENTATION SIMPLIFIÉE -->
+            <div class="innovation-solution">
+                <h3>Notre solution en bref</h3>
+                <div class="solution-highlight fade-in" style="display: flex; align-items: center; gap: 2.5rem;">
+                    <div style="flex-shrink: 0; width: 200px; height: 380px; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
+                        <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/ACS%20vertical.jpeg" alt="ACS - Anti Collapse System" style="width: 106%; height: 100%; object-fit: cover; object-position: center; margin-left: -3%;" />
+                    </div>
+                    <p style="margin: 0;">L'ACS est un <strong>"ange gardien numérique"</strong> : un petit boîtier électronique fixé sur l'aile qui surveille en permanence la voile. Dès qu'il détecte le début d'une fermeture, il <strong>réagit automatiquement en 0,05 seconde</strong> (20 fois plus vite qu'un humain) en actionnant les commandes arrière. La voile reste ouverte et stable <strong>sans que le pilote n'ait à intervenir</strong>.</p>
+                </div>
+                <div class="solution-benefits fade-in">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🛡️</div>
+                        <h4>Sécurité active</h4>
+                        <p>Intervention automatique avant le danger</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">⚡</div>
+                        <h4>20x plus rapide</h4>
+                        <p>Réaction en 0,05s vs 1s pour un humain</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🧘</div>
+                        <h4>Vol serein</h4>
+                        <p>Réduction du stress pour tous les pilotes</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 4. DESCRIPTION TECHNIQUE -->
+            <div class="innovation-technical">
+                <h3>Description technique</h3>
+                <div class="technical-grid fade-in">
+                    <div class="technical-item">
+                        <h4>Système mécatronique embarqué</h4>
+                        <p>L'ACS est composé de :</p>
+                        <ul>
+                            <li><strong>Capteurs</strong> qui surveillent en temps réel la géométrie de la voile</li>
+                            <li><strong>Algorithmes de détection</strong> qui identifient les prémices d'une fermeture</li>
+                            <li><strong>Unité motorisée</strong> qui agit sur les élévateurs arrière</li>
+                        </ul>
+                    </div>
+                    <div class="technical-item">
+                        <h4>Temps de réaction : 0,05 seconde</h4>
+                        <p>Quand le système détecte une anomalie, il actionne les commandes arrière en <strong>50 millisecondes</strong>. Cette action préventive empêche la fermeture de se développer. Le pilote ne ressent qu'une légère correction, comme si l'aile s'était "auto-stabilisée".</p>
+                    </div>
+                    <div class="technical-item">
+                        <h4>Validation en vol — TRL 5</h4>
+                        <p>Le prototype V1 a accumulé :</p>
+                        <ul>
+                            <li><strong>14+ heures de vol</strong> avec le système actif</li>
+                            <li>Plusieurs <strong>fermetures réelles interceptées</strong> avec succès</li>
+                            <li>Validation des algorithmes de détection</li>
+                        </ul>
+                        <p style="margin-top: 0.8rem;"><em>→ Preuve de concept validée en conditions réelles</em></p>
+                    </div>
+                    <div class="technical-item">
+                        <h4>Propriété intellectuelle</h4>
+                        <p>L'innovation est <strong>protégée par un brevet</strong> (validé). Le transfert de propriété vers PLUME Paragliders est en cours.</p>
+                        <p style="margin-top: 0.8rem;">Cette technologie de rupture positionne PLUME comme pionnier de la <strong>sécurité active motorisée</strong> en parapente.</p>
+                    </div>
+                </div>
+                
+                <!-- Vidéo démonstration ACS -->
+                <div class="market-context fade-in" style="margin-top: 2.5rem; background: var(--white);">
+                    <h4>Démonstration en Vol — Interception de Fermeture</h4>
+                    <p style="margin-top: 0.8rem; margin-bottom: 1.5rem;">Visualisez le système ACS en action lors d'une interception réelle de fermeture en vol :</p>
+                    <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+                        <iframe 
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                            src="https://www.youtube.com/embed/EEbdZJI5tWY"
+                            title="ACS - Anti Collapse System - Démonstration"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+                
+                <!-- Lien vers dossier complet -->
+                <div class="market-context fade-in" style="margin-top: 2rem; background: var(--white);">
+                    <h4>Pour aller plus loin</h4>
+                    <p style="margin-top: 0.8rem;">Dossier technique complet et documentation brevet :</p>
+                    <a href="https://raw.githubusercontent.com/jbintheair/NeawBrand/main/ACS%20presentation%20brevet%201.pdf" download class="btn-patent" style="margin-top: 1rem; display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, var(--turquoise), #0e7490); color: white; padding: 0.9rem 1.5rem; border-radius: 8px; font-weight: 600; text-decoration: none; box-shadow: 0 4px 15px rgba(8, 145, 178, 0.3); transition: all 0.3s ease;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Télécharger le PDF de présentation de l'ACS
+                    </a>
+                </div>
+            </div>
+            
+            <!-- 5. TIMELINE -->
+            <div class="innovation-timeline">
+                <h3>Historique & Feuille de route</h3>
+                <p class="timeline-subtitle">Projet pluriannuel — De la R&D à l'industrialisation</p>
+                
+                <div class="timeline-container fade-in">
+                    <div class="timeline-step">
+                        <div class="timeline-dot completed"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-date">2022-2024</div>
+                            <h4>R&D — Prototype V1</h4>
+                            <p>Conception, développement des algorithmes, 14h+ de tests en vol réels.</p>
+                            <div class="timeline-progress">
+                                <div class="timeline-progress-bar" style="width: 100%;"></div>
+                            </div>
+                            <div class="timeline-progress-label">100% terminé</div>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot current"></div>
+                        <div class="timeline-card current">
+                            <div class="timeline-date">2026</div>
+                            <h4>Prototype V2 — Fiabilisation</h4>
+                            <p>Électronique robuste, packaging pour crash-tests, préparation homologation EN.</p>
+                            <div class="timeline-progress">
+                                <div class="timeline-progress-bar" style="width: 30%;"></div>
+                            </div>
+                            <div class="timeline-progress-label">30% en cours</div>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot future"></div>
+                        <div class="timeline-card future">
+                            <div class="timeline-date">2027-2028</div>
+                            <h4>Design — Miniaturisation</h4>
+                            <p>Intégration ergonomique, Design for Manufacturing, produit commercialisable.</p>
+                            <div class="timeline-progress">
+                                <div class="timeline-progress-bar" style="width: 0%;"></div>
+                            </div>
+                            <div class="timeline-progress-label">À venir</div>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot future"></div>
+                        <div class="timeline-card future">
+                            <div class="timeline-date">2029+</div>
+                            <h4>Industrialisation série</h4>
+                            <p>Chaîne de production, contrôle qualité, commercialisation.</p>
+                            <div class="timeline-progress">
+                                <div class="timeline-progress-bar" style="width: 0%;"></div>
+                            </div>
+                            <div class="timeline-progress-label">À venir</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 6. BUDGET -->
+            <div class="innovation-budget">
+                <h3>Budget du projet</h3>
+                <div class="budget-grid fade-in">
+                    <div class="budget-card">
+                        <h4>Budget 2026</h4>
+                        <div class="budget-amount">10 000 €</div>
+                        <div class="budget-details">
+                            <div class="budget-line">
+                                <span class="budget-line-label">2 Prototypes V2</span>
+                                <span class="budget-line-amount">3 000 €</span>
+                            </div>
+                            <div class="budget-line">
+                                <span class="budget-line-label">Design & intégration</span>
+                                <span class="budget-line-amount">5 000 €</span>
+                            </div>
+                            <div class="budget-line">
+                                <span class="budget-line-label">Tests en vol</span>
+                                <span class="budget-line-amount">2 000 €</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="budget-card total">
+                        <h4>Budget Total (Industrialisation)</h4>
+                        <div class="budget-amount">300 000 €</div>
+                        <div class="budget-details">
+                            <div class="budget-line">
+                                <span class="budget-line-label">R&D & Prototypes (2026-2028)</span>
+                                <span class="budget-line-amount">~50 000 €</span>
+                            </div>
+                            <div class="budget-line">
+                                <span class="budget-line-label">Homologation & Certification</span>
+                                <span class="budget-line-amount">~100 000 €</span>
+                            </div>
+                            <div class="budget-line">
+                                <span class="budget-line-label">Outillage & Industrialisation</span>
+                                <span class="budget-line-amount">~150 000 €</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <!-- PAGE 8: Budget Innovation 2026 -->
+        <section id="innovation-budget" class="bg-cream">
+            <span class="section-number">07</span>
+            <h2 class="fade-in">Budget Innovation 2026</h2>
+            <p class="fade-in">Investissements R&D et développement produits pour l'année 2026.</p>
+
+            <div class="financement-grid fade-in" style="margin-top: 2.5rem;">
+                <div>
+                    <h3 style="margin-bottom: 1.5rem; color: var(--turquoise-dark);">Projets Innovation 2026</h3>
+                    <div class="financement-sources">
+                        <div class="source">
+                            <div>
+                                <span class="source-name">Architecture Hybride (FUSION)</span>
+                                <div class="source-detail">Innovation aérodynamique • Sortie 2027</div>
+                            </div>
+                            <span class="source-amount">20 500 €</span>
+                        </div>
+                        <div class="source">
+                            <div>
+                                <span class="source-name">Aile CROSS-OVER</span>
+                                <div class="source-detail">Géométrie variable • Sortie Automne 2026</div>
+                            </div>
+                            <span class="source-amount">18 000 €</span>
+                        </div>
+                        <div class="source">
+                            <div>
+                                <span class="source-name">Site Internet Innovation</span>
+                                <div class="source-detail">Plateforme digitale B2B2C</div>
+                            </div>
+                            <span class="source-amount">16 200 €</span>
+                        </div>
+                        <div class="source">
+                            <div>
+                                <span class="source-name">PLUME MIND</span>
+                                <div class="source-detail">Logiciel propriétaire • Solver conception</div>
+                            </div>
+                            <span class="source-amount">10 800 €</span>
+                        </div>
+                        <div class="source">
+                            <div>
+                                <span class="source-name">ACS — Brevet</span>
+                                <div class="source-detail">DeepTech • Prototypage V2</div>
+                            </div>
+                            <span class="source-amount">10 000 €</span>
+                        </div>
+                    </div>
+                    <div class="total-financement">
+                        <div class="total-label">Budget Innovation 2026</div>
+                        <div class="total-value">75 500 €</div>
+                    </div>
+                </div>
+                <div class="utilisation-fonds">
+                    <h4>Répartition des dépenses</h4>
+                    <ul class="fonds-list">
+                        <li>R&D Personnel (design, tests, développement)</li>
+                        <li>Prototypage matériel (FUSION, CROSS-OVER, ACS)</li>
+                        <li>Homologation EN (certification vol + shock)</li>
+                        <li>Création gammes (industrialisation 9 tailles)</li>
+                        <li>Outils IA (Cursor AI)</li>
+                        <li>Temps équipe technique (16 mois/homme)</li>
+                    </ul>
+                    <p style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--gray-500);"><strong>Note :</strong> Budget autofinancé sur fonds propres. 5 projets d'innovation en parallèle.</p>
+                </div>
+            </div>
+
+            <div class="business-numbers fade-in" style="margin-top: 2.5rem;">
+                <div class="business-number"><div class="value">50 000€</div><div class="label">R&D Personnel</div></div>
+                <div class="business-number"><div class="value">17 500€</div><div class="label">Prototypage & Gammes</div></div>
+                <div class="business-number"><div class="value">6 000€</div><div class="label">Homologation</div></div>
+                <div class="business-number"><div class="value">2 000€</div><div class="label">Logiciels IA</div></div>
+            </div>
+        </section>
+
+    </div>
+    <!-- FIN TAB: Présentation Innovation -->
+
+    <!-- Contact Section (visible sur les deux onglets) -->
     <section id="contact">
         <h2 class="fade-in">Contact</h2>
         <p class="fade-in">PLUME Paragliders</p>
@@ -1830,6 +3628,36 @@
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
         }, { threshold: 0.1 });
         fadeElements.forEach(el => observer.observe(el));
+
+        // Tab switching functionality
+        const tabLinks = document.querySelectorAll('.tab-link');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Remove active class from all tabs
+                tabLinks.forEach(l => l.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                link.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = link.getAttribute('data-tab');
+                document.getElementById('tab-' + tabId).classList.add('active');
+                
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                
+                // Re-observe fade elements for the new tab
+                fadeElements.forEach(el => {
+                    el.classList.remove('visible');
+                    observer.observe(el);
+                });
+            });
+        });
     </script>
 </body>
 </html>
