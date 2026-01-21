@@ -1219,16 +1219,18 @@
         /* Hero Section Innovation - Titre avec image de fond */
         .innovation-hero {
             position: relative;
-            min-height: 50vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: 4rem 2rem;
-            background-size: cover;
-            background-position: center;
+            background-size: 110% auto;
+            background-position: center center;
+            background-attachment: scroll;
             overflow: hidden;
+            will-change: background-position;
         }
         
         .innovation-hero::before {
@@ -1434,8 +1436,6 @@
         
         .technical-grid.single-column {
             grid-template-columns: 1fr;
-            max-width: 900px;
-            margin: 0 auto;
         }
         
         .technical-item {
@@ -1746,7 +1746,7 @@
         }
         
         @media (max-width: 768px) {
-            .innovation-hero { min-height: 40vh; padding: 3rem 1.5rem; }
+            .innovation-hero { min-height: 80vh; padding: 3rem 1.5rem; background-size: cover; }
             .innovation-hero h2 { font-size: 2rem; }
             .innovation-problem, .innovation-solution, .innovation-technical, .innovation-timeline, .innovation-budget {
                 padding: 2.5rem 1.5rem;
@@ -1785,7 +1785,7 @@
     <section id="vision">
         <span class="section-number">01</span>
         <h2 class="fade-in">Notre Vision</h2>
-        <p class="fade-in">PLUME Paragliders est une nouvelle marque française de parapente avec une mission claire : <span class="highlight">devenir le leader mondial du parapente léger</span>.</p>
+        <p class="fade-in">PLUME Paragliders est une nouvelle marque française de parapente avec une mission claire : <span class="highlight">rendre le parapente plus accessible en le rendant plus sûr, plus léger, plus intuitif</span>.</p>
         
         <div class="fade-in" style="margin: 2.5rem 0;">
             <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/Blow%20Summit%20cloud%20amazing.jpeg" alt="Vue sommet nuages - La vision PLUME" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto; border-radius: 12px; box-shadow: 0 12px 35px rgba(0,0,0,0.2);">
@@ -2381,20 +2381,20 @@
             
             <div class="vision-grid fade-in" style="margin-top: 3rem;">
                 <div class="vision-card" style="text-align: left;">
-                    <h4 style="display: flex; align-items: center; gap: 0.8rem;"><span style="background: var(--turquoise); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">01</span> Projet FUSION</h4>
+                    <h4 style="display: flex; align-items: center; gap: 0.8rem;"><span style="background: var(--turquoise); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">01</span> PLUME MIND — Solver Propriétaire</h4>
+                    <p>Logiciel interne de conception et dimensionnement fusionnant aérodynamisme et structure en temps réel.</p>
+                </div>
+                <div class="vision-card" style="text-align: left;">
+                    <h4 style="display: flex; align-items: center; gap: 0.8rem;"><span style="background: var(--turquoise); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">02</span> PLUME Hybrid</h4>
                     <p>Architecture Aérodynamique Hybride — Innovation de rupture combinant mono-surface et double surface.</p>
                 </div>
                 <div class="vision-card" style="text-align: left;">
-                    <h4 style="display: flex; align-items: center; gap: 0.8rem;"><span style="background: var(--turquoise); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">02</span> Aile CROSS-OVER</h4>
+                    <h4 style="display: flex; align-items: center; gap: 0.8rem;"><span style="background: var(--turquoise); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">03</span> PLUME Duale</h4>
                     <p>Première aile au monde à géométrie variable fusionnant parapente et parakite — Sortie Automne 2026.</p>
                 </div>
                 <div class="vision-card" style="text-align: left;">
-                    <h4 style="display: flex; align-items: center; gap: 0.8rem;"><span style="background: var(--turquoise); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">03</span> Architecture Numérique</h4>
+                    <h4 style="display: flex; align-items: center; gap: 0.8rem;"><span style="background: var(--turquoise); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">04</span> PLUME Connect</h4>
                     <p>Distribution hybride, Demo-Center autonome, Support IA auto-apprenant et R&D participative par la data.</p>
-                </div>
-                <div class="vision-card" style="text-align: left;">
-                    <h4 style="display: flex; align-items: center; gap: 0.8rem;"><span style="background: var(--turquoise); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">04</span> PLUME MIND — Solver Propriétaire</h4>
-                    <p>Logiciel interne de conception et dimensionnement fusionnant aérodynamisme et structure en temps réel.</p>
                 </div>
                 <div class="vision-card" style="text-align: left;">
                     <h4 style="display: flex; align-items: center; gap: 0.8rem;"><span style="background: var(--gold); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">05</span> ACS — Brevet</h4>
@@ -2407,19 +2407,217 @@
             </div>
         </section>
 
+        <!-- PAGE 2: VOLET 1 - INNOVATION TECHNOLOGIQUE (R&D & PROCESS) - PLUME MIND -->
+        <section id="innovation-logiciels" style="padding: 0;">
+            
+            <!-- 1. HERO - Titre avec image de fond -->
+            <div class="innovation-hero" style="background-image: linear-gradient(135deg, rgba(12, 74, 110, 0.2) 0%, rgba(15, 36, 48, 0.25) 100%), url('https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/plume%20mind.jpeg');">
+                <div class="innovation-hero-content fade-in">
+                    <h2>PLUME MIND</h2>
+                    <p class="innovation-hero-subtitle">Logiciel Propriétaire de Conception & Dimensionnement — En production</p>
+                    <div class="innovation-hero-keywords">
+                        <span class="keyword-badge">Innovation logicielle</span>
+                        <span class="keyword-badge"><strong>~25 000 €</strong> budget total</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 2. PROBLÈME À RÉSOUDRE -->
+            <div class="innovation-problem">
+                <h3>Le problème à résoudre</h3>
+                <div class="problem-content fade-in">
+                    <div class="problem-card">
+                        <h4>Outils de conception inadaptés</h4>
+                        <p>L'ingénierie du parapente manque d'outils capables de coupler efficacement aérodynamisme (CFD) et structure. Les solutions existantes sont énergivores, lentes, et déconnectées de la réalité industrielle.</p>
+                    </div>
+                    <div class="problem-card">
+                        <h4>Précision critique pour le "Light"</h4>
+                        <p>Sur le segment des ailes ultra-légères, chaque gramme compte. Les méthodes manuelles traditionnelles ne permettent pas d'atteindre la précision nécessaire pour optimiser le poids sans compromettre la sécurité.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 3. PRÉSENTATION SIMPLIFIÉE -->
+            <div class="innovation-solution">
+                <h3>Notre solution en bref</h3>
+                <div class="solution-highlight fade-in">
+                    <p>PLUME MIND est un <strong>logiciel de conception interne</strong> qui fusionne en temps réel l'aérodynamisme et la structure. Au lieu de concevoir l'aile puis de calculer sa solidité ensuite (approche séquentielle), notre outil <strong>adapte automatiquement la structure</strong> selon les contraintes physiques. Résultat : des ailes plus légères, plus précises, développées <strong>5 fois plus vite</strong>, avec une <strong>précision au millimètre</strong>.</p>
+                </div>
+                <div class="fade-in" style="margin: 2rem 0;">
+                    <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/Plume%20mind%2C%20trac%C3%A9%20le%20chemin%20des%20effort.png" alt="Illustration Plume Mind - Le chemin des efforts" style="width: 100%; height: auto; display: block; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
+                </div>
+                <div class="solution-benefits fade-in">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">⚡</div>
+                        <h4>5x plus rapide</h4>
+                        <p>Développement accéléré drastiquement</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🎯</div>
+                        <h4>Précision absolue</h4>
+                        <p>Calage au millimètre près</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🛡️</div>
+                        <h4>Sécurité garantie</h4>
+                        <p>Pré-certification EN/LTF intégrée</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 4. DESCRIPTION TECHNIQUE -->
+            <div class="innovation-technical">
+                <h3>Les 3 piliers techniques</h3>
+                <div class="technical-grid single-column fade-in">
+                    <div class="technical-item">
+                        <h4>1. Conception pilotée par l'effort</h4>
+                        <p>L'ingénieur définit les <strong>chemins d'efforts stratégiques</strong>. Le logiciel calcule instantanément :</p>
+                        <ul>
+                            <li>La géométrie idéale de chaque pièce</li>
+                            <li>La quantité de matière strictement nécessaire</li>
+                            <li>Le "Ballooning" (déformation 3D sous pression) pour garantir la forme aérodynamique parfaite</li>
+                        </ul>
+                        <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/rib%20alpha%207.png" alt="Structure Nervure Rib Alpha 7" style="width: 100%; max-width: 600px; height: auto; display: block; margin: 1.5rem auto 0;" />
+                    </div>
+                    <div class="technical-item">
+                        <h4>2. Algorithme de suspentage intelligent</h4>
+                        <p>Pour les lignes (suspentes), l'algorithme gère automatiquement :</p>
+                        <ul>
+                            <li><strong>Sélection automatique</strong> du matériau et diamètre optimal</li>
+                            <li><strong>Équilibrage</strong> de l'aile en intégrant la traînée des suspentes</li>
+                            <li><strong>Compensation micrométrique</strong> (élasticité, réduction d'arcs...)</li>
+                        </ul>
+                        <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/line%20load%20calculation.png" alt="Calcul de charge des lignes (Line Load)" style="width: 100%; height: auto; display: block; margin: 1.5rem auto 0; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); background-color: #fff;" />
+                    </div>
+                    <div class="technical-item">
+                        <h4>3. Passerelle Design-to-Manufacture</h4>
+                        <p>Le logiciel génère directement les fichiers pour l'atelier :</p>
+                        <ul>
+                            <li><strong>Pré-certification</strong> : simulation des tests EN/LTF en amont</li>
+                            <li><strong>Fichiers de production</strong> : longueurs de coupe exactes, nomenclatures</li>
+                            <li><strong>Plans d'assemblage</strong> automatiques pour les suspentes</li>
+                        </ul>
+                        <p style="margin-top: 0.8rem;"><em>→ Zéro erreur humaine sur cette étape critique</em></p>
+                        <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/line%20homologation.png" alt="Homologation des lignes" style="width: 100%; height: auto; display: block; margin: 1.5rem auto 0; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); background-color: #fff;" />
+                    </div>
+                </div>
+                
+                <!-- Conclusion / Impact -->
+                <div class="fade-in" style="margin-top: 3rem; padding: 2.5rem; background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); border-radius: 12px; color: white; text-align: center;">
+                    <h4 style="font-size: 1.4rem; font-weight: 600; margin-bottom: 1rem; color: white;">💡 Impact concurrentiel</h4>
+                    <p style="font-size: 1.1rem; line-height: 1.7; max-width: 800px; margin: 0 auto;"><strong>PLUME MIND divise par 5 le temps de développement</strong>, mais son atout majeur est la précision absolue. Il nous permet d'atteindre une justesse de calage et de dimensionnement <strong>impossible à obtenir avec des méthodes manuelles</strong>, garantissant une performance "Light" sans compromis sur la sécurité.</p>
+                </div>
+            </div>
+            
+            <!-- 5. TIMELINE -->
+            <div class="innovation-timeline">
+                <h3>Historique & Feuille de route</h3>
+                <p class="timeline-subtitle">Du développement à l'utilisation en production</p>
+                
+                <div class="timeline-container fade-in">
+                    <div class="timeline-step">
+                        <div class="timeline-dot completed"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-date">2024</div>
+                            <h4>Développement initial</h4>
+                            <p>Conception de l'architecture, premiers modules de calcul.</p>
+                            <div class="timeline-progress">
+                                <div class="timeline-progress-bar" style="width: 100%;"></div>
+                            </div>
+                            <div class="timeline-progress-label">100% terminé</div>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot completed"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-date">Fin 2024</div>
+                            <h4>Validation & Tests</h4>
+                            <p>Tests sur prototypes réels, validation des calculs.</p>
+                            <div class="timeline-progress">
+                                <div class="timeline-progress-bar" style="width: 100%;"></div>
+                            </div>
+                            <div class="timeline-progress-label">100% terminé</div>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot current"></div>
+                        <div class="timeline-card current">
+                            <div class="timeline-date">2025-2026</div>
+                            <h4>Production & Améliorations</h4>
+                            <p>Utilisation quotidienne, nouvelles fonctionnalités.</p>
+                            <div class="timeline-progress">
+                                <div class="timeline-progress-bar" style="width: 80%;"></div>
+                            </div>
+                            <div class="timeline-progress-label">80% opérationnel</div>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot future"></div>
+                        <div class="timeline-card future">
+                            <div class="timeline-date">Continu</div>
+                            <h4>Évolutions</h4>
+                            <p>Nouveaux modules selon besoins R&D.</p>
+                            <div class="timeline-progress">
+                                <div class="timeline-progress-bar" style="width: 0%;"></div>
+                            </div>
+                            <div class="timeline-progress-label">Continu</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 6. BUDGET -->
+            <div class="innovation-budget">
+                <h3>Budget du projet</h3>
+                <div class="budget-grid fade-in">
+                    <div class="budget-card">
+                        <h4>Budget 2026</h4>
+                        <div class="budget-amount">10 800 €</div>
+                        <div class="budget-details">
+                            <div class="budget-line">
+                                <span class="budget-line-label">Temps de développement (4 mois)</span>
+                                <span class="budget-line-amount">10 000 €</span>
+                            </div>
+                            <div class="budget-line">
+                                <span class="budget-line-label">Outils Cursor AI (4 mois)</span>
+                                <span class="budget-line-amount">800 €</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="budget-card total">
+                        <h4>Budget Total</h4>
+                        <div class="budget-amount">~25 000 €</div>
+                        <div class="budget-details">
+                            <div class="budget-line">
+                                <span class="budget-line-label">Développement initial (2024)</span>
+                                <span class="budget-line-amount">~15 000 €</span>
+                            </div>
+                            <div class="budget-line">
+                                <span class="budget-line-label">Évolutions 2026</span>
+                                <span class="budget-line-amount">10 800 €</span>
+                            </div>
+                            <div class="budget-line">
+                                <span class="budget-line-label">Logiciel opérationnel</span>
+                                <span class="budget-line-amount">En production</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
         <!-- PAGE 3: Design - Projet FUSION -->
         <section id="innovation-design" style="padding: 0;">
             
             <!-- 1. HERO - Titre avec image de fond -->
             <div class="innovation-hero" style="background-image: url('https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/hybrid%20color%20full%202K.jpeg');">
                 <div class="innovation-hero-content fade-in">
-                    <h2>Hybride</h2>
+                    <h2>PLUME Hybrid</h2>
                     <p class="innovation-hero-subtitle">Architecture Aérodynamique Hybride — Sortie Printemps 2027</p>
                     <div class="innovation-hero-keywords">
-                        <span class="keyword-badge"><strong>9</strong> prototypes</span>
-                        <span class="keyword-badge"><strong>-20%</strong> matière</span>
-                        <span class="keyword-badge"><strong>-15%</strong> coût</span>
-                        <span class="keyword-badge">Mono + Double surface</span>
+                        <span class="keyword-badge">Innovation conception parapente</span>
+                        <span class="keyword-badge"><strong>54 000 €</strong> budget total</span>
                     </div>
                 </div>
             </div>
@@ -2635,7 +2833,25 @@
             <!-- 6. BUDGET -->
             <div class="innovation-budget">
                 <h3>Budget du projet</h3>
-                <div class="budget-grid fade-in">
+                <div class="budget-grid fade-in" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="budget-card">
+                        <h4>Avant 2026 (R&D)</h4>
+                        <div class="budget-amount">33 500 €</div>
+                        <div class="budget-details">
+                            <div class="budget-line">
+                                <span class="budget-line-label">Prototypes (9)</span>
+                                <span class="budget-line-amount">8 000 €</span>
+                            </div>
+                            <div class="budget-line">
+                                <span class="budget-line-label">Conception (9)</span>
+                                <span class="budget-line-amount">13 500 €</span>
+                            </div>
+                            <div class="budget-line">
+                                <span class="budget-line-label">Tests aile (6 mois)</span>
+                                <span class="budget-line-amount">12 000 €</span>
+                            </div>
+                        </div>
+                    </div>
                     <div class="budget-card">
                         <h4>Budget 2026</h4>
                         <div class="budget-amount">20 500 €</div>
@@ -2664,7 +2880,7 @@
                     </div>
                     <div class="budget-card total">
                         <h4>Total</h4>
-                        <div class="budget-amount">20 500 €</div>
+                        <div class="budget-amount">54 000 €</div>
                         <div class="budget-details">
                             <div class="budget-line">
                                 <span class="budget-line-label">Innovation intégrée à la gamme PLUME</span>
@@ -2689,15 +2905,13 @@
         <section id="innovation-nouveau-concept" style="padding: 0;">
             
             <!-- 1. HERO - Titre avec image de fond -->
-            <div class="innovation-hero" style="background-image: url('https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/Generated%20Image%20December%2018%2C%202025%20-%201_05AM.jpeg');">
+            <div class="innovation-hero" style="background-image: linear-gradient(rgba(15, 36, 48, 0.3), rgba(15, 36, 48, 0.35)), url('https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/Blow%20winter%20over%20summit.jpeg');">
                 <div class="innovation-hero-content fade-in">
-                    <h2>CROSS-OVER</h2>
+                    <h2>PLUME Duale</h2>
                     <p class="innovation-hero-subtitle">La Première Aile de Montagne à Géométrie Variable — Sortie Automne 2026</p>
                     <div class="innovation-hero-keywords">
-                        <span class="keyword-badge"><strong>V3</strong> prototype</span>
-                        <span class="keyword-badge"><strong>TRL 5/6</strong> maturité</span>
-                        <span class="keyword-badge"><strong>x2</strong> fenêtre météo</span>
-                        <span class="keyword-badge">Parapente + Parakite</span>
+                        <span class="keyword-badge">Innovation conception parapente</span>
+                        <span class="keyword-badge"><strong>27 000 €</strong> budget total</span>
                     </div>
                 </div>
             </div>
@@ -2771,9 +2985,9 @@
                         <h4>Validation en vol</h4>
                         <p>Les essais ont validé :</p>
                         <ul>
-                            <li>Viabilité du ratio 1/6</li>
-                            <li>Capacité à décoller sans vent (pétole)</li>
-                            <li>Tenue en vents forts</li>
+                            <li>Viabilité du mouflage ratio 1/6</li>
+                            <li>Capacité à décoller sans vent, voire vent arrière — excellent</li>
+                            <li>Accessibilité en vent fort — excellent, +40% de vitesse en mode speed</li>
                             <li>Progressivité des commandes optimisée</li>
                         </ul>
                     </div>
@@ -2789,9 +3003,9 @@
                     <div class="timeline-step">
                         <div class="timeline-dot completed"></div>
                         <div class="timeline-card">
-                            <div class="timeline-date">2023-2024</div>
+                            <div class="timeline-date">2025</div>
                             <h4>R&D — Prototypes V1 à V2</h4>
-                            <p>Exploration du concept, validation du ratio 1/6, premiers tests en vol.</p>
+                            <p>Validation du mouflage ratio 1/6. Concept validé.</p>
                             <div class="timeline-progress">
                                 <div class="timeline-progress-bar" style="width: 100%;"></div>
                             </div>
@@ -2801,7 +3015,7 @@
                     <div class="timeline-step">
                         <div class="timeline-dot current"></div>
                         <div class="timeline-card current">
-                            <div class="timeline-date">2025-2026</div>
+                            <div class="timeline-date">2026</div>
                             <h4>Prototype V3 — Finalisation</h4>
                             <p>Affinage progressivité, tension matériaux, préparation industrialisation.</p>
                             <div class="timeline-progress">
@@ -2840,7 +3054,25 @@
             <!-- 6. BUDGET -->
             <div class="innovation-budget">
                 <h3>Budget du projet</h3>
-                <div class="budget-grid fade-in">
+                <div class="budget-grid fade-in" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="budget-card">
+                        <h4>Avant 2026 (R&D)</h4>
+                        <div class="budget-amount">9 000 €</div>
+                        <div class="budget-details">
+                            <div class="budget-line">
+                                <span class="budget-line-label">Prototypes (2)</span>
+                                <span class="budget-line-amount">2 000 €</span>
+                            </div>
+                            <div class="budget-line">
+                                <span class="budget-line-label">Conception</span>
+                                <span class="budget-line-amount">3 000 €</span>
+                            </div>
+                            <div class="budget-line">
+                                <span class="budget-line-label">Tests (1,5 mois)</span>
+                                <span class="budget-line-amount">4 000 €</span>
+                            </div>
+                        </div>
+                    </div>
                     <div class="budget-card">
                         <h4>Budget 2026</h4>
                         <div class="budget-amount">18 000 €</div>
@@ -2869,7 +3101,7 @@
                     </div>
                     <div class="budget-card total">
                         <h4>Total</h4>
-                        <div class="budget-amount">18 000 €</div>
+                        <div class="budget-amount">27 000 €</div>
                         <div class="budget-details">
                             <div class="budget-line">
                                 <span class="budget-line-label">Innovation intégrée à la gamme PLUME</span>
@@ -2894,15 +3126,13 @@
         <section id="innovation-site-internet" style="padding: 0;">
             
             <!-- 1. HERO - Titre avec image de fond -->
-            <div class="innovation-hero" style="background-image: linear-gradient(135deg, rgba(15, 36, 48, 0.55) 0%, rgba(85, 136, 166, 0.45) 100%), url('https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/Generated%20Image%20January%2021%2C%202026%20-%201_02AM.jpeg');">
+            <div class="innovation-hero" style="background-image: linear-gradient(135deg, rgba(15, 36, 48, 0.35) 0%, rgba(85, 136, 166, 0.3) 100%), url('https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/Plume%20connect.jpeg');">
                 <div class="innovation-hero-content fade-in">
-                    <h2>Architecture Numérique</h2>
+                    <h2>PLUME Connect</h2>
                     <p class="innovation-hero-subtitle">Distribution & Intelligence Produit — En production</p>
                     <div class="innovation-hero-keywords">
-                        <span class="keyword-badge"><strong>4</strong> piliers</span>
-                        <span class="keyword-badge"><strong>B2C2B</strong> innovant</span>
-                        <span class="keyword-badge"><strong>IA</strong> auto-apprenante</span>
-                        <span class="keyword-badge">Low-code & API</span>
+                        <span class="keyword-badge">Innovation de procédé</span>
+                        <span class="keyword-badge"><strong>~32 000 €</strong> budget total</span>
                     </div>
                 </div>
             </div>
@@ -2926,7 +3156,17 @@
             <div class="innovation-solution">
                 <h3>Notre solution en bref</h3>
                 <div class="solution-highlight fade-in">
-                    <p>Nous avons développé une <strong>plateforme numérique propriétaire</strong> qui révolutionne la distribution du parapente. Au lieu d'opposer vente en ligne et réseau physique, notre système les <strong>réconcilie automatiquement</strong> : le client commande en ligne, et l'école partenaire la plus proche touche sa commission. Un système de <strong>Demo-Center automatisé</strong> permet de tester les ailes facilement, et une <strong>IA auto-apprenante</strong> répond aux questions techniques 24h/24.</p>
+                    <p>PLUME Connect est une <strong>plateforme numérique propriétaire</strong> qui structure notre croissance autour de <strong>4 piliers technologiques</strong> :</p>
+                    <ul style="margin: 1.5rem 0; padding-left: 1.5rem; line-height: 2;">
+                        <li><strong>Distribution Hybride B2C2B</strong> — Un algorithme qui réconcilie vente directe et réseau physique, attribuant automatiquement les commissions aux partenaires locaux.</li>
+                        <li><strong>Demo-Center Autonome</strong> — Digitalisation complète du flux de test (réservation, caution, expédition, retour) pour lever le frein n°1 à l'achat.</li>
+                        <li><strong>Support IA Auto-apprenant</strong> — Assistance 24h/24 qui s'enrichit à chaque interaction expert, capitalisant le savoir-faire technique.</li>
+                        <li><strong>R&D Participative</strong> — Collecte statistique des retours terrain pour orienter l'ingénierie produit en temps réel.</li>
+                    </ul>
+                    <p>Cette architecture logicielle constitue un <strong>avantage concurrentiel durable</strong> : elle permet de scaler rapidement tout en préservant la proximité avec le réseau de distribution et en alimentant continuellement l'innovation produit.</p>
+                </div>
+                <div class="fade-in" style="margin: 2rem 0;">
+                    <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/site%20web%20demo%20wing%20screenshot.png" alt="Capture d'écran Demo Wing" style="width: 100%; height: auto; display: block; border: 1px solid #e0e0e0; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
                 </div>
                 <div class="solution-benefits fade-in">
                     <div class="benefit-item">
@@ -2983,7 +3223,7 @@
                     <div class="timeline-step">
                         <div class="timeline-dot completed"></div>
                         <div class="timeline-card">
-                            <div class="timeline-date">2024-2025</div>
+                            <div class="timeline-date">2025</div>
                             <h4>Développement V1</h4>
                             <p>Architecture technique, API, intégration B2C2B, premiers modules.</p>
                             <div class="timeline-progress">
@@ -3025,21 +3265,21 @@
                 <div class="budget-grid fade-in">
                     <div class="budget-card">
                         <h4>Budget 2026</h4>
-                        <div class="budget-amount">16 200 €</div>
+                        <div class="budget-amount">17 400 €</div>
                         <div class="budget-details">
                             <div class="budget-line">
                                 <span class="budget-line-label">Temps de développement (6 mois)</span>
                                 <span class="budget-line-amount">15 000 €</span>
                             </div>
                             <div class="budget-line">
-                                <span class="budget-line-label">Outils Cursor AI (6 mois)</span>
-                                <span class="budget-line-amount">1 200 €</span>
+                                <span class="budget-line-label">Outils Cursor AI (12 mois)</span>
+                                <span class="budget-line-amount">2 400 €</span>
                             </div>
                         </div>
                     </div>
                     <div class="budget-card total">
                         <h4>Budget Total</h4>
-                        <div class="budget-amount">~30 000 €</div>
+                        <div class="budget-amount">~32 000 €</div>
                         <div class="budget-details">
                             <div class="budget-line">
                                 <span class="budget-line-label">Développement initial (2025)</span>
@@ -3047,205 +3287,10 @@
                             </div>
                             <div class="budget-line">
                                 <span class="budget-line-label">Évolutions 2026</span>
-                                <span class="budget-line-amount">16 200 €</span>
+                                <span class="budget-line-amount">17 400 €</span>
                             </div>
                             <div class="budget-line">
                                 <span class="budget-line-label">Plateforme opérationnelle</span>
-                                <span class="budget-line-amount">En production</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </section>
-
-        <!-- PAGE 6: VOLET 1 - INNOVATION TECHNOLOGIQUE (R&D & PROCESS) -->
-        <section id="innovation-logiciels" style="padding: 0;">
-            
-            <!-- 1. HERO - Titre avec image de fond -->
-            <div class="innovation-hero" style="background-image: linear-gradient(135deg, rgba(12, 74, 110, 0.9) 0%, rgba(15, 36, 48, 0.85) 100%);">
-                <div class="innovation-hero-content fade-in">
-                    <h2>PLUME MIND</h2>
-                    <p class="innovation-hero-subtitle">Logiciel Propriétaire de Conception & Dimensionnement — En production</p>
-                    <div class="innovation-hero-keywords">
-                        <span class="keyword-badge"><strong>÷5</strong> temps de dev</span>
-                        <span class="keyword-badge"><strong>mm</strong> de précision</span>
-                        <span class="keyword-badge"><strong>EN/LTF</strong> pré-certif</span>
-                        <span class="keyword-badge">Aéro + Structure temps réel</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 2. PROBLÈME À RÉSOUDRE -->
-            <div class="innovation-problem">
-                <h3>Le problème à résoudre</h3>
-                <div class="problem-content fade-in">
-                    <div class="problem-card">
-                        <h4>Outils de conception inadaptés</h4>
-                        <p>L'ingénierie du parapente manque d'outils capables de coupler efficacement aérodynamisme (CFD) et structure. Les solutions existantes sont énergivores, lentes, et déconnectées de la réalité industrielle.</p>
-                    </div>
-                    <div class="problem-card">
-                        <h4>Précision critique pour le "Light"</h4>
-                        <p>Sur le segment des ailes ultra-légères, chaque gramme compte. Les méthodes manuelles traditionnelles ne permettent pas d'atteindre la précision nécessaire pour optimiser le poids sans compromettre la sécurité.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 3. PRÉSENTATION SIMPLIFIÉE -->
-            <div class="innovation-solution">
-                <h3>Notre solution en bref</h3>
-                <div class="solution-highlight fade-in">
-                    <p>PLUME MIND est un <strong>logiciel de conception interne</strong> qui fusionne en temps réel l'aérodynamisme et la structure. Au lieu de concevoir l'aile puis de calculer sa solidité ensuite (approche séquentielle), notre outil <strong>adapte automatiquement la structure</strong> selon les contraintes physiques. Résultat : des ailes plus légères, plus précises, développées <strong>5 fois plus vite</strong>, avec une <strong>précision au millimètre</strong>.</p>
-                </div>
-                <div class="solution-benefits fade-in">
-                    <div class="benefit-item">
-                        <div class="benefit-icon">⚡</div>
-                        <h4>5x plus rapide</h4>
-                        <p>Développement accéléré drastiquement</p>
-                    </div>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">🎯</div>
-                        <h4>Précision absolue</h4>
-                        <p>Calage au millimètre près</p>
-                    </div>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">🛡️</div>
-                        <h4>Sécurité garantie</h4>
-                        <p>Pré-certification EN/LTF intégrée</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 4. DESCRIPTION TECHNIQUE -->
-            <div class="innovation-technical">
-                <h3>Les 3 piliers techniques</h3>
-                <div class="technical-grid fade-in">
-                    <div class="technical-item">
-                        <h4>1. Conception pilotée par l'effort</h4>
-                        <p>L'ingénieur définit les <strong>chemins d'efforts stratégiques</strong>. Le logiciel calcule instantanément :</p>
-                        <ul>
-                            <li>La géométrie idéale de chaque pièce</li>
-                            <li>La quantité de matière strictement nécessaire</li>
-                            <li>Le "Ballooning" (déformation 3D sous pression) pour garantir la forme aérodynamique parfaite</li>
-                        </ul>
-                    </div>
-                    <div class="technical-item">
-                        <h4>2. Algorithme de suspentage intelligent</h4>
-                        <p>Pour les lignes (suspentes), l'algorithme gère automatiquement :</p>
-                        <ul>
-                            <li><strong>Sélection automatique</strong> du matériau et diamètre optimal</li>
-                            <li><strong>Équilibrage</strong> de l'aile en intégrant la traînée des suspentes</li>
-                            <li><strong>Compensation micrométrique</strong> (élasticité, réduction d'arcs...)</li>
-                        </ul>
-                    </div>
-                    <div class="technical-item">
-                        <h4>3. Passerelle Design-to-Manufacture</h4>
-                        <p>Le logiciel génère directement les fichiers pour l'atelier :</p>
-                        <ul>
-                            <li><strong>Pré-certification</strong> : simulation des tests EN/LTF en amont</li>
-                            <li><strong>Fichiers de production</strong> : longueurs de coupe exactes, nomenclatures</li>
-                            <li><strong>Plans d'assemblage</strong> automatiques pour les suspentes</li>
-                        </ul>
-                        <p style="margin-top: 0.8rem;"><em>→ Zéro erreur humaine sur cette étape critique</em></p>
-                    </div>
-                    <div class="technical-item">
-                        <h4>Impact concurrentiel</h4>
-                        <p><strong>PLUME MIND divise par 5 le temps de développement</strong>, mais son atout majeur est la précision absolue.</p>
-                        <p style="margin-top: 0.8rem;">Il nous permet d'atteindre une justesse de calage et de dimensionnement <strong>impossible à obtenir avec des méthodes manuelles</strong>, garantissant une performance "Light" sans compromis sur la sécurité.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 5. TIMELINE -->
-            <div class="innovation-timeline">
-                <h3>Historique & Feuille de route</h3>
-                <p class="timeline-subtitle">Du développement à l'utilisation en production</p>
-                
-                <div class="timeline-container fade-in">
-                    <div class="timeline-step">
-                        <div class="timeline-dot completed"></div>
-                        <div class="timeline-card">
-                            <div class="timeline-date">2024</div>
-                            <h4>Développement initial</h4>
-                            <p>Conception de l'architecture, premiers modules de calcul.</p>
-                            <div class="timeline-progress">
-                                <div class="timeline-progress-bar" style="width: 100%;"></div>
-                            </div>
-                            <div class="timeline-progress-label">100% terminé</div>
-                        </div>
-                    </div>
-                    <div class="timeline-step">
-                        <div class="timeline-dot completed"></div>
-                        <div class="timeline-card">
-                            <div class="timeline-date">Fin 2024</div>
-                            <h4>Validation & Tests</h4>
-                            <p>Tests sur prototypes réels, validation des calculs.</p>
-                            <div class="timeline-progress">
-                                <div class="timeline-progress-bar" style="width: 100%;"></div>
-                            </div>
-                            <div class="timeline-progress-label">100% terminé</div>
-                        </div>
-                    </div>
-                    <div class="timeline-step">
-                        <div class="timeline-dot current"></div>
-                        <div class="timeline-card current">
-                            <div class="timeline-date">2025-2026</div>
-                            <h4>Production & Améliorations</h4>
-                            <p>Utilisation quotidienne, nouvelles fonctionnalités.</p>
-                            <div class="timeline-progress">
-                                <div class="timeline-progress-bar" style="width: 80%;"></div>
-                            </div>
-                            <div class="timeline-progress-label">80% opérationnel</div>
-                        </div>
-                    </div>
-                    <div class="timeline-step">
-                        <div class="timeline-dot future"></div>
-                        <div class="timeline-card future">
-                            <div class="timeline-date">Continu</div>
-                            <h4>Évolutions</h4>
-                            <p>Nouveaux modules selon besoins R&D.</p>
-                            <div class="timeline-progress">
-                                <div class="timeline-progress-bar" style="width: 0%;"></div>
-                            </div>
-                            <div class="timeline-progress-label">Continu</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 6. BUDGET -->
-            <div class="innovation-budget">
-                <h3>Budget du projet</h3>
-                <div class="budget-grid fade-in">
-                    <div class="budget-card">
-                        <h4>Budget 2026</h4>
-                        <div class="budget-amount">10 800 €</div>
-                        <div class="budget-details">
-                            <div class="budget-line">
-                                <span class="budget-line-label">Temps de développement (4 mois)</span>
-                                <span class="budget-line-amount">10 000 €</span>
-                            </div>
-                            <div class="budget-line">
-                                <span class="budget-line-label">Outils Cursor AI (4 mois)</span>
-                                <span class="budget-line-amount">800 €</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="budget-card total">
-                        <h4>Budget Total</h4>
-                        <div class="budget-amount">~25 000 €</div>
-                        <div class="budget-details">
-                            <div class="budget-line">
-                                <span class="budget-line-label">Développement initial (2024)</span>
-                                <span class="budget-line-amount">~15 000 €</span>
-                            </div>
-                            <div class="budget-line">
-                                <span class="budget-line-label">Évolutions 2026</span>
-                                <span class="budget-line-amount">10 800 €</span>
-                            </div>
-                            <div class="budget-line">
-                                <span class="budget-line-label">Logiciel opérationnel</span>
                                 <span class="budget-line-amount">En production</span>
                             </div>
                         </div>
@@ -3259,15 +3304,13 @@
         <section id="innovation-acs" style="padding: 0;">
             
             <!-- 1. HERO - Titre avec image de fond -->
-            <div class="innovation-hero" style="background-image: linear-gradient(rgba(15, 25, 40, 0.55), rgba(15, 25, 40, 0.55)), url('https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/ACS%20horizontal.jpeg'); background-size: cover; background-position: center;">
+            <div class="innovation-hero" style="background-image: linear-gradient(rgba(15, 25, 40, 0.2), rgba(15, 25, 40, 0.25)), url('https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/ACS%20horizontal.jpeg'); background-size: cover; background-position: center;">
                 <div class="innovation-hero-content fade-in">
                     <h2>ACS</h2>
                     <p class="innovation-hero-subtitle">Anti-Collapse System — Innovation brevetée DeepTech</p>
                     <div class="innovation-hero-keywords">
-                        <span class="keyword-badge"><strong>0,05s</strong> réaction</span>
-                        <span class="keyword-badge"><strong>14h+</strong> de vol</span>
-                        <span class="keyword-badge"><strong>TRL 5</strong> validé</span>
-                        <span class="keyword-badge">Brevet déposé</span>
+                        <span class="keyword-badge">Innovation de rupture — Brevet</span>
+                        <span class="keyword-badge"><strong>300 000 €</strong> budget total</span>
                     </div>
                 </div>
             </div>
@@ -3300,7 +3343,7 @@
                     <div style="flex-shrink: 0; width: 200px; height: 380px; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
                         <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/ACS%20vertical.jpeg" alt="ACS - Anti Collapse System" style="width: 106%; height: 100%; object-fit: cover; object-position: center; margin-left: -3%;" />
                     </div>
-                    <p style="margin: 0;">L'ACS est un <strong>"ange gardien numérique"</strong> : un petit boîtier électronique fixé sur l'aile qui surveille en permanence la voile. Dès qu'il détecte le début d'une fermeture, il <strong>réagit automatiquement en 0,05 seconde</strong> (20 fois plus vite qu'un humain) en actionnant les commandes arrière. La voile reste ouverte et stable <strong>sans que le pilote n'ait à intervenir</strong>.</p>
+                    <p style="margin: 0;">L'ACS est <strong>l'ABS du parapente</strong> : un petit boîtier électronique fixé sur l'aile qui surveille en permanence la voile. Dès qu'il détecte le début d'une fermeture, il <strong>réagit automatiquement en 0,05 seconde</strong> (20 fois plus vite qu'un humain) en actionnant les commandes arrière. La voile reste ouverte et stable <strong>sans que le pilote n'ait à intervenir</strong>.</p>
                 </div>
                 <div class="solution-benefits fade-in">
                     <div class="benefit-item">
@@ -3394,9 +3437,21 @@
                     <div class="timeline-step">
                         <div class="timeline-dot completed"></div>
                         <div class="timeline-card">
-                            <div class="timeline-date">2022-2024</div>
-                            <h4>R&D — Prototype V1</h4>
-                            <p>Conception, développement des algorithmes, 14h+ de tests en vol réels.</p>
+                            <div class="timeline-date">2022-2023</div>
+                            <h4>Prototype V1</h4>
+                            <p>Conception, développement des algorithmes.</p>
+                            <div class="timeline-progress">
+                                <div class="timeline-progress-bar" style="width: 100%;"></div>
+                            </div>
+                            <div class="timeline-progress-label">100% terminé</div>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot completed"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-date">2024-2025</div>
+                            <h4>Prototype V2</h4>
+                            <p>Tests en vol réels, 14h+ de validation.</p>
                             <div class="timeline-progress">
                                 <div class="timeline-progress-bar" style="width: 100%;"></div>
                             </div>
@@ -3407,7 +3462,7 @@
                         <div class="timeline-dot current"></div>
                         <div class="timeline-card current">
                             <div class="timeline-date">2026</div>
-                            <h4>Prototype V2 — Fiabilisation</h4>
+                            <h4>Prototype V3</h4>
                             <p>Électronique robuste, packaging pour crash-tests, préparation homologation EN.</p>
                             <div class="timeline-progress">
                                 <div class="timeline-progress-bar" style="width: 30%;"></div>
@@ -3420,7 +3475,7 @@
                         <div class="timeline-card future">
                             <div class="timeline-date">2027-2028</div>
                             <h4>Design — Miniaturisation</h4>
-                            <p>Intégration ergonomique, Design for Manufacturing, produit commercialisable.</p>
+                            <p>Création d'une équipe dédiée. Intégration ergonomique, Design for Manufacturing, produit commercialisable.</p>
                             <div class="timeline-progress">
                                 <div class="timeline-progress-bar" style="width: 0%;"></div>
                             </div>
@@ -3445,13 +3500,31 @@
             <!-- 6. BUDGET -->
             <div class="innovation-budget">
                 <h3>Budget du projet</h3>
-                <div class="budget-grid fade-in">
+                <div class="budget-grid fade-in" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="budget-card">
+                        <h4>Avant 2026 (R&D)</h4>
+                        <div class="budget-amount">16 500 €</div>
+                        <div class="budget-details">
+                            <div class="budget-line">
+                                <span class="budget-line-label">Brevets</span>
+                                <span class="budget-line-amount">9 500 €</span>
+                            </div>
+                            <div class="budget-line">
+                                <span class="budget-line-label">Temps passé</span>
+                                <span class="budget-line-amount">5 000 €</span>
+                            </div>
+                            <div class="budget-line">
+                                <span class="budget-line-label">Prototypage</span>
+                                <span class="budget-line-amount">2 000 €</span>
+                            </div>
+                        </div>
+                    </div>
                     <div class="budget-card">
                         <h4>Budget 2026</h4>
                         <div class="budget-amount">10 000 €</div>
                         <div class="budget-details">
                             <div class="budget-line">
-                                <span class="budget-line-label">2 Prototypes V2</span>
+                                <span class="budget-line-label">2 Prototypes V3</span>
                                 <span class="budget-line-amount">3 000 €</span>
                             </div>
                             <div class="budget-line">
@@ -3499,50 +3572,50 @@
                     <div class="financement-sources">
                         <div class="source">
                             <div>
-                                <span class="source-name">Architecture Hybride (FUSION)</span>
-                                <div class="source-detail">Innovation aérodynamique • Sortie 2027</div>
-                            </div>
-                            <span class="source-amount">20 500 €</span>
-                        </div>
-                        <div class="source">
-                            <div>
-                                <span class="source-name">Aile CROSS-OVER</span>
-                                <div class="source-detail">Géométrie variable • Sortie Automne 2026</div>
-                            </div>
-                            <span class="source-amount">18 000 €</span>
-                        </div>
-                        <div class="source">
-                            <div>
-                                <span class="source-name">Site Internet Innovation</span>
-                                <div class="source-detail">Plateforme digitale B2B2C</div>
-                            </div>
-                            <span class="source-amount">16 200 €</span>
-                        </div>
-                        <div class="source">
-                            <div>
-                                <span class="source-name">PLUME MIND</span>
+                                <span class="source-name">PLUME Mind</span>
                                 <div class="source-detail">Logiciel propriétaire • Solver conception</div>
                             </div>
                             <span class="source-amount">10 800 €</span>
                         </div>
                         <div class="source">
                             <div>
+                                <span class="source-name">PLUME Hybrid</span>
+                                <div class="source-detail">Innovation aérodynamique • Sortie 2027</div>
+                            </div>
+                            <span class="source-amount">20 500 €</span>
+                        </div>
+                        <div class="source">
+                            <div>
+                                <span class="source-name">PLUME Duale</span>
+                                <div class="source-detail">Géométrie variable • Sortie Automne 2026</div>
+                            </div>
+                            <span class="source-amount">18 000 €</span>
+                        </div>
+                        <div class="source">
+                            <div>
+                                <span class="source-name">PLUME Connect</span>
+                                <div class="source-detail">Plateforme digitale B2C2B</div>
+                            </div>
+                            <span class="source-amount">17 400 €</span>
+                        </div>
+                        <div class="source">
+                            <div>
                                 <span class="source-name">ACS — Brevet</span>
-                                <div class="source-detail">DeepTech • Prototypage V2</div>
+                                <div class="source-detail">DeepTech • Prototypage V3</div>
                             </div>
                             <span class="source-amount">10 000 €</span>
                         </div>
                     </div>
                     <div class="total-financement">
                         <div class="total-label">Budget Innovation 2026</div>
-                        <div class="total-value">75 500 €</div>
+                        <div class="total-value">76 700 €</div>
                     </div>
                 </div>
                 <div class="utilisation-fonds">
                     <h4>Répartition des dépenses</h4>
                     <ul class="fonds-list">
                         <li>R&D Personnel (design, tests, développement)</li>
-                        <li>Prototypage matériel (FUSION, CROSS-OVER, ACS)</li>
+                        <li>Prototypage matériel (Hybrid, Duale, ACS)</li>
                         <li>Homologation EN (certification vol + shock)</li>
                         <li>Création gammes (industrialisation 9 tailles)</li>
                         <li>Outils IA (Cursor AI)</li>
@@ -3621,6 +3694,40 @@
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 80));
+
+        // Parallax effect for innovation hero sections
+        const heroSections = document.querySelectorAll('.innovation-hero');
+        
+        function updateParallax() {
+            heroSections.forEach(hero => {
+                const rect = hero.getBoundingClientRect();
+                const viewportHeight = window.innerHeight;
+                
+                // Only apply effect when the section is visible
+                if (rect.top < viewportHeight && rect.bottom > 0) {
+                    // Calculate how far through the viewport the element is
+                    const scrollProgress = (viewportHeight - rect.top) / (viewportHeight + rect.height);
+                    // Subtle movement: -10% to +10% vertical shift
+                    const yOffset = (scrollProgress - 0.5) * 20;
+                    hero.style.backgroundPosition = `center calc(50% + ${yOffset}%)`;
+                }
+            });
+        }
+        
+        // Use requestAnimationFrame for smooth performance
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    updateParallax();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+        
+        // Initial call
+        updateParallax();
 
         // Fade in on scroll
         const fadeElements = document.querySelectorAll('.fade-in');
