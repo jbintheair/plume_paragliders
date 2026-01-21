@@ -62,6 +62,74 @@
 
         .nav-logo img { height: 36px; }
 
+        /* Sub-navbar styles */
+        #sub-navbar {
+            position: fixed;
+            top: -60px;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background: rgba(12, 74, 110, 0.97);
+            backdrop-filter: blur(10px);
+            padding: 0.6rem 2rem;
+            transition: top 0.3s ease;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            overflow-x: auto;
+        }
+
+        #sub-navbar.visible {
+            top: 78px;
+        }
+
+        nav.scrolled + #sub-navbar.visible,
+        #sub-navbar.nav-scrolled {
+            top: 62px;
+        }
+
+        .sub-nav-content {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
+            min-width: max-content;
+        }
+
+        .sub-nav-item {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 0.5rem 0.8rem;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .sub-nav-item:hover {
+            color: white;
+            background: rgba(255,255,255,0.15);
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        .sub-nav-item.active {
+            color: white;
+            background: var(--turquoise);
+            border-color: var(--turquoise);
+        }
+
+        .sub-nav-banque, .sub-nav-innovation {
+            display: none;
+        }
+
+        .sub-nav-banque.active, .sub-nav-innovation.active {
+            display: flex;
+        }
+
         .nav-links {
             display: flex;
             gap: 2rem;
@@ -1199,6 +1267,19 @@
                 padding: 0.4rem 0.6rem;
                 letter-spacing: 0.05em;
             }
+            #sub-navbar {
+                padding: 0.5rem 1rem;
+            }
+            #sub-navbar.visible {
+                top: 100px;
+            }
+            #sub-navbar.nav-scrolled {
+                top: 85px;
+            }
+            .sub-nav-item {
+                font-size: 0.6rem;
+                padding: 0.4rem 0.6rem;
+            }
             .vision-grid, .production-content, .financement-grid { grid-template-columns: 1fr; }
             .market-kpis, .business-advantages, .chiffres-grid, .business-numbers { grid-template-columns: 1fr; }
             .innovation-grid { grid-template-columns: 1fr; }
@@ -1226,8 +1307,9 @@
             align-items: center;
             text-align: center;
             padding: 4rem 2rem;
-            background-size: 110% auto;
+            background-size: cover;
             background-position: center center;
+            background-repeat: no-repeat;
             background-attachment: scroll;
             overflow: hidden;
             will-change: background-position;
@@ -1583,6 +1665,7 @@
             border-radius: 8px;
             box-shadow: 0 2px 15px rgba(0,0,0,0.08);
             border-top: 3px solid var(--turquoise);
+            text-align: center;
         }
         
         .timeline-card.current {
@@ -1767,6 +1850,33 @@
         </ul>
     </nav>
 
+    <!-- Sub-navigation bar -->
+    <div id="sub-navbar">
+        <!-- Banque sub-nav -->
+        <div class="sub-nav-content sub-nav-banque active">
+            <span class="sub-nav-item" data-target="presentation">Présentation</span>
+            <span class="sub-nav-item" data-target="marche">Marché</span>
+            <span class="sub-nav-item" data-target="avantages">Avantages</span>
+            <span class="sub-nav-item" data-target="innovation">Innovation</span>
+            <span class="sub-nav-item" data-target="production">Production</span>
+            <span class="sub-nav-item" data-target="gamme">Gamme</span>
+            <span class="sub-nav-item" data-target="business">Vente</span>
+            <span class="sub-nav-item" data-target="chiffres">Chiffres</span>
+            <span class="sub-nav-item" data-target="financement">Business Plan</span>
+            <span class="sub-nav-item" data-target="communication">Communication</span>
+            <span class="sub-nav-item" data-target="roadmap">Roadmap</span>
+        </div>
+        <!-- Innovation sub-nav -->
+        <div class="sub-nav-content sub-nav-innovation">
+            <span class="sub-nav-item" data-target="innovation-logiciels">PLUME MIND</span>
+            <span class="sub-nav-item" data-target="innovation-design">PLUME Hybrid</span>
+            <span class="sub-nav-item" data-target="innovation-nouveau-concept">PLUME Dual</span>
+            <span class="sub-nav-item" data-target="innovation-site-internet">PLUME Connect</span>
+            <span class="sub-nav-item" data-target="innovation-acs">ACS</span>
+            <span class="sub-nav-item" data-target="innovation-budget">Budget</span>
+        </div>
+    </div>
+
     <!-- TAB: Présentation Banque -->
     <div id="tab-banque" class="tab-content active">
 
@@ -1781,10 +1891,10 @@
         <div class="scroll-indicator"><span>Découvrir</span></div>
     </section>
 
-    <!-- Vision Section -->
-    <section id="vision">
+    <!-- Présentation Section (Vision + Équipe fusionnées) -->
+    <section id="presentation">
         <span class="section-number">01</span>
-        <h2 class="fade-in">Notre Vision</h2>
+        <h2 class="fade-in">Présentation</h2>
         <p class="fade-in">PLUME Paragliders est une nouvelle marque française de parapente avec une mission claire : <span class="highlight">rendre le parapente plus accessible en le rendant plus sûr, plus léger, plus intuitif</span>.</p>
         
         <div class="fade-in" style="margin: 2.5rem 0;">
@@ -1812,12 +1922,9 @@
                 <span class="gold">Qualité</span> — Produits beaux et bien finis</p>
             </div>
         </div>
-    </section>
 
-    <!-- Team Section -->
-    <section id="equipe" class="bg-cream">
-        <span class="section-number">02</span>
-        <h2 class="fade-in">L'Équipe Fondatrice</h2>
+        <!-- Équipe Fondatrice -->
+        <h3 class="fade-in" style="margin-top: 4rem; font-size: 1.8rem; color: var(--gray-800);">L'Équipe Fondatrice</h3>
         <p class="fade-in">Une équipe complémentaire avec une expertise unique dans le parapente.</p>
 
         <div class="team-grid fade-in">
@@ -1874,8 +1981,8 @@
     </section>
 
     <!-- Market Section -->
-    <section id="marche">
-        <span class="section-number">03</span>
+    <section id="marche" class="bg-cream">
+        <span class="section-number">02</span>
         <h2 class="fade-in">Le Marché du Parapente</h2>
         <p class="fade-in">Un marché stable et profitable, porté par le segment léger en forte croissance.</p>
 
@@ -1904,8 +2011,8 @@
     </section>
 
     <!-- Avantages Concurrentiels Section -->
-    <section id="avantages" class="bg-cream">
-        <span class="section-number">04</span>
+    <section id="avantages">
+        <span class="section-number">03</span>
         <h2 class="fade-in">Avantages Concurrentiels</h2>
         <p class="fade-in">Des atouts uniques qui positionnent PLUME comme leader du parapente léger.</p>
 
@@ -1941,10 +2048,10 @@
     </section>
 
     <!-- Innovation Section -->
-    <section id="innovation">
-        <span class="section-number">05</span>
+    <section id="innovation" class="bg-cream">
+        <span class="section-number">04</span>
         <h2 class="fade-in">Innovation</h2>
-        <p class="fade-in">Une approche globale de l'innovation : produit, process et distribution.</p>
+        <p class="fade-in">Une approche globale de l'innovation : produit, process, distribution et innovation de rupture.</p>
 
         <div class="innovation-grid fade-in">
             <div class="innovation-card">
@@ -1976,7 +2083,6 @@
                 </div>
                 <h4>Modèle B2B2C + IA</h4>
                 <p>Première dans le parapente : vente en ligne directe avec intégration obligatoire des écoles partenaires. Conseil assisté par intelligence artificielle.</p>
-                <a href="#business" class="btn-patent">En savoir plus</a>
             </div>
             <div class="innovation-card">
                 <div class="innovation-tag">Sécurité</div>
@@ -1987,14 +2093,19 @@
                 </div>
                 <h4>ACS — Anti Collapse System</h4>
                 <p>Brevet déposé. Système mécanique innovant pour éviter les fermetures de voile. Une avancée majeure en sécurité passive.</p>
-                <a href="https://band-era-f13.notion.site/ACS-Brevet-document-2ed020b3360f808190c3fc308cd1a18a?source=copy_link" target="_blank" rel="noopener noreferrer" class="btn-patent">Voir le dossier brevet</a>
             </div>
+        </div>
+        
+        <div class="fade-in" style="text-align: center; margin-top: 3rem;">
+            <a href="#" class="tab-link" data-tab="innovation" style="display: inline-block; padding: 1rem 2.5rem; background: linear-gradient(135deg, var(--turquoise), #0e7490); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1rem; box-shadow: 0 4px 15px rgba(8, 145, 178, 0.3); transition: all 0.3s ease;">
+                Voir le détail de toutes les innovations →
+            </a>
         </div>
     </section>
 
     <!-- Production Section -->
-    <section id="production" class="bg-cream">
-        <span class="section-number">06</span>
+    <section id="production">
+        <span class="section-number">05</span>
         <h2 class="fade-in">Production & Partenaire</h2>
         <p class="fade-in">Un partenariat exclusif avec une usine de référence en Asie.</p>
 
@@ -2014,8 +2125,8 @@
     </section>
 
     <!-- Gamme Parapente Section -->
-    <section id="gamme">
-        <span class="section-number">07</span>
+    <section id="gamme" class="bg-cream">
+        <span class="section-number">06</span>
         <h2 class="fade-in">La Gamme Parapente</h2>
         <p class="fade-in">Une offre complète pour tous les profils de pilotes et tous les usages.</p>
 
@@ -2078,16 +2189,18 @@
     </section>
 
     <!-- Business Model Section -->
-    <section id="business" class="bg-cream">
-        <span class="section-number">08</span>
-        <h2 class="fade-in">Modèle Commercial B2B2C</h2>
+    <section id="business">
+        <span class="section-number">07</span>
+        <h2 class="fade-in">Business</h2>
         <p class="fade-in">Une innovation majeure dans la distribution du parapente.</p>
 
+        <!-- Modèle B2B2C -->
+        <h3 class="fade-in" style="margin-top: 2rem;">Modèle Commercial B2B2C</h3>
         <div class="business-schema fade-in" style="text-align: center;">
             <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/Generated%20Image%20December%2018%2C%202025%20-%2010_35AM.jpeg" alt="Schéma du modèle B2B2C PLUME" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
         </div>
 
-        <h3 class="fade-in">Avantages du modèle</h3>
+        <h4 class="fade-in">Avantages du modèle</h4>
         <div class="business-advantages fade-in">
             <div class="advantage"><h5>Automatisation des ventes</h5><p>Les écoles génèrent des ventes en saison comme hors saison avec une logistique simplifiée.</p></div>
             <div class="advantage"><h5>Exclusivité géographique</h5><p>Chaque école partenaire bénéficie d'un secteur exclusif, créant un effet d'opportunité limitée.</p></div>
@@ -2102,19 +2215,16 @@
         </div>
 
         <p class="fade-in" style="margin-top: 2rem; font-size: 0.9rem;"><strong>Cycle de trésorerie favorable :</strong> Clients paient immédiatement sur le site — Fournisseurs payés 3 semaines après livraison.</p>
-    </section>
 
-    <!-- B2C Voiles Écoles Section -->
-    <section id="b2c-ecoles">
-        <span class="section-number">09</span>
-        <h2 class="fade-in">Modèle B2C — Voiles Écoles</h2>
+        <!-- Modèle B2C Voiles Écoles -->
+        <h3 class="fade-in" style="margin-top: 4rem;">Modèle B2C — Voiles Écoles</h3>
         <p class="fade-in">Un circuit de distribution dédié exclusivement à l'enseignement et la formation des élèves.</p>
 
         <div class="business-schema fade-in" style="text-align: center;">
             <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/Generated%20Image%20December%2018%2C%202025%20-%2010_47AM.jpeg" alt="Schéma du modèle B2C Voiles Écoles PLUME" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
         </div>
 
-        <h3 class="fade-in">Spécificités du modèle Écoles</h3>
+        <h4 class="fade-in">Spécificités du modèle Écoles</h4>
         <div class="business-advantages fade-in">
             <div class="advantage"><h5>Voiles dédiées formation</h5><p>Ailes spécialement conçues pour l'enseignement : robustes, tolérantes et adaptées aux premiers vols des élèves.</p></div>
             <div class="advantage"><h5>Vente directe aux écoles</h5><p>Circuit B2C simplifié : les écoles commandent directement pour équiper leur flotte pédagogique.</p></div>
@@ -2129,11 +2239,143 @@
         </div>
 
         <p class="fade-in" style="margin-top: 2rem; font-size: 0.9rem;"><strong>Avantage clé :</strong> Les écoles partenaires bénéficient de conditions préférentielles et d'un SAV prioritaire pour assurer la continuité de leur activité de formation.</p>
+
+        <!-- Analyse des Marges -->
+        <h3 class="fade-in" style="margin-top: 4rem;">Analyse des Marges par Canal de Vente</h3>
+        <p class="fade-in">Décomposition des coûts et marges selon le canal de distribution.</p>
+
+        <!-- Vente via Partenaires -->
+        <div class="fade-in" style="margin-top: 2rem;">
+            <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.5rem;">
+                <div style="height: 4px; width: 40px; background: var(--gold); border-radius: 2px;"></div>
+                <h4 style="margin: 0; color: var(--gray-800);">Vente via Partenaires</h4>
+                <span style="font-size: 0.85rem; color: var(--gray-500);">(Commission 20%)</span>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                <!-- A+ Classic -->
+                <div style="background: white; border-radius: 16px; padding: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e0e0e0;">
+                    <h5 style="font-size: 1.2rem; color: var(--gray-800); margin-bottom: 0.5rem; text-align: center;">A+ Classic</h5>
+                    <p style="text-align: center; color: var(--gray-500); font-size: 0.9rem; margin-bottom: 1rem;">Prix HT : 2 666,67 €</p>
+                    <div style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, rgba(8, 145, 178, 0.1), rgba(8, 145, 178, 0.05)); border-radius: 12px; margin-bottom: 1rem;">
+                        <div style="font-size: 2rem; font-weight: 700; color: var(--turquoise);">44,2%</div>
+                        <div style="font-size: 0.85rem; color: var(--gray-500);">Marge</div>
+                    </div>
+                    <div style="border-top: 2px solid var(--turquoise); padding-top: 1rem;">
+                        <div style="display: flex; justify-content: space-between; padding: 0.4rem 0;"><span style="display: flex; align-items: center; gap: 0.5rem;"><span style="width: 10px; height: 10px; border-radius: 50%; background: var(--turquoise);"></span> Marge Plume</span><strong style="color: var(--turquoise);">1 179,46 €</strong></div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.3rem 0; font-size: 0.85rem;"><span style="display: flex; align-items: center; gap: 0.5rem;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #4A90A4;"></span> Prix Usine</span><span>838,00 €</span></div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.3rem 0; font-size: 0.85rem;"><span style="display: flex; align-items: center; gap: 0.5rem;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold);"></span> Marge Partenaire</span><span>533,33 €</span></div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.3rem 0; font-size: 0.85rem;"><span style="display: flex; align-items: center; gap: 0.5rem;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #AB47BC;"></span> Frais paiement</span><span>48,25 €</span></div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.3rem 0; font-size: 0.85rem;"><span style="display: flex; align-items: center; gap: 0.5rem;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #7CB342;"></span> Logistique</span><span>45,00 €</span></div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.3rem 0; font-size: 0.85rem;"><span style="display: flex; align-items: center; gap: 0.5rem;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #FF7043;"></span> Taxes Import</span><span>22,63 €</span></div>
+                    </div>
+                </div>
+
+                <!-- B- Ultra -->
+                <div style="background: white; border-radius: 16px; padding: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e0e0e0;">
+                    <h5 style="font-size: 1.2rem; color: var(--gray-800); margin-bottom: 0.5rem; text-align: center;">B- Ultra</h5>
+                    <p style="text-align: center; color: var(--gray-500); font-size: 0.9rem; margin-bottom: 1rem;">Prix HT : 3 500,00 €</p>
+                    <div style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, rgba(8, 145, 178, 0.1), rgba(8, 145, 178, 0.05)); border-radius: 12px; margin-bottom: 1rem;">
+                        <div style="font-size: 2rem; font-weight: 700; color: var(--turquoise);">44,7%</div>
+                        <div style="font-size: 0.85rem; color: var(--gray-500);">Marge</div>
+                    </div>
+                    <div style="border-top: 2px solid var(--turquoise); padding-top: 1rem;">
+                        <div style="display: flex; justify-content: space-between; padding: 0.4rem 0;"><span style="display: flex; align-items: center; gap: 0.5rem;"><span style="width: 10px; height: 10px; border-radius: 50%; background: var(--turquoise);"></span> Marge Plume</span><strong style="color: var(--turquoise);">1 563,08 €</strong></div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.3rem 0; font-size: 0.85rem;"><span style="display: flex; align-items: center; gap: 0.5rem;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #4A90A4;"></span> Prix Usine</span><span>1 099,00 €</span></div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.3rem 0; font-size: 0.85rem;"><span style="display: flex; align-items: center; gap: 0.5rem;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold);"></span> Marge Partenaire</span><span>700,00 €</span></div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.3rem 0; font-size: 0.85rem;"><span style="display: flex; align-items: center; gap: 0.5rem;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #AB47BC;"></span> Frais paiement</span><span>63,25 €</span></div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.3rem 0; font-size: 0.85rem;"><span style="display: flex; align-items: center; gap: 0.5rem;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #7CB342;"></span> Logistique</span><span>45,00 €</span></div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.3rem 0; font-size: 0.85rem;"><span style="display: flex; align-items: center; gap: 0.5rem;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #FF7043;"></span> Taxes Import</span><span>29,67 €</span></div>
+                    </div>
+                </div>
+
+                <!-- K2- Ultra -->
+                <div style="background: white; border-radius: 16px; padding: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e0e0e0;">
+                    <h5 style="font-size: 1.2rem; color: var(--gray-800); margin-bottom: 0.5rem; text-align: center;">K2- Ultra</h5>
+                    <p style="text-align: center; color: var(--gray-500); font-size: 0.9rem; margin-bottom: 1rem;">Prix HT : 2 333,34 €</p>
+                    <div style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, rgba(8, 145, 178, 0.1), rgba(8, 145, 178, 0.05)); border-radius: 12px; margin-bottom: 1rem;">
+                        <div style="font-size: 2rem; font-weight: 700; color: var(--turquoise);">46,3%</div>
+                        <div style="font-size: 0.85rem; color: var(--gray-500);">Marge</div>
+                    </div>
+                    <div style="border-top: 2px solid var(--turquoise); padding-top: 1rem;">
+                        <div style="display: flex; justify-content: space-between; padding: 0.4rem 0;"><span style="display: flex; align-items: center; gap: 0.5rem;"><span style="width: 10px; height: 10px; border-radius: 50%; background: var(--turquoise);"></span> Marge Plume</span><strong style="color: var(--turquoise);">1 081,06 €</strong></div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.3rem 0; font-size: 0.85rem;"><span style="display: flex; align-items: center; gap: 0.5rem;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #4A90A4;"></span> Prix Usine</span><span>680,00 €</span></div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.3rem 0; font-size: 0.85rem;"><span style="display: flex; align-items: center; gap: 0.5rem;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold);"></span> Marge Partenaire</span><span>466,67 €</span></div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.3rem 0; font-size: 0.85rem;"><span style="display: flex; align-items: center; gap: 0.5rem;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #AB47BC;"></span> Frais paiement</span><span>42,25 €</span></div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.3rem 0; font-size: 0.85rem;"><span style="display: flex; align-items: center; gap: 0.5rem;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #7CB342;"></span> Logistique</span><span>45,00 €</span></div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.3rem 0; font-size: 0.85rem;"><span style="display: flex; align-items: center; gap: 0.5rem;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #FF7043;"></span> Taxes Import</span><span>18,36 €</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vente Directe Écoles -->
+        <div class="fade-in" style="margin-top: 3rem;">
+            <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.5rem;">
+                <div style="height: 4px; width: 40px; background: var(--turquoise); border-radius: 2px;"></div>
+                <h4 style="margin: 0; color: var(--gray-800);">Vente Directe Écoles</h4>
+                <span style="font-size: 0.85rem; color: var(--gray-500);">(Sans commission)</span>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 1.5rem;">
+                <!-- Pack École A+ Classic -->
+                <div style="background: white; border-radius: 16px; padding: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 2px solid var(--turquoise);">
+                    <h5 style="font-size: 1.2rem; color: var(--gray-800); margin-bottom: 0.3rem; text-align: center;">A+ Classic</h5>
+                    <p style="text-align: center; margin-bottom: 0.5rem;"><span style="background: rgba(8, 145, 178, 0.15); color: var(--turquoise); padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.75rem;">Pack Écoles (Prix Pro)</span></p>
+                    <p style="text-align: center; color: var(--gray-500); font-size: 0.9rem; margin-bottom: 1rem;">Prix HT : 1 650,00 €</p>
+                    <div style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, rgba(8, 145, 178, 0.1), rgba(8, 145, 178, 0.05)); border-radius: 12px; margin-bottom: 1rem;">
+                        <div style="font-size: 2rem; font-weight: 700; color: var(--turquoise);">43,3%</div>
+                        <div style="font-size: 0.85rem; color: var(--gray-500);">Marge</div>
+                    </div>
+                    <div style="border-top: 2px solid var(--turquoise); padding-top: 1rem;">
+                        <div style="display: flex; justify-content: space-between; padding: 0.4rem 0;"><span style="display: flex; align-items: center; gap: 0.5rem;"><span style="width: 10px; height: 10px; border-radius: 50%; background: var(--turquoise);"></span> Marge Plume</span><strong style="color: var(--turquoise);">714,42 €</strong></div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.3rem 0; font-size: 0.85rem;"><span style="display: flex; align-items: center; gap: 0.5rem;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #4A90A4;"></span> Prix Usine</span><span>838,00 €</span></div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.3rem 0; font-size: 0.85rem;"><span style="display: flex; align-items: center; gap: 0.5rem;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #AB47BC;"></span> Frais paiement</span><span>29,95 €</span></div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.3rem 0; font-size: 0.85rem;"><span style="display: flex; align-items: center; gap: 0.5rem;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #7CB342;"></span> Logistique</span><span>45,00 €</span></div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.3rem 0; font-size: 0.85rem;"><span style="display: flex; align-items: center; gap: 0.5rem;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #FF7043;"></span> Taxes Import</span><span>22,63 €</span></div>
+                    </div>
+                </div>
+
+                <!-- Comparaison -->
+                <div style="background: linear-gradient(135deg, rgba(8, 145, 178, 0.08), white); border-radius: 16px; padding: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                    <h5 style="font-size: 1.1rem; color: var(--gray-800); margin-bottom: 1.5rem;">📊 Comparaison A+ Classic</h5>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                        <div style="background: white; border-radius: 12px; padding: 1.2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                            <p style="color: var(--gray-500); font-size: 0.85rem; margin-bottom: 0.5rem;">Via Partenaire</p>
+                            <p style="font-size: 1.5rem; font-weight: 700; color: var(--gray-800);">2 666,67 €</p>
+                            <p style="color: var(--gray-500); font-size: 0.8rem;">Prix HT</p>
+                            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #eee;">
+                                <p style="font-size: 1.1rem; font-weight: 600; color: var(--turquoise);">1 179,46 € <span style="font-size: 0.8rem; color: var(--gray-500);">(44,2%)</span></p>
+                                <p style="color: var(--gray-500); font-size: 0.75rem;">Marge Plume</p>
+                            </div>
+                        </div>
+                        
+                        <div style="background: white; border-radius: 12px; padding: 1.2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border: 2px solid rgba(8, 145, 178, 0.3);">
+                            <p style="color: var(--gray-500); font-size: 0.85rem; margin-bottom: 0.5rem;">Vente Directe École</p>
+                            <p style="font-size: 1.5rem; font-weight: 700; color: var(--gray-800);">1 650,00 €</p>
+                            <p style="color: var(--gray-500); font-size: 0.8rem;">Prix HT</p>
+                            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #eee;">
+                                <p style="font-size: 1.1rem; font-weight: 600; color: var(--turquoise);">714,42 € <span style="font-size: 0.8rem; color: var(--gray-500);">(43,3%)</span></p>
+                                <p style="color: var(--gray-500); font-size: 0.75rem;">Marge Plume</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(201, 125, 24, 0.1); border-radius: 12px;">
+                        <p style="color: var(--gray-700); font-size: 0.9rem; line-height: 1.5;">
+                            <strong style="color: var(--gold);">💡 Analyse :</strong> La vente directe école offre un prix attractif (-38%) pour les écoles tout en maintenant un % de marge similaire (43,3% vs 44,2%). La marge en valeur est plus faible (-465€) mais sans intermédiaire.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </section>
 
     <!-- Chiffres Section -->
-    <section id="chiffres">
-        <span class="section-number">10</span>
+    <section id="chiffres" class="bg-cream">
+        <span class="section-number">08</span>
         <h2 class="fade-in">Chiffres Clés</h2>
         <p class="fade-in">Les indicateurs essentiels du business plan.</p>
 
@@ -2159,8 +2401,8 @@
     </section>
 
     <!-- Financement Section -->
-    <section id="financement" class="bg-cream">
-        <span class="section-number">11</span>
+    <section id="financement">
+        <span class="section-number">09</span>
         <h2 class="fade-in">Plan de Financement</h2>
         <p class="fade-in">Une structure financière solide pour assurer le développement.</p>
 
@@ -2224,8 +2466,8 @@
     </section>
 
     <!-- Communication Section -->
-    <section id="communication">
-        <span class="section-number">12</span>
+    <section id="communication" class="bg-cream">
+        <span class="section-number">10</span>
         <h2 class="fade-in">Stratégie Communication</h2>
         <p class="fade-in">Une visibilité unique dans l'industrie grâce à un réseau d'influence exceptionnel.</p>
 
@@ -2299,8 +2541,8 @@
     </section>
 
     <!-- Roadmap Section -->
-    <section id="roadmap" class="bg-cream">
-        <span class="section-number">13</span>
+    <section id="roadmap">
+        <span class="section-number">11</span>
         <h2 class="fade-in">Roadmap</h2>
         <p class="fade-in">Les étapes clés du développement de PLUME.</p>
 
@@ -2377,32 +2619,57 @@
         <section id="innovation-sommaire" class="bg-cream">
             <span class="section-number">01</span>
             <h2 class="fade-in">Sommaire</h2>
-            <p class="fade-in">Découvrez les différents axes d'innovation de PLUME Paragliders.</p>
+            <p class="fade-in" style="max-width: 100%;">PLUME a une approche globale de l'innovation : produit, process, distribution et innovation de rupture.</p>
             
             <div class="vision-grid fade-in" style="margin-top: 3rem;">
-                <div class="vision-card" style="text-align: left;">
-                    <h4 style="display: flex; align-items: center; gap: 0.8rem;"><span style="background: var(--turquoise); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">01</span> PLUME MIND — Solver Propriétaire</h4>
-                    <p>Logiciel interne de conception et dimensionnement fusionnant aérodynamisme et structure en temps réel.</p>
+                <div class="vision-card sommaire-link" data-target="innovation-logiciels" style="text-align: left; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                    <h4 style="display: flex; align-items: center; gap: 0.8rem; color: var(--turquoise);"><span style="background: var(--turquoise); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">01</span> PLUME MIND</h4>
+                    <p>Logiciel propriétaire au cœur de notre avantage compétitif : légèreté, précision, rapidité, calcul.</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.8rem;">
+                        <span style="background: var(--turquoise); color: white; padding: 0.3rem 0.6rem; border-radius: 15px; font-size: 0.75rem;">Innovation logicielle</span>
+                        <span style="background: var(--gray-800); color: white; padding: 0.3rem 0.6rem; border-radius: 15px; font-size: 0.75rem; font-weight: 600;">25 000 €</span>
+                    </div>
                 </div>
-                <div class="vision-card" style="text-align: left;">
-                    <h4 style="display: flex; align-items: center; gap: 0.8rem;"><span style="background: var(--turquoise); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">02</span> PLUME Hybrid</h4>
-                    <p>Architecture Aérodynamique Hybride — Innovation de rupture combinant mono-surface et double surface.</p>
+                <div class="vision-card sommaire-link" data-target="innovation-design" style="text-align: left; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                    <h4 style="display: flex; align-items: center; gap: 0.8rem; color: var(--turquoise);"><span style="background: var(--turquoise); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">02</span> PLUME Hybrid</h4>
+                    <p>Nouveau concept de parapente avec une architecture aérodynamique hybride.</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.8rem;">
+                        <span style="background: var(--turquoise); color: white; padding: 0.3rem 0.6rem; border-radius: 15px; font-size: 0.75rem;">Innovation de conception</span>
+                        <span style="background: var(--gray-800); color: white; padding: 0.3rem 0.6rem; border-radius: 15px; font-size: 0.75rem; font-weight: 600;">54 000 €</span>
+                        <span style="background: white; color: var(--gray-800); padding: 0.3rem 0.6rem; border-radius: 15px; font-size: 0.75rem; border: 1px solid var(--gray-300);">Sortie printemps 2027</span>
+                    </div>
                 </div>
-                <div class="vision-card" style="text-align: left;">
-                    <h4 style="display: flex; align-items: center; gap: 0.8rem;"><span style="background: var(--turquoise); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">03</span> PLUME Duale</h4>
-                    <p>Première aile au monde à géométrie variable fusionnant parapente et parakite — Sortie Automne 2026.</p>
+                <div class="vision-card sommaire-link" data-target="innovation-nouveau-concept" style="text-align: left; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                    <h4 style="display: flex; align-items: center; gap: 0.8rem; color: var(--turquoise);"><span style="background: var(--turquoise); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">03</span> PLUME Dual</h4>
+                    <p>Nouveau concept à géométrie variable pour ouvrir le marché des alpinistes.</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.8rem;">
+                        <span style="background: var(--turquoise); color: white; padding: 0.3rem 0.6rem; border-radius: 15px; font-size: 0.75rem;">Innovation conception</span>
+                        <span style="background: var(--gray-800); color: white; padding: 0.3rem 0.6rem; border-radius: 15px; font-size: 0.75rem; font-weight: 600;">27 000 €</span>
+                        <span style="background: white; color: var(--gray-800); padding: 0.3rem 0.6rem; border-radius: 15px; font-size: 0.75rem; border: 1px solid var(--gray-300);">Sortie automne 2026</span>
+                    </div>
                 </div>
-                <div class="vision-card" style="text-align: left;">
-                    <h4 style="display: flex; align-items: center; gap: 0.8rem;"><span style="background: var(--turquoise); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">04</span> PLUME Connect</h4>
-                    <p>Distribution hybride, Demo-Center autonome, Support IA auto-apprenant et R&D participative par la data.</p>
+                <div class="vision-card sommaire-link" data-target="innovation-site-internet" style="text-align: left; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                    <h4 style="display: flex; align-items: center; gap: 0.8rem; color: var(--turquoise);"><span style="background: var(--turquoise); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">04</span> PLUME Connect</h4>
+                    <p>4 innovations de procédé pour une croissance scalable par l'automatisation.</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.8rem;">
+                        <span style="background: var(--turquoise); color: white; padding: 0.3rem 0.6rem; border-radius: 15px; font-size: 0.75rem;">Innovation de procédé</span>
+                        <span style="background: var(--gray-800); color: white; padding: 0.3rem 0.6rem; border-radius: 15px; font-size: 0.75rem; font-weight: 600;">32 000 €</span>
+                    </div>
                 </div>
-                <div class="vision-card" style="text-align: left;">
-                    <h4 style="display: flex; align-items: center; gap: 0.8rem;"><span style="background: var(--gold); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">05</span> ACS — Brevet</h4>
-                    <p>Anti Collapse System : une innovation brevetée pour la sécurité.</p>
+                <div class="vision-card sommaire-link" data-target="innovation-acs" style="text-align: left; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                    <h4 style="display: flex; align-items: center; gap: 0.8rem; color: var(--turquoise);"><span style="background: var(--turquoise); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">05</span> ACS</h4>
+                    <p>Anti-Collapse System — Innovation brevetée DeepTech.</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.8rem;">
+                        <span style="background: var(--gold); color: white; padding: 0.3rem 0.6rem; border-radius: 15px; font-size: 0.75rem;">Innovation de rupture — Brevet</span>
+                        <span style="background: var(--gray-800); color: white; padding: 0.3rem 0.6rem; border-radius: 15px; font-size: 0.75rem; font-weight: 600;">300 000 €</span>
+                    </div>
                 </div>
-                <div class="vision-card" style="text-align: left;">
-                    <h4 style="display: flex; align-items: center; gap: 0.8rem;"><span style="background: var(--gold); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">06</span> Budget Innovation</h4>
-                    <p>Plan de financement et utilisation des fonds pour l'innovation.</p>
+                <div class="vision-card sommaire-link" data-target="innovation-budget" style="text-align: left; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                    <h4 style="display: flex; align-items: center; gap: 0.8rem; color: var(--turquoise);"><span style="background: var(--turquoise); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">06</span> Budget Innovation 2026</h4>
+                    <p>Synthèse des investissements R&D pour nos produits innovants.</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.8rem;">
+                        <span style="background: var(--gray-800); color: white; padding: 0.3rem 0.6rem; border-radius: 15px; font-size: 0.75rem; font-weight: 600;">76 700 € total</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -2414,10 +2681,10 @@
             <div class="innovation-hero" style="background-image: linear-gradient(135deg, rgba(12, 74, 110, 0.2) 0%, rgba(15, 36, 48, 0.25) 100%), url('https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/plume%20mind.jpeg');">
                 <div class="innovation-hero-content fade-in">
                     <h2>PLUME MIND</h2>
-                    <p class="innovation-hero-subtitle">Logiciel Propriétaire de Conception & Dimensionnement — En production</p>
+                    <p class="innovation-hero-subtitle">Logiciel propriétaire au cœur de notre avantage compétitif : légèreté, précision, rapidité, calcul</p>
                     <div class="innovation-hero-keywords">
                         <span class="keyword-badge">Innovation logicielle</span>
-                        <span class="keyword-badge"><strong>~25 000 €</strong> budget total</span>
+                        <span class="keyword-badge"><strong>25 000 €</strong> budget total</span>
                     </div>
                 </div>
             </div>
@@ -2441,10 +2708,18 @@
             <div class="innovation-solution">
                 <h3>Notre solution en bref</h3>
                 <div class="solution-highlight fade-in">
-                    <p>PLUME MIND est un <strong>logiciel de conception interne</strong> qui fusionne en temps réel l'aérodynamisme et la structure. Au lieu de concevoir l'aile puis de calculer sa solidité ensuite (approche séquentielle), notre outil <strong>adapte automatiquement la structure</strong> selon les contraintes physiques. Résultat : des ailes plus légères, plus précises, développées <strong>5 fois plus vite</strong>, avec une <strong>précision au millimètre</strong>.</p>
+                    <p>PLUME MIND est un <strong>logiciel conçu et développé en interne</strong>, qui intègre des fonctionnalités inexistantes sur le marché :</p>
+                    <ul style="margin: 1rem 0; padding-left: 1.5rem; line-height: 1.8;">
+                        <li><strong>Calcul structurel automatisé</strong> — dimensionnement de chaque pièce selon les contraintes physiques réelles</li>
+                        <li><strong>Sélection optimale des matériaux</strong> — choix automatique du bon matériau et diamètre pour les suspentes</li>
+                        <li><strong>Pré-calculs de certification</strong> — génération des données nécessaires à l'homologation EN/LTF</li>
+                        <li><strong>Préparation des fichiers de production</strong> — export direct des fichiers prêts pour la fabrication</li>
+                    </ul>
+                    <p>Résultat : une <strong>précision de conception inégalée</strong> qui nous permet de créer les ailes les plus légères du marché, avec un cycle de développement <strong>5 fois plus rapide</strong> que les méthodes traditionnelles.</p>
                 </div>
                 <div class="fade-in" style="margin: 2rem 0;">
                     <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/Plume%20mind%2C%20trac%C3%A9%20le%20chemin%20des%20effort.png" alt="Illustration Plume Mind - Le chemin des efforts" style="width: 100%; height: auto; display: block; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
+                    <p style="text-align: center; font-size: 0.85rem; color: var(--gray-500); margin-top: 0.8rem; font-style: italic;">Capture d'écran de PLUME MIND — Positionnement des chemins d'effort avant dimensionnement</p>
                 </div>
                 <div class="solution-benefits fade-in">
                     <div class="benefit-item">
@@ -2471,7 +2746,7 @@
                 <div class="technical-grid single-column fade-in">
                     <div class="technical-item">
                         <h4>1. Conception pilotée par l'effort</h4>
-                        <p>L'ingénieur définit les <strong>chemins d'efforts stratégiques</strong>. Le logiciel calcule instantanément :</p>
+                        <p><strong>Seul logiciel du marché</strong> qui intègre simultanément les efforts aérodynamiques, la pression interne, le load test et le shock test de la norme EN. Le logiciel calcule instantanément :</p>
                         <ul>
                             <li>La géométrie idéale de chaque pièce</li>
                             <li>La quantité de matière strictement nécessaire</li>
@@ -2480,7 +2755,7 @@
                         <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/rib%20alpha%207.png" alt="Structure Nervure Rib Alpha 7" style="width: 100%; max-width: 600px; height: auto; display: block; margin: 1.5rem auto 0;" />
                     </div>
                     <div class="technical-item">
-                        <h4>2. Algorithme de suspentage intelligent</h4>
+                        <h4>2. Calcul et sélection automatique du suspentage</h4>
                         <p>Pour les lignes (suspentes), l'algorithme gère automatiquement :</p>
                         <ul>
                             <li><strong>Sélection automatique</strong> du matériau et diamètre optimal</li>
@@ -2488,6 +2763,7 @@
                             <li><strong>Compensation micrométrique</strong> (élasticité, réduction d'arcs...)</li>
                         </ul>
                         <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/line%20load%20calculation.png" alt="Calcul de charge des lignes (Line Load)" style="width: 100%; height: auto; display: block; margin: 1.5rem auto 0; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); background-color: #fff;" />
+                        <p style="text-align: center; font-size: 0.85rem; color: var(--gray-500); margin-top: 0.8rem; font-style: italic;">Capture d'écran de PLUME MIND — Calcul des efforts par suspente</p>
                     </div>
                     <div class="technical-item">
                         <h4>3. Passerelle Design-to-Manufacture</h4>
@@ -2502,12 +2778,7 @@
                     </div>
                 </div>
                 
-                <!-- Conclusion / Impact -->
-                <div class="fade-in" style="margin-top: 3rem; padding: 2.5rem; background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); border-radius: 12px; color: white; text-align: center;">
-                    <h4 style="font-size: 1.4rem; font-weight: 600; margin-bottom: 1rem; color: white;">💡 Impact concurrentiel</h4>
-                    <p style="font-size: 1.1rem; line-height: 1.7; max-width: 800px; margin: 0 auto;"><strong>PLUME MIND divise par 5 le temps de développement</strong>, mais son atout majeur est la précision absolue. Il nous permet d'atteindre une justesse de calage et de dimensionnement <strong>impossible à obtenir avec des méthodes manuelles</strong>, garantissant une performance "Light" sans compromis sur la sécurité.</p>
                 </div>
-            </div>
             
             <!-- 5. TIMELINE -->
             <div class="innovation-timeline">
@@ -2518,21 +2789,9 @@
                     <div class="timeline-step">
                         <div class="timeline-dot completed"></div>
                         <div class="timeline-card">
-                            <div class="timeline-date">2024</div>
-                            <h4>Développement initial</h4>
-                            <p>Conception de l'architecture, premiers modules de calcul.</p>
-                            <div class="timeline-progress">
-                                <div class="timeline-progress-bar" style="width: 100%;"></div>
-                            </div>
-                            <div class="timeline-progress-label">100% terminé</div>
-                        </div>
-                    </div>
-                    <div class="timeline-step">
-                        <div class="timeline-dot completed"></div>
-                        <div class="timeline-card">
-                            <div class="timeline-date">Fin 2024</div>
-                            <h4>Validation & Tests</h4>
-                            <p>Tests sur prototypes réels, validation des calculs.</p>
+                            <div class="timeline-date">2025</div>
+                            <h4>Création du logiciel</h4>
+                            <p>Calcul de la structure, de l'aérodynamique, des scénarios (load test, pression interne, normes EN). Dimensionnement et choix des suspentes. Préparation des fichiers de production.</p>
                             <div class="timeline-progress">
                                 <div class="timeline-progress-bar" style="width: 100%;"></div>
                             </div>
@@ -2542,13 +2801,13 @@
                     <div class="timeline-step">
                         <div class="timeline-dot current"></div>
                         <div class="timeline-card current">
-                            <div class="timeline-date">2025-2026</div>
-                            <h4>Production & Améliorations</h4>
-                            <p>Utilisation quotidienne, nouvelles fonctionnalités.</p>
+                            <div class="timeline-date">2026</div>
+                            <h4>Nouvelles fonctionnalités</h4>
+                            <p>Calcul du ballooning, calcul des arcs des suspentes avec la traînée, calcul de l'élasticité. Amélioration du workflow.</p>
                             <div class="timeline-progress">
-                                <div class="timeline-progress-bar" style="width: 80%;"></div>
+                                <div class="timeline-progress-bar" style="width: 50%;"></div>
                             </div>
-                            <div class="timeline-progress-label">80% opérationnel</div>
+                            <div class="timeline-progress-label">50%</div>
                         </div>
                     </div>
                     <div class="timeline-step">
@@ -2586,11 +2845,11 @@
                     </div>
                     <div class="budget-card total">
                         <h4>Budget Total</h4>
-                        <div class="budget-amount">~25 000 €</div>
+                        <div class="budget-amount">25 000 €</div>
                         <div class="budget-details">
                             <div class="budget-line">
                                 <span class="budget-line-label">Développement initial (2024)</span>
-                                <span class="budget-line-amount">~15 000 €</span>
+                                <span class="budget-line-amount">15 000 €</span>
                             </div>
                             <div class="budget-line">
                                 <span class="budget-line-label">Évolutions 2026</span>
@@ -2614,10 +2873,11 @@
             <div class="innovation-hero" style="background-image: url('https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/hybrid%20color%20full%202K.jpeg');">
                 <div class="innovation-hero-content fade-in">
                     <h2>PLUME Hybrid</h2>
-                    <p class="innovation-hero-subtitle">Architecture Aérodynamique Hybride — Sortie Printemps 2027</p>
+                    <p class="innovation-hero-subtitle">Nouveau concept de parapente avec une architecture aérodynamique hybride</p>
                     <div class="innovation-hero-keywords">
-                        <span class="keyword-badge">Innovation conception parapente</span>
+                        <span class="keyword-badge">Innovation de rupture</span>
                         <span class="keyword-badge"><strong>54 000 €</strong> budget total</span>
+                        <span class="keyword-badge">Sortie printemps 2027</span>
                     </div>
                 </div>
             </div>
@@ -2625,14 +2885,10 @@
             <!-- 2. PROBLÈME À RÉSOUDRE -->
             <div class="innovation-problem">
                 <h3>Le problème à résoudre</h3>
-                <div class="problem-content fade-in">
-                    <div class="problem-card">
-                        <h4>Mono-surface : légère mais limitée</h4>
-                        <p>Ultra-légère et accessible, cette technologie est pénalisée par une faible vitesse, un atterrissage brutal (pas d'arrondi possible) et une dégradation rapide des performances en conditions turbulentes.</p>
-                    </div>
-                    <div class="problem-card">
-                        <h4>Double surface : performante mais contraignante</h4>
-                        <p>Performante et rapide, mais lourde, volumineuse, coûteuse à produire et exigeante techniquement. Ces deux technologies sont aujourd'hui incompatibles.</p>
+                <div class="problem-content fade-in" style="display: block;">
+                    <div class="problem-card" style="max-width: 100%;">
+                        <h4>Un sport à rendre plus accessible</h4>
+                        <p>Le parapente est perçu comme un sport onéreux, exigeant techniquement, coûteux en équipement et qui fait peur. Notre objectif : réduire ces freins pour démocratiser la pratique.</p>
                     </div>
                 </div>
             </div>
@@ -2641,63 +2897,70 @@
             <div class="innovation-solution">
                 <h3>Notre solution en bref</h3>
                 <div class="solution-highlight fade-in">
-                    <p>Notre objectif : créer une aile qui combine le meilleur des deux mondes. <strong>Légère comme une mono-surface</strong> au bout des ailes (stabilité, poids réduit), mais avec un <strong>centre performant en double surface</strong> (vitesse, plané, arrondi à l'atterrissage). Ce type de produit n'existe pas sur le marché — nous créons une nouvelle catégorie. C'est le principe de l'hybridation zonale : on garde le tissu là où il est utile, on le supprime là où il ne l'est pas.</p>
+                    <p><strong>Pour comprendre notre solution, il faut d'abord comprendre les deux technologies sur le marché.</strong> Chacune a ses avantages et ses inconvénients :</p>
+                    <div style="margin: 1.5rem 0;">
+                        <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/mono%20double%20surface.png" alt="Comparaison Mono et Double Surface" style="width: 100%; max-width: 750px; height: auto; display: block; margin: 0 auto; border-radius: 8px;" />
+                        <p style="text-align: center; font-size: 0.85rem; color: var(--gray-500); margin-top: 0.8rem; font-style: italic;">Comparaison des profils mono-surface et double-surface</p>
+                    </div>
                     
-                    <!-- Illustration visuelle de l'hybridation -->
-                    <div style="display: flex; flex-direction: column; align-items: center; margin-top: 2.5rem; gap: 1.5rem;">
-                        <!-- Ligne du haut : Mono + Classique -->
-                        <div style="display: flex; align-items: stretch; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-                            <!-- Card Mono-surface -->
-                            <div style="background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); padding: 1.5rem; width: 380px; border: 1px solid #e0e0e0;">
-                                <div style="text-align: center; margin-bottom: 1rem;">
-                                    <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/mono%20surface.png" alt="Mono Surface" style="width: 100%; max-width: 320px; height: auto; border-radius: 10px;">
-                                </div>
-                                <h4 style="text-align: center; font-size: 1.2rem; color: var(--dark); margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 2px solid #eee;">Mono-surface</h4>
-                                <div style="display: flex; gap: 1rem;">
-                                    <div style="flex: 1; background: #e8f5e9; padding: 0.75rem; border-radius: 8px;">
-                                        <p style="color: #2e7d32; font-weight: 700; font-size: 0.8rem; margin-bottom: 0.5rem;">✓ AVANTAGES</p>
-                                        <ul style="color: #333; font-size: 0.85rem; line-height: 1.6; margin: 0; padding-left: 1rem;">
-                                            <li>Poids léger</li>
-                                            <li>Stabilité</li>
-                                            <li>Coût réduit</li>
-                                        </ul>
-                                    </div>
-                                    <div style="flex: 1; background: #ffebee; padding: 0.75rem; border-radius: 8px;">
-                                        <p style="color: #c62828; font-weight: 700; font-size: 0.8rem; margin-bottom: 0.5rem;">✗ INCONVÉNIENTS</p>
-                                        <ul style="color: #333; font-size: 0.85rem; line-height: 1.6; margin: 0; padding-left: 1rem;">
-                                            <li>Atterrissage difficile</li>
-                                            <li>Manque de vitesse</li>
-                                            <li>Peu performante</li>
-                                        </ul>
-                                    </div>
-                                </div>
+                    <!-- Cards comparatives Mono / Double -->
+                    <div style="display: flex; align-items: stretch; justify-content: center; gap: 2rem; flex-wrap: wrap; margin: 2rem 0;">
+                        <!-- Card Mono-surface -->
+                        <div style="background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); padding: 1.5rem; width: 380px; border: 1px solid #e0e0e0;">
+                            <div style="text-align: center; margin-bottom: 1rem;">
+                                <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/mono%20surface.png" alt="Mono Surface" style="width: 100%; max-width: 320px; height: auto; border-radius: 10px;">
                             </div>
-                            <!-- Card Double surface -->
-                            <div style="background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); padding: 1.5rem; width: 380px; border: 1px solid #e0e0e0;">
-                                <div style="text-align: center; margin-bottom: 1rem;">
-                                    <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/parapente%20normal.png" alt="Parapente Classique" style="width: 100%; max-width: 320px; height: auto; border-radius: 10px;">
+                            <h4 style="text-align: center; font-size: 1.2rem; color: var(--dark); margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 2px solid #eee;">Mono-surface</h4>
+                            <div style="display: flex; gap: 1rem;">
+                                <div style="flex: 1; background: #e8f5e9; padding: 0.75rem; border-radius: 8px;">
+                                    <p style="color: #2e7d32; font-weight: 700; font-size: 0.8rem; margin-bottom: 0.5rem;">✓ AVANTAGES</p>
+                                    <ul style="color: #333; font-size: 0.85rem; line-height: 1.6; margin: 0; padding-left: 1rem;">
+                                        <li>Poids léger</li>
+                                        <li>Stabilité</li>
+                                        <li>Coût réduit</li>
+                                    </ul>
                                 </div>
-                                <h4 style="text-align: center; font-size: 1.2rem; color: var(--dark); margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 2px solid #eee;">Double surface</h4>
-                                <div style="display: flex; gap: 1rem;">
-                                    <div style="flex: 1; background: #e8f5e9; padding: 0.75rem; border-radius: 8px;">
-                                        <p style="color: #2e7d32; font-weight: 700; font-size: 0.8rem; margin-bottom: 0.5rem;">✓ AVANTAGES</p>
-                                        <ul style="color: #333; font-size: 0.85rem; line-height: 1.6; margin: 0; padding-left: 1rem;">
-                                            <li>Vitesse élevée</li>
-                                            <li>Performance</li>
-                                            <li>Bon atterrissage</li>
-                                        </ul>
-                                    </div>
-                                    <div style="flex: 1; background: #ffebee; padding: 0.75rem; border-radius: 8px;">
-                                        <p style="color: #c62828; font-weight: 700; font-size: 0.8rem; margin-bottom: 0.5rem;">✗ INCONVÉNIENTS</p>
-                                        <ul style="color: #333; font-size: 0.85rem; line-height: 1.6; margin: 0; padding-left: 1rem;">
-                                            <li>Coût élevé</li>
-                                            <li>Poids important</li>
-                                            <li>Technicité requise</li>
-                                        </ul>
-                                    </div>
+                                <div style="flex: 1; background: #ffebee; padding: 0.75rem; border-radius: 8px;">
+                                    <p style="color: #c62828; font-weight: 700; font-size: 0.8rem; margin-bottom: 0.5rem;">✗ INCONVÉNIENTS</p>
+                                    <ul style="color: #333; font-size: 0.85rem; line-height: 1.6; margin: 0; padding-left: 1rem;">
+                                        <li>Atterrissage difficile</li>
+                                        <li>Manque de vitesse</li>
+                                        <li>Peu performante</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
+                        <!-- Card Double surface -->
+                        <div style="background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); padding: 1.5rem; width: 380px; border: 1px solid #e0e0e0;">
+                            <div style="text-align: center; margin-bottom: 1rem;">
+                                <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/parapente%20normal.png" alt="Parapente Classique" style="width: 100%; max-width: 320px; height: auto; border-radius: 10px;">
+                            </div>
+                            <h4 style="text-align: center; font-size: 1.2rem; color: var(--dark); margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 2px solid #eee;">Double surface</h4>
+                            <div style="display: flex; gap: 1rem;">
+                                <div style="flex: 1; background: #e8f5e9; padding: 0.75rem; border-radius: 8px;">
+                                    <p style="color: #2e7d32; font-weight: 700; font-size: 0.8rem; margin-bottom: 0.5rem;">✓ AVANTAGES</p>
+                                    <ul style="color: #333; font-size: 0.85rem; line-height: 1.6; margin: 0; padding-left: 1rem;">
+                                        <li>Vitesse élevée</li>
+                                        <li>Performance</li>
+                                        <li>Bon atterrissage</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; background: #ffebee; padding: 0.75rem; border-radius: 8px;">
+                                    <p style="color: #c62828; font-weight: 700; font-size: 0.8rem; margin-bottom: 0.5rem;">✗ INCONVÉNIENTS</p>
+                                    <ul style="color: #333; font-size: 0.85rem; line-height: 1.6; margin: 0; padding-left: 1rem;">
+                                        <li>Coût élevé</li>
+                                        <li>Poids important</li>
+                                        <li>Technicité requise</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p style="margin-top: 1rem;"><strong>Notre solution :</strong> avec l'architecture hybride, nous créons probablement <strong>l'aile la plus saine du marché</strong>. Elle offre toute la stabilité d'une mono-surface, tout en conservant la vitesse, une performance acceptable et le bon atterrissage d'une double-surface. En bonus : un <strong>coût réduit</strong> et un <strong>poids allégé</strong> par rapport à un parapente classique. C'est pour nous la solution idéale pour rendre le parapente plus accessible aux débutants.</p>
+                    
+                    <!-- Illustration visuelle de l'hybridation -->
+                    <div style="display: flex; flex-direction: column; align-items: center; margin-top: 2.5rem; gap: 1.5rem;">
                         <!-- Flèche vers le bas -->
                         <div style="font-size: 3rem; font-weight: 700; color: var(--gold);">↓</div>
                         <!-- Résultat : Hybride -->
@@ -2731,6 +2994,11 @@
                         <div class="benefit-icon">💰</div>
                         <h4>Plus accessible</h4>
                         <p>Coût de production réduit, prix plus abordable</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">✨</div>
+                        <h4>Plus intuitive</h4>
+                        <p>Pilotage facilité, comportement plus naturel</p>
                     </div>
                 </div>
             </div>
@@ -2869,7 +3137,7 @@
                                 <span class="budget-line-amount">3 500 €</span>
                             </div>
                             <div class="budget-line">
-                                <span class="budget-line-label">Design (2 mois)</span>
+                                <span class="budget-line-label">Conception x2</span>
                                 <span class="budget-line-amount">5 000 €</span>
                             </div>
                             <div class="budget-line">
@@ -2901,17 +3169,18 @@
             
         </section>
 
-        <!-- PAGE 4: Design Nouveau Parapente Concept - CROSS-OVER -->
+        <!-- PAGE 4: Design Nouveau Parapente Concept - PLUME Dual -->
         <section id="innovation-nouveau-concept" style="padding: 0;">
             
             <!-- 1. HERO - Titre avec image de fond -->
             <div class="innovation-hero" style="background-image: linear-gradient(rgba(15, 36, 48, 0.3), rgba(15, 36, 48, 0.35)), url('https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/Blow%20winter%20over%20summit.jpeg');">
                 <div class="innovation-hero-content fade-in">
-                    <h2>PLUME Duale</h2>
-                    <p class="innovation-hero-subtitle">La Première Aile de Montagne à Géométrie Variable — Sortie Automne 2026</p>
+                    <h2>PLUME Dual</h2>
+                    <p class="innovation-hero-subtitle">Nouveau concept à géométrie variable pour ouvrir le marché des alpinistes</p>
                     <div class="innovation-hero-keywords">
                         <span class="keyword-badge">Innovation conception parapente</span>
                         <span class="keyword-badge"><strong>27 000 €</strong> budget total</span>
+                        <span class="keyword-badge">Sortie automne 2026</span>
                     </div>
                 </div>
             </div>
@@ -2926,7 +3195,7 @@
                     </div>
                     <div class="problem-card">
                         <h4>Parakite : trop exigeant</h4>
-                        <p>Excellent dans le vent fort avec une forte pénétration, mais lourd, incapable de décoller sans vent, et avec un atterrissage exigeant (pas d'arrondi possible). Ces deux types d'ailes sont incompatibles.</p>
+                        <p>Excellent dans le vent fort avec une forte pénétration, mais incapable de décoller sans vent, et avec un atterrissage exigeant (pas d'arrondi possible). Ce type d'aile n'existe pas en version légère.</p>
                     </div>
                 </div>
             </div>
@@ -2935,30 +3204,13 @@
             <div class="innovation-solution">
                 <h3>Notre solution en bref</h3>
                 <div class="solution-highlight fade-in" style="display: flex; align-items: center; gap: 2.5rem;">
-                    <p style="flex: 1; margin: 0;">CROSS-OVER est la <strong>première aile au monde</strong> qui fusionne parapente et parakite. Grâce à un système mécanique innovant sur les élévateurs, l'aile peut <strong>changer de comportement en vol</strong> : mode "parapente" pour décoller sans vent et atterrir en douceur, mode "speed" pour foncer dans le vent fort. Une seule aile remplace deux équipements et <strong>double la fenêtre météo exploitable</strong>.</p>
+                    <p style="flex: 1; margin: 0;">PLUME Dual est un <strong>concept totalement nouveau</strong> : une aile à géométrie variable, en version ultra-légère, conçue pour la montagne. Grâce à un système mécanique innovant sur les élévateurs, l'aile peut <strong>changer de comportement en vol</strong> — mode "parapente" pour décoller sans vent et atterrir en douceur, mode "speed" pour pénétrer dans le vent fort. Cette innovation <strong>ouvre de nouvelles portes aux alpinistes</strong> : plus de chances de décoller en toute sécurité au sommet, qu'il y ait du vent ou non, avec une <strong>fenêtre de vol élargie d'au moins 50%</strong>.</p>
                     <div style="flex-shrink: 0;">
-                        <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/Generated%20Image%20January%2020%2C%202026%20-%206_29PM.jpeg" alt="Élévateur hybride CROSS-OVER" style="width: 280px; height: auto; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.15);" />
+                        <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/Generated%20Image%20January%2020%2C%202026%20-%206_29PM.jpeg" alt="Élévateur hybride PLUME Dual" style="width: 280px; height: auto; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.15);" />
                         <p style="font-size: 0.85rem; color: #666; text-align: center; margin-top: 0.8rem; font-style: italic;">Élévateur à géométrie variable</p>
                     </div>
                 </div>
-                <div class="solution-benefits fade-in">
-                    <div class="benefit-item">
-                        <div class="benefit-icon">🏔️</div>
-                        <h4>Polyvalence totale</h4>
-                        <p>Une aile pour toutes les conditions</p>
-                    </div>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">🛡️</div>
-                        <h4>Sécurité accrue</h4>
-                        <p>Ne plus être bloqué par la météo</p>
-                    </div>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">🎿</div>
-                        <h4>Conçue pour l'alpinisme</h4>
-                        <p>Ultra-légère, compacte, efficace</p>
-                    </div>
                 </div>
-            </div>
             
             <!-- 4. DESCRIPTION TECHNIQUE -->
             <div class="innovation-technical">
@@ -3129,10 +3381,10 @@
             <div class="innovation-hero" style="background-image: linear-gradient(135deg, rgba(15, 36, 48, 0.35) 0%, rgba(85, 136, 166, 0.3) 100%), url('https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/Plume%20connect.jpeg');">
                 <div class="innovation-hero-content fade-in">
                     <h2>PLUME Connect</h2>
-                    <p class="innovation-hero-subtitle">Distribution & Intelligence Produit — En production</p>
+                    <p class="innovation-hero-subtitle">4 innovations de procédé pour une croissance scalable par l'automatisation</p>
                     <div class="innovation-hero-keywords">
                         <span class="keyword-badge">Innovation de procédé</span>
-                        <span class="keyword-badge"><strong>~32 000 €</strong> budget total</span>
+                        <span class="keyword-badge"><strong>32 000 €</strong> budget total</span>
                     </div>
                 </div>
             </div>
@@ -3156,36 +3408,20 @@
             <div class="innovation-solution">
                 <h3>Notre solution en bref</h3>
                 <div class="solution-highlight fade-in">
-                    <p>PLUME Connect est une <strong>plateforme numérique propriétaire</strong> qui structure notre croissance autour de <strong>4 piliers technologiques</strong> :</p>
+                    <p>PLUME Connect est la <strong>colonne vertébrale de notre modèle de croissance</strong>. Cette plateforme numérique propriétaire nous permet de <strong>grandir sans multiplier les effectifs</strong>, grâce à l'automatisation de 4 piliers clés :</p>
                     <ul style="margin: 1.5rem 0; padding-left: 1.5rem; line-height: 2;">
-                        <li><strong>Distribution Hybride B2C2B</strong> — Un algorithme qui réconcilie vente directe et réseau physique, attribuant automatiquement les commissions aux partenaires locaux.</li>
+                        <li><strong>Distribution Hybride B2C2B</strong> — Une première dans le parapente : un système de vente automatisé qui réconcilie vente directe et réseau physique, attribuant automatiquement les commissions aux partenaires locaux.</li>
                         <li><strong>Demo-Center Autonome</strong> — Digitalisation complète du flux de test (réservation, caution, expédition, retour) pour lever le frein n°1 à l'achat.</li>
                         <li><strong>Support IA Auto-apprenant</strong> — Assistance 24h/24 qui s'enrichit à chaque interaction expert, capitalisant le savoir-faire technique.</li>
                         <li><strong>R&D Participative</strong> — Collecte statistique des retours terrain pour orienter l'ingénierie produit en temps réel.</li>
                     </ul>
-                    <p>Cette architecture logicielle constitue un <strong>avantage concurrentiel durable</strong> : elle permet de scaler rapidement tout en préservant la proximité avec le réseau de distribution et en alimentant continuellement l'innovation produit.</p>
+                    <p>Cette architecture logicielle est un <strong>axe essentiel de notre scalabilité</strong> : elle permet de multiplier les ventes, d'assurer un service client 24h/24 et d'alimenter l'innovation produit — le tout avec une équipe réduite.</p>
                 </div>
                 <div class="fade-in" style="margin: 2rem 0;">
                     <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/site%20web%20demo%20wing%20screenshot.png" alt="Capture d'écran Demo Wing" style="width: 100%; height: auto; display: block; border: 1px solid #e0e0e0; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
+                    <p style="text-align: center; font-size: 0.85rem; color: var(--gray-500); margin-top: 0.8rem; font-style: italic;">Capture d'écran de notre plateforme de réservation de démo</p>
                 </div>
-                <div class="solution-benefits fade-in">
-                    <div class="benefit-item">
-                        <div class="benefit-icon">🤝</div>
-                        <h4>Écoles partenaires</h4>
-                        <p>Commission automatique sur chaque vente de leur zone</p>
-                    </div>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">🧪</div>
-                        <h4>Test facile</h4>
-                        <p>Réservation en ligne, caution automatique, expédition</p>
-                    </div>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">🤖</div>
-                        <h4>Support IA</h4>
-                        <p>Réponses instantanées, expertise qui s'enrichit</p>
-                    </div>
                 </div>
-            </div>
             
             <!-- 4. DESCRIPTION TECHNIQUE -->
             <div class="innovation-technical">
@@ -3193,7 +3429,7 @@
                 <div class="technical-grid single-column fade-in">
                     <div class="technical-item">
                         <h4>1. Distribution Hybride B2C2B</h4>
-                        <p>Un <strong>algorithme de vente</strong> qui réconcilie vente directe et réseau physique. Le système attribue dynamiquement les ventes et commissions aux partenaires locaux selon la géolocalisation du client. Croissance digitale rapide tout en préservant le tissu économique des écoles.</p>
+                        <p>Une <strong>stratégie de vente unique dans le parapente</strong> qui réconcilie vente directe et réseau physique. Le système attribue automatiquement les ventes et commissions aux écoles partenaires selon la géolocalisation du client. L'objectif : faciliter la vie aux écoles, automatiser au maximum et créer un modèle de croissance scalable.</p>
                         <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/canva%20B2C2B.jpeg" alt="Schéma Modèle B2C2B" style="width: 100%; height: auto; display: block; margin: 1.5rem auto 0; border-radius: 8px;" />
                     </div>
                     <div class="technical-item">
@@ -3279,11 +3515,11 @@
                     </div>
                     <div class="budget-card total">
                         <h4>Budget Total</h4>
-                        <div class="budget-amount">~32 000 €</div>
+                        <div class="budget-amount">32 000 €</div>
                         <div class="budget-details">
                             <div class="budget-line">
                                 <span class="budget-line-label">Développement initial (2025)</span>
-                                <span class="budget-line-amount">~15 000 €</span>
+                                <span class="budget-line-amount">15 000 €</span>
                             </div>
                             <div class="budget-line">
                                 <span class="budget-line-label">Évolutions 2026</span>
@@ -3417,13 +3653,8 @@
                 <div class="market-context fade-in" style="margin-top: 2rem; background: var(--white);">
                     <h4>Pour aller plus loin</h4>
                     <p style="margin-top: 0.8rem;">Dossier technique complet et documentation brevet :</p>
-                    <a href="https://raw.githubusercontent.com/jbintheair/NeawBrand/main/ACS%20presentation%20brevet%201.pdf" download class="btn-patent" style="margin-top: 1rem; display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, var(--turquoise), #0e7490); color: white; padding: 0.9rem 1.5rem; border-radius: 8px; font-weight: 600; text-decoration: none; box-shadow: 0 4px 15px rgba(8, 145, 178, 0.3); transition: all 0.3s ease;">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        Télécharger le PDF de présentation de l'ACS
+                    <a href="https://band-era-f13.notion.site/ACS-Brevet-document-2ed020b3360f808190c3fc308cd1a18a?source=copy_link" target="_blank" rel="noopener noreferrer" class="btn-patent" style="margin-top: 1rem; display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, var(--turquoise), #0e7490); color: white; padding: 0.9rem 1.5rem; border-radius: 8px; font-weight: 600; text-decoration: none; box-shadow: 0 4px 15px rgba(8, 145, 178, 0.3); transition: all 0.3s ease;">
+                        📄 Voir le document Brevet ACS
                     </a>
                 </div>
             </div>
@@ -3540,31 +3771,28 @@
                     <div class="budget-card total">
                         <h4>Budget Total (Industrialisation)</h4>
                         <div class="budget-amount">300 000 €</div>
-                        <div class="budget-details">
-                            <div class="budget-line">
-                                <span class="budget-line-label">R&D & Prototypes (2026-2028)</span>
-                                <span class="budget-line-amount">~50 000 €</span>
-                            </div>
-                            <div class="budget-line">
-                                <span class="budget-line-label">Homologation & Certification</span>
-                                <span class="budget-line-amount">~100 000 €</span>
-                            </div>
-                            <div class="budget-line">
-                                <span class="budget-line-label">Outillage & Industrialisation</span>
-                                <span class="budget-line-amount">~150 000 €</span>
-                            </div>
-                        </div>
+                        <p style="font-size: 0.85rem; color: var(--gray-600); margin-top: 1rem; font-style: italic; line-height: 1.5;">Estimation à affiner dans le courant de l'année.<br>Chiffre approximatif donné par un ingénieur spécialisé dans ce type de projet.</p>
                     </div>
                 </div>
             </div>
             
         </section>
 
+        <!-- Hero image transition vers Budget -->
+        <div class="innovation-hero" style="min-height: 60vh; background-image: linear-gradient(rgba(15, 36, 48, 0.5), rgba(15, 36, 48, 0.6)), url('https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/Generated%20Image%20November%2030%2C%202025%20-%201_39AM.jpeg');">
+            <div class="innovation-hero-content fade-in">
+                <h2>Budget Innovation 2026</h2>
+                <div class="innovation-hero-keywords" style="margin-top: 1.5rem;">
+                    <span class="keyword-badge"><strong>76 700 €</strong> budget total</span>
+                </div>
+            </div>
+        </div>
+
         <!-- PAGE 8: Budget Innovation 2026 -->
         <section id="innovation-budget" class="bg-cream">
-            <span class="section-number">07</span>
-            <h2 class="fade-in">Budget Innovation 2026</h2>
-            <p class="fade-in">Investissements R&D et développement produits pour l'année 2026.</p>
+            <span class="section-number" style="display: none;">07</span>
+            <h2 class="fade-in" style="display: none;">Budget Innovation 2026</h2>
+            <p class="fade-in">Investissements R&D pour le développement de nos produits innovants en 2026.</p>
 
             <div class="financement-grid fade-in" style="margin-top: 2.5rem;">
                 <div>
@@ -3586,7 +3814,7 @@
                         </div>
                         <div class="source">
                             <div>
-                                <span class="source-name">PLUME Duale</span>
+                                <span class="source-name">PLUME Dual</span>
                                 <div class="source-detail">Géométrie variable • Sortie Automne 2026</div>
                             </div>
                             <span class="source-amount">18 000 €</span>
@@ -3615,7 +3843,7 @@
                     <h4>Répartition des dépenses</h4>
                     <ul class="fonds-list">
                         <li>R&D Personnel (design, tests, développement)</li>
-                        <li>Prototypage matériel (Hybrid, Duale, ACS)</li>
+                        <li>Prototypage matériel (Hybrid, Dual, ACS)</li>
                         <li>Homologation EN (certification vol + shock)</li>
                         <li>Création gammes (industrialisation 9 tailles)</li>
                         <li>Outils IA (Cursor AI)</li>
@@ -3707,9 +3935,9 @@
                 if (rect.top < viewportHeight && rect.bottom > 0) {
                     // Calculate how far through the viewport the element is
                     const scrollProgress = (viewportHeight - rect.top) / (viewportHeight + rect.height);
-                    // Subtle movement: -10% to +10% vertical shift
-                    const yOffset = (scrollProgress - 0.5) * 20;
-                    hero.style.backgroundPosition = `center calc(50% + ${yOffset}%)`;
+                    // Subtle movement: 40% to 60% vertical shift (stays within safe bounds for cover)
+                    const yOffset = 40 + (scrollProgress * 20);
+                    hero.style.backgroundPosition = `center ${yOffset}%`;
                 }
             });
         }
@@ -3765,6 +3993,142 @@
                 });
             });
         });
+
+        // Sommaire navigation - Click to scroll to section
+        const sommaireLinks = document.querySelectorAll('.sommaire-link');
+        sommaireLinks.forEach(link => {
+            // Hover effect
+            link.addEventListener('mouseenter', () => {
+                link.style.transform = 'translateY(-5px)';
+                link.style.boxShadow = '0 8px 25px rgba(0,0,0,0.15)';
+            });
+            link.addEventListener('mouseleave', () => {
+                link.style.transform = 'translateY(0)';
+                link.style.boxShadow = '';
+            });
+            
+            // Click to navigate
+            link.addEventListener('click', () => {
+                const targetId = link.getAttribute('data-target');
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Sub-navbar functionality
+        const subNavbar = document.getElementById('sub-navbar');
+        const subNavBanque = document.querySelector('.sub-nav-banque');
+        const subNavInnovation = document.querySelector('.sub-nav-innovation');
+        const subNavItems = document.querySelectorAll('.sub-nav-item');
+        
+        // Sections for each tab
+        const banqueSections = ['presentation', 'marche', 'avantages', 'innovation', 'production', 'gamme', 'business', 'chiffres', 'financement', 'communication', 'roadmap'];
+        const innovationSections = ['innovation-logiciels', 'innovation-design', 'innovation-nouveau-concept', 'innovation-site-internet', 'innovation-acs', 'innovation-budget'];
+        
+        let currentTab = 'banque';
+
+        // Update sub-navbar visibility and active section on scroll
+        function updateSubNavbar() {
+            const scrollY = window.scrollY;
+            const navScrolled = scrollY > 80;
+            
+            // Update sub-navbar position based on main navbar state
+            if (navScrolled) {
+                subNavbar.classList.add('nav-scrolled');
+            } else {
+                subNavbar.classList.remove('nav-scrolled');
+            }
+            
+            // Show/hide sub-navbar based on scroll position
+            if (currentTab === 'banque') {
+                // Show after 300px for banque tab
+                if (scrollY > 300) {
+                    subNavbar.classList.add('visible');
+                } else {
+                    subNavbar.classList.remove('visible');
+                }
+                updateActiveSection(banqueSections);
+            } else if (currentTab === 'innovation') {
+                // Show after passing sommaire section (around 1000px)
+                const sommaire = document.getElementById('innovation-sommaire');
+                if (sommaire) {
+                    const sommaireBottom = sommaire.offsetTop + sommaire.offsetHeight;
+                    if (scrollY > sommaireBottom - 200) {
+                        subNavbar.classList.add('visible');
+                    } else {
+                        subNavbar.classList.remove('visible');
+                    }
+                }
+                updateActiveSection(innovationSections);
+            }
+        }
+
+        // Highlight current section in sub-nav
+        function updateActiveSection(sections) {
+            let currentSection = null;
+            const offset = 150; // Offset for header
+            
+            sections.forEach(sectionId => {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top <= offset && rect.bottom > offset) {
+                        currentSection = sectionId;
+                    }
+                }
+            });
+            
+            // Update active class
+            subNavItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('data-target') === currentSection) {
+                    item.classList.add('active');
+                }
+            });
+        }
+
+        // Switch sub-nav content when tab changes
+        function switchSubNav(tab) {
+            currentTab = tab;
+            if (tab === 'banque') {
+                subNavBanque.classList.add('active');
+                subNavInnovation.classList.remove('active');
+            } else {
+                subNavBanque.classList.remove('active');
+                subNavInnovation.classList.add('active');
+            }
+            subNavbar.classList.remove('visible');
+            updateSubNavbar();
+        }
+
+        // Add click handlers to sub-nav items
+        subNavItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const targetId = item.getAttribute('data-target');
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    const offset = 140; // Account for both navbars
+                    const targetPosition = targetSection.offsetTop - offset;
+                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Update tab switching to also switch sub-nav
+        tabLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                const tabId = link.getAttribute('data-tab');
+                switchSubNav(tabId);
+            });
+        });
+
+        // Listen to scroll
+        window.addEventListener('scroll', updateSubNavbar);
+        
+        // Initial update
+        updateSubNavbar();
     </script>
 </body>
 </html>
