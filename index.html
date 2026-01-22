@@ -122,11 +122,11 @@
             border-color: var(--turquoise);
         }
 
-        .sub-nav-banque, .sub-nav-innovation {
+        .sub-nav-banque, .sub-nav-innovation, .sub-nav-businessplan {
             display: none;
         }
 
-        .sub-nav-banque.active, .sub-nav-innovation.active {
+        .sub-nav-banque.active, .sub-nav-innovation.active, .sub-nav-businessplan.active {
             display: flex;
         }
 
@@ -1847,6 +1847,7 @@
         <ul class="nav-links">
             <li><a href="#" class="tab-link active" data-tab="banque">Présentation Banque</a></li>
             <li><a href="#" class="tab-link" data-tab="innovation">Présentation Innovation</a></li>
+            <li><a href="#" class="tab-link" data-tab="businessplan">Business Plan</a></li>
         </ul>
     </nav>
 
@@ -1875,6 +1876,17 @@
             <span class="sub-nav-item" data-target="innovation-acs">ACS</span>
             <span class="sub-nav-item" data-target="innovation-budget">Budget</span>
         </div>
+        <!-- Business Plan sub-nav -->
+        <div class="sub-nav-content sub-nav-businessplan">
+            <span class="sub-nav-item" data-target="bp-overview">Vue d'Ensemble</span>
+            <span class="sub-nav-item" data-target="bp-produits">Produits & Marges</span>
+            <span class="sub-nav-item" data-target="bp-couts">Charges Fixes</span>
+            <span class="sub-nav-item" data-target="bp-variables">Charges Variables</span>
+            <span class="sub-nav-item" data-target="bp-emprunt">Emprunt Bancaire</span>
+            <span class="sub-nav-item" data-target="bp-financement">Financement</span>
+            <span class="sub-nav-item" data-target="bp-croissance">Croissance</span>
+            <span class="sub-nav-item" data-target="bp-seuil">Seuil de Rentabilité</span>
+        </div>
     </div>
 
     <!-- TAB: Présentation Banque -->
@@ -1898,7 +1910,7 @@
         <p class="fade-in">PLUME Paragliders est une nouvelle marque française de parapente avec une mission claire : <span class="highlight">rendre le parapente plus accessible en le rendant plus sûr, plus léger, plus intuitif</span>.</p>
         
         <div class="fade-in" style="margin: 2.5rem 0;">
-            <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/Blow%20Summit%20cloud%20amazing.jpeg" alt="Vue sommet nuages - La vision PLUME" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto; border-radius: 12px; box-shadow: 0 12px 35px rgba(0,0,0,0.2);">
+            <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/Blow%20Summit%20cloud%20amazing.jpeg" alt="Vue sommet nuages - La vision PLUME" style="width: 100%; max-width: 1100px; height: auto; display: block; margin: 0 auto; border-radius: 12px; box-shadow: 0 12px 35px rgba(0,0,0,0.2);">
         </div>
         
         <div class="vision-grid fade-in">
@@ -3864,7 +3876,1694 @@
     </div>
     <!-- FIN TAB: Présentation Innovation -->
 
-    <!-- Contact Section (visible sur les deux onglets) -->
+    <!-- TAB: Business Plan -->
+    <div id="tab-businessplan" class="tab-content">
+        
+        <!-- Hero Business Plan -->
+        <section id="hero-businessplan" style="height: 100vh; padding: 0; background: linear-gradient(135deg, rgba(12, 74, 110, 0.9) 0%, rgba(15, 36, 48, 0.95) 100%), url('https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/Generated%20Image%20December%2018%2C%202025%20-%2012_41AM.jpeg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center;">
+            <div class="hero-content" style="color: white;">
+                <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/LOGO%20V3%20White.png" alt="PLUME Paragliders" class="hero-logo">
+                <p class="hero-tagline" style="color: rgba(255,255,255,0.95);">Business Plan</p>
+                <p class="hero-subtitle" style="color: rgba(255,255,255,0.85);">Janvier 2026</p>
+                
+                <!-- Bouton téléchargement Business Plan complet -->
+                <a href="https://raw.githubusercontent.com/jbintheair/NeawBrand/main/PLUME_business_plan_BPI_2026_01_22.xlsx"
+                   download
+                   target="_blank"
+                   rel="noopener"
+                   class="btn-primary"
+                   style="display: inline-flex; align-items: center; gap: 0.6rem; margin-top: 2rem;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="12" y1="18" x2="12" y2="12"></line>
+                        <polyline points="9 15 12 18 15 15"></polyline>
+                    </svg>
+                    Télécharger le fichier complet du Business Plan (XLSX)
+                </a>
+            </div>
+            <div class="scroll-indicator" style="color: rgba(255,255,255,0.7);"><span>Découvrir</span></div>
+        </section>
+
+        <!-- ========== SECTION 0: VUE D'ENSEMBLE ========== -->
+        <section id="bp-overview" class="bg-white">
+            <span class="section-number">00</span>
+            <h2>Vue <span class="gold">d'Ensemble</span></h2>
+            <p>Tableau de bord exécutif — Business Plan 2025-2031</p>
+
+            <!-- Indicateurs clés -->
+            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; margin: 3rem 0;">
+                <div style="background: white; border-radius: 16px; padding: 1.5rem; box-shadow: 0 8px 30px rgba(0,0,0,0.08); text-align: center; border-top: 4px solid var(--turquoise);">
+                    <div style="font-size: 0.75rem; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Création</div>
+                    <div style="font-size: 1.1rem; font-weight: 700; color: var(--black);">15 décembre 2025</div>
+                </div>
+                <div style="background: white; border-radius: 16px; padding: 1.5rem; box-shadow: 0 8px 30px rgba(0,0,0,0.08); text-align: center; border-top: 4px solid var(--turquoise);">
+                    <div style="font-size: 0.75rem; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Capital social</div>
+                    <div style="font-size: 1.5rem; font-weight: 700; color: var(--turquoise);">100 000€</div>
+                </div>
+                <div style="background: white; border-radius: 16px; padding: 1.5rem; box-shadow: 0 8px 30px rgba(0,0,0,0.08); text-align: center; border-top: 4px solid var(--gold);">
+                    <div style="font-size: 0.75rem; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Plan de financement</div>
+                    <div style="font-size: 1.5rem; font-weight: 700; color: var(--gold);">428 000€</div>
+                </div>
+                <div style="background: white; border-radius: 16px; padding: 1.5rem; box-shadow: 0 8px 30px rgba(0,0,0,0.08); text-align: center; border-top: 4px solid var(--turquoise);">
+                    <div style="font-size: 0.75rem; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Seuil rentabilité</div>
+                    <div style="font-size: 1.5rem; font-weight: 700; color: var(--turquoise);">187 <span style="font-size: 0.9rem; font-weight: 400;">ailes/an</span></div>
+                </div>
+                <div style="background: white; border-radius: 16px; padding: 1.5rem; box-shadow: 0 8px 30px rgba(0,0,0,0.08); text-align: center; border-top: 4px solid var(--gold);">
+                    <div style="font-size: 0.75rem; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Marge nette/aile</div>
+                    <div style="font-size: 1.5rem; font-weight: 700; color: var(--gold);">1 092€</div>
+                </div>
+            </div>
+
+            <!-- Grid 3 colonnes: Financement, Charges fixes, Emprunt -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; margin: 3rem 0;">
+                
+                <!-- Plan de financement -->
+                <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 30px rgba(0,0,0,0.08);">
+                    <h4 style="color: var(--turquoise-dark); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="font-size: 1.2rem;">💰</span> Plan de Financement
+                    </h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem; background: var(--cream); border-radius: 8px;">
+                            <span style="color: var(--gray-600);">JB Chandelier</span>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span style="font-weight: 600;">104 000€</span>
+                                <span style="font-size: 0.75rem; background: var(--turquoise); color: white; padding: 0.2rem 0.5rem; border-radius: 4px;">55%</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem; background: var(--cream); border-radius: 8px;">
+                            <span style="color: var(--gray-600);">Thomas Pierre-Bes</span>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span style="font-weight: 600;">85 000€</span>
+                                <span style="font-size: 0.75rem; background: var(--gold); color: white; padding: 0.2rem 0.5rem; border-radius: 4px;">45%</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.8rem; background: var(--cream); border-radius: 8px;">
+                            <span style="color: var(--gray-600);">Emprunt 4 ans</span>
+                            <span style="font-weight: 600;">189 000€</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.8rem; background: var(--cream); border-radius: 8px;">
+                            <span style="color: var(--gray-600);">Avoir EURL JB (2027)</span>
+                            <span style="font-weight: 600;">50 000€</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 1rem; background: linear-gradient(90deg, var(--turquoise) 0%, var(--turquoise-dark) 100%); border-radius: 8px; color: white; margin-top: 0.5rem;">
+                            <span style="font-weight: 600;">TOTAL</span>
+                            <span style="font-weight: 700; font-size: 1.2rem;">428 000€</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charges fixes -->
+                <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 30px rgba(0,0,0,0.08);">
+                    <h4 style="color: var(--gold-dark); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="font-size: 1.2rem;">📊</span> Charges Fixes / An
+                    </h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                        <div style="display: flex; justify-content: space-between; padding: 0.8rem; background: var(--cream); border-radius: 8px;">
+                            <span style="color: var(--gray-600);">Masse salariale</span>
+                            <span style="font-weight: 600;">101 476€</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.8rem; background: var(--cream); border-radius: 8px;">
+                            <span style="color: var(--gray-600);">Investissement R&D</span>
+                            <span style="font-weight: 600;">54 169€</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.8rem; background: var(--cream); border-radius: 8px;">
+                            <span style="color: var(--gray-600);">Exploitation</span>
+                            <span style="font-weight: 600;">40 114€</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 1rem; background: linear-gradient(90deg, var(--gold) 0%, var(--gold-dark) 100%); border-radius: 8px; color: white; margin-top: 0.5rem;">
+                            <span style="font-weight: 600;">TOTAL</span>
+                            <span style="font-weight: 700; font-size: 1.2rem;">195 759€</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emprunt bancaire -->
+                <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 30px rgba(0,0,0,0.08);">
+                    <h4 style="color: var(--turquoise-dark); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="font-size: 1.2rem;">🏦</span> Emprunt Bancaire
+                    </h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                        <div style="display: flex; justify-content: space-between; padding: 0.8rem; background: var(--cream); border-radius: 8px;">
+                            <span style="color: var(--gray-600);">Montant</span>
+                            <span style="font-weight: 600;">189 000€</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.8rem; background: var(--cream); border-radius: 8px;">
+                            <span style="color: var(--gray-600);">Durée</span>
+                            <span style="font-weight: 600;">4 ans</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.8rem; background: var(--cream); border-radius: 8px;">
+                            <span style="color: var(--gray-600);">Taux</span>
+                            <span style="font-weight: 600;">4,50%</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 1rem; background: linear-gradient(90deg, var(--turquoise) 0%, var(--turquoise-dark) 100%); border-radius: 8px; color: white; margin-top: 0.5rem;">
+                            <span style="font-weight: 600;">Échéance/an</span>
+                            <span style="font-weight: 700; font-size: 1.2rem;">52 400€</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scénarios de ventes -->
+            <div style="margin-top: 3rem;">
+                <h3 style="margin-bottom: 1.5rem;">Scénarios de Ventes (Nombre d'ailes)</h3>
+                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.08);">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <thead>
+                            <tr style="background: var(--turquoise-dark); color: white;">
+                                <th style="padding: 1rem; text-align: left;"></th>
+                                <th style="padding: 1rem; text-align: center;">2025</th>
+                                <th style="padding: 1rem; text-align: center;">2026</th>
+                                <th style="padding: 1rem; text-align: center;">2027</th>
+                                <th style="padding: 1rem; text-align: center;">2028</th>
+                                <th style="padding: 1rem; text-align: center;">2029</th>
+                                <th style="padding: 1rem; text-align: center;">2030</th>
+                                <th style="padding: 1rem; text-align: center;">2031</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--gray-100); background: rgba(212, 175, 55, 0.1);">
+                                <td style="padding: 1rem; font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
+                                    <span style="width: 12px; height: 12px; background: var(--gold); border-radius: 50%;"></span> Réaliste
+                                </td>
+                                <td style="padding: 1rem; text-align: center; color: var(--gray-400);">0</td>
+                                <td style="padding: 1rem; text-align: center; font-weight: 600;">75</td>
+                                <td style="padding: 1rem; text-align: center; font-weight: 600;">250</td>
+                                <td style="padding: 1rem; text-align: center; font-weight: 600;">550</td>
+                                <td style="padding: 1rem; text-align: center; font-weight: 600;">800</td>
+                                <td style="padding: 1rem; text-align: center; font-weight: 700; color: var(--gold);">1000</td>
+                                <td style="padding: 1rem; text-align: center; font-weight: 700; color: var(--gold);">1000</td>
+                            </tr>
+                            <tr style="background: rgba(220, 53, 69, 0.05);">
+                                <td style="padding: 1rem; font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
+                                    <span style="width: 12px; height: 12px; background: #dc3545; border-radius: 50%;"></span> Point Mort
+                                </td>
+                                <td style="padding: 1rem; text-align: center; color: var(--gray-400);">0</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--gray-400);">0</td>
+                                <td style="padding: 1rem; text-align: center;">63</td>
+                                <td style="padding: 1rem; text-align: center;">372</td>
+                                <td style="padding: 1rem; text-align: center;">100</td>
+                                <td style="padding: 1rem; text-align: center;">249</td>
+                                <td style="padding: 1rem; text-align: center;">118</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Résultats prévisionnels -->
+            <div style="margin-top: 3rem;">
+                <h3 style="margin-bottom: 1.5rem;">Résultats Prévisionnels — Scénario Réaliste</h3>
+                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.08);">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <thead>
+                            <tr style="background: var(--gold-dark); color: white;">
+                                <th style="padding: 1rem; text-align: left;"></th>
+                                <th style="padding: 1rem; text-align: center;">2025</th>
+                                <th style="padding: 1rem; text-align: center;">2026</th>
+                                <th style="padding: 1rem; text-align: center;">2027</th>
+                                <th style="padding: 1rem; text-align: center;">2028</th>
+                                <th style="padding: 1rem; text-align: center;">2029</th>
+                                <th style="padding: 1rem; text-align: center;">2030</th>
+                                <th style="padding: 1rem; text-align: center;">2031</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem; font-weight: 500;">Chiffre d'affaires</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--gray-400);">0</td>
+                                <td style="padding: 1rem; text-align: center;">186 500€</td>
+                                <td style="padding: 1rem; text-align: center;">621 667€</td>
+                                <td style="padding: 1rem; text-align: center;">1 367 667€</td>
+                                <td style="padding: 1rem; text-align: center;">1 989 333€</td>
+                                <td style="padding: 1rem; text-align: center; font-weight: 600;">2 486 667€</td>
+                                <td style="padding: 1rem; text-align: center; font-weight: 600;">2 611 000€</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100); background: var(--cream);">
+                                <td style="padding: 1rem; font-weight: 500;">Bénéfice net</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--gray-400);">0</td>
+                                <td style="padding: 1rem; text-align: center; color: #dc3545; font-weight: 600;">-122 171€</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--turquoise); font-weight: 600;">70 887€</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--turquoise); font-weight: 600;">400 489€</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--turquoise); font-weight: 600;">675 608€</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--turquoise); font-weight: 600;">895 849€</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--turquoise); font-weight: 600;">950 429€</td>
+                            </tr>
+                            <tr style="background: linear-gradient(90deg, rgba(0,128,128,0.1) 0%, rgba(212,175,55,0.1) 100%);">
+                                <td style="padding: 1rem; font-weight: 600;">Trésorerie cumulée</td>
+                                <td style="padding: 1rem; text-align: center;">77 342€</td>
+                                <td style="padding: 1rem; text-align: center;">171 208€</td>
+                                <td style="padding: 1rem; text-align: center;">191 500€</td>
+                                <td style="padding: 1rem; text-align: center;">565 428€</td>
+                                <td style="padding: 1rem; text-align: center; font-weight: 600;">1 206 942€</td>
+                                <td style="padding: 1rem; text-align: center; font-weight: 700; color: var(--gold);">2 209 372€</td>
+                                <td style="padding: 1rem; text-align: center; font-weight: 700; color: var(--gold);">3 441 108€</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Points clés -->
+            <div style="background: linear-gradient(135deg, var(--turquoise-dark) 0%, var(--black) 100%); border-radius: 20px; padding: 2.5rem; margin-top: 3rem; color: white;">
+                <h3 style="color: white; margin-bottom: 1.5rem; text-align: center;">Points Clés</h3>
+                <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; text-align: center;">
+                    <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: 1.2rem;">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">✓</div>
+                        <div style="font-size: 0.9rem; font-weight: 600;">Rentabilité dès 2027</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: 1.2rem;">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">✓</div>
+                        <div style="font-size: 0.9rem; font-weight: 600;">Seuil : 187 ailes/an</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: 1.2rem;">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">✓</div>
+                        <div style="font-size: 0.9rem; font-weight: 600;">Marge brute ~44.7%</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: 1.2rem;">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">✓</div>
+                        <div style="font-size: 0.9rem; font-weight: 600;">Tréso toujours positive</div>
+                    </div>
+                    <div style="background: rgba(212,175,55,0.3); border-radius: 12px; padding: 1.2rem;">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">✓</div>
+                        <div style="font-size: 0.9rem; font-weight: 600;">Emprunt remboursé 2029</div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ========== SECTION 1: PRODUITS & MARGES ========== -->
+        <section id="bp-produits" class="bg-cream">
+            <span class="section-number">01</span>
+            <h2>Produits & <span class="gold">Marges</span></h2>
+            <p>Unit economics et rentabilité par produit — Le cœur de notre modèle économique</p>
+
+            <!-- Canal 1: SCHOOL PACK -->
+            <div style="margin-top: 3rem;">
+                <h3 style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                    <span style="background: var(--turquoise); color: white; padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.8rem;">CANAL 1</span>
+                    Vente SCHOOL PACK — Vente directe écoles
+                </h3>
+                <p style="color: var(--gray-500); margin-bottom: 1.5rem; font-size: 0.9rem;">Paiement immédiat via site PLUME — Sans intermédiaire</p>
+                
+                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.08); max-width: 500px;">
+                    <div style="background: linear-gradient(135deg, var(--turquoise) 0%, var(--turquoise-dark) 100%); padding: 1.5rem; color: white;">
+                        <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; opacity: 0.9;">Modèle École</div>
+                        <div style="font-size: 1.8rem; font-weight: 700; margin-top: 0.3rem;">A+ Classic</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">Parapente école EN-A — Pack complet</div>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.8rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--gray-100);">
+                            <span style="color: var(--gray-500);">Prix de vente TTC</span>
+                            <span style="font-weight: 600; color: var(--black);">1 980,00 €</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.8rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--gray-100);">
+                            <span style="color: var(--gray-500);">Prix de vente HT</span>
+                            <span style="font-weight: 600; color: var(--black);">1 650,00 €</span>
+                        </div>
+                        <div style="background: var(--cream); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                            <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--gray-500); margin-bottom: 0.5rem;">Décomposition coût de revient</div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                                <span style="color: var(--gray-600); font-size: 0.9rem;">Prix usine (aile + bags + goodies)</span>
+                                <span style="color: var(--gray-600);">838,00 €</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                                <span style="color: var(--gray-600); font-size: 0.9rem;">Coûts logistiques</span>
+                                <span style="color: var(--gray-600);">45,00 €</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                                <span style="color: var(--gray-600); font-size: 0.9rem;">Taxes import (2.7%)</span>
+                                <span style="color: var(--gray-600);">22,63 €</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding-top: 0.5rem; border-top: 1px dashed var(--gray-200); font-weight: 600;">
+                                <span style="color: var(--black);">Total coût de revient</span>
+                                <span style="color: var(--black);">905,63 €</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.8rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--gray-100);">
+                            <span style="color: var(--gray-500);">Frais Stripe</span>
+                            <span style="color: var(--gray-600);">29,70 €</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.8rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--gray-100);">
+                            <span style="color: var(--gray-500); font-weight: 600;">Marge brute unitaire</span>
+                            <span style="font-weight: 700; color: var(--turquoise); font-size: 1.2rem;">714,67 €</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="color: var(--gray-500); font-weight: 600;">Taux de marge brute</span>
+                            <span style="font-weight: 700; font-size: 1.4rem; color: var(--gold);">43,3%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Canal 2: B2C2B -->
+            <div style="margin-top: 3rem;">
+                <h3 style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                    <span style="background: var(--gold); color: white; padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.8rem;">CANAL 2</span>
+                    Vente B2C2B — Site internet avec partenaires
+                </h3>
+                <p style="color: var(--gray-500); margin-bottom: 1.5rem; font-size: 0.9rem;">Marge partenaire : 20% du prix HT — Réseau de distribution</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+                    <!-- A+ Classic B2C2B -->
+                    <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.08);">
+                        <div style="background: linear-gradient(135deg, var(--turquoise) 0%, var(--turquoise-dark) 100%); padding: 1.2rem; color: white;">
+                            <div style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; opacity: 0.9;">EN-A École</div>
+                            <div style="font-size: 1.4rem; font-weight: 700; margin-top: 0.2rem;">A+ Classic</div>
+                        </div>
+                        <div style="padding: 1.2rem; font-size: 0.85rem;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="color: var(--gray-500);">Prix TTC</span>
+                                <span style="font-weight: 600;">3 200,00 €</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="color: var(--gray-500);">Prix HT</span>
+                                <span style="font-weight: 600;">2 666,67 €</span>
+                            </div>
+                            <!-- Détail coût de revient -->
+                            <div style="background: var(--cream); border-radius: 6px; padding: 0.6rem; margin: 0.8rem 0; font-size: 0.8rem;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.3rem;">
+                                    <span style="color: var(--gray-500);">Prix usine (aile+sac+goodies)</span>
+                                    <span>838,00 €</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.3rem;">
+                                    <span style="color: var(--gray-500);">Coûts logistiques</span>
+                                    <span>45,00 €</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.3rem;">
+                                    <span style="color: var(--gray-500);">Taxes import (2.7%)</span>
+                                    <span>22,63 €</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; padding-top: 0.3rem; border-top: 1px dashed var(--gray-200); font-weight: 500;">
+                                    <span style="color: var(--gray-600);">Total coût revient</span>
+                                    <span style="color: var(--gray-800);">905,63 €</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="color: var(--gray-500);">Frais payment</span>
+                                <span>48,00 €</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; color: var(--gold-dark);">
+                                <span>Marge partenaire (20%)</span>
+                                <span>533,33 €</span>
+                            </div>
+                            <div style="border-top: 2px solid var(--gray-100); padding-top: 0.8rem; margin-top: 0.8rem;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                                    <span style="font-weight: 600; color: var(--turquoise);">Marge brute</span>
+                                    <span style="font-weight: 700; color: var(--turquoise);">1 179,71 €</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span style="font-weight: 600;">Taux marge</span>
+                                    <span style="font-weight: 700; color: var(--gold); font-size: 1.1rem;">44,2%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- B- Ultra -->
+                    <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.08); border: 2px solid var(--gold);">
+                        <div style="background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%); padding: 1.2rem; color: white;">
+                            <div style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; opacity: 0.9;">EN-B Ultra-léger</div>
+                            <div style="font-size: 1.4rem; font-weight: 700; margin-top: 0.2rem;">B- Ultra</div>
+                        </div>
+                        <div style="padding: 1.2rem; font-size: 0.85rem;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="color: var(--gray-500);">Prix TTC</span>
+                                <span style="font-weight: 600;">4 200,00 €</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="color: var(--gray-500);">Prix HT</span>
+                                <span style="font-weight: 600;">3 500,00 €</span>
+                            </div>
+                            <!-- Détail coût de revient -->
+                            <div style="background: var(--cream); border-radius: 6px; padding: 0.6rem; margin: 0.8rem 0; font-size: 0.8rem;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.3rem;">
+                                    <span style="color: var(--gray-500);">Prix usine (aile+sac+goodies)</span>
+                                    <span>1 099,00 €</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.3rem;">
+                                    <span style="color: var(--gray-500);">Coûts logistiques</span>
+                                    <span>45,00 €</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.3rem;">
+                                    <span style="color: var(--gray-500);">Taxes import (2.7%)</span>
+                                    <span>29,67 €</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; padding-top: 0.3rem; border-top: 1px dashed var(--gray-200); font-weight: 500;">
+                                    <span style="color: var(--gray-600);">Total coût revient</span>
+                                    <span style="color: var(--gray-800);">1 173,67 €</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="color: var(--gray-500);">Frais payment</span>
+                                <span>63,00 €</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; color: var(--gold-dark);">
+                                <span>Marge partenaire (20%)</span>
+                                <span>700,00 €</span>
+                            </div>
+                            <div style="border-top: 2px solid var(--gray-100); padding-top: 0.8rem; margin-top: 0.8rem;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                                    <span style="font-weight: 600; color: var(--turquoise);">Marge brute</span>
+                                    <span style="font-weight: 700; color: var(--turquoise);">1 563,33 €</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span style="font-weight: 600;">Taux marge</span>
+                                    <span style="font-weight: 700; color: var(--gold); font-size: 1.1rem;">44,7%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- K2- Ultra -->
+                    <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.08);">
+                        <div style="background: linear-gradient(135deg, var(--gray-600) 0%, var(--black) 100%); padding: 1.2rem; color: white;">
+                            <div style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; opacity: 0.9;">Mini-voile</div>
+                            <div style="font-size: 1.4rem; font-weight: 700; margin-top: 0.2rem;">K2- Ultra</div>
+                        </div>
+                        <div style="padding: 1.2rem; font-size: 0.85rem;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="color: var(--gray-500);">Prix TTC</span>
+                                <span style="font-weight: 600;">2 800,00 €</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="color: var(--gray-500);">Prix HT</span>
+                                <span style="font-weight: 600;">2 333,33 €</span>
+                            </div>
+                            <!-- Détail coût de revient -->
+                            <div style="background: var(--cream); border-radius: 6px; padding: 0.6rem; margin: 0.8rem 0; font-size: 0.8rem;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.3rem;">
+                                    <span style="color: var(--gray-500);">Prix usine (aile+sac+goodies)</span>
+                                    <span>680,00 €</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.3rem;">
+                                    <span style="color: var(--gray-500);">Coûts logistiques</span>
+                                    <span>45,00 €</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.3rem;">
+                                    <span style="color: var(--gray-500);">Taxes import (2.7%)</span>
+                                    <span>18,36 €</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; padding-top: 0.3rem; border-top: 1px dashed var(--gray-200); font-weight: 500;">
+                                    <span style="color: var(--gray-600);">Total coût revient</span>
+                                    <span style="color: var(--gray-800);">743,36 €</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span style="color: var(--gray-500);">Frais payment</span>
+                                <span>42,00 €</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; color: var(--gold-dark);">
+                                <span>Marge partenaire (20%)</span>
+                                <span>466,67 €</span>
+                            </div>
+                            <div style="border-top: 2px solid var(--gray-100); padding-top: 0.8rem; margin-top: 0.8rem;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                                    <span style="font-weight: 600; color: var(--turquoise);">Marge brute</span>
+                                    <span style="font-weight: 700; color: var(--turquoise);">1 081,30 €</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span style="font-weight: 600;">Taux marge</span>
+                                    <span style="font-weight: 700; color: var(--gold); font-size: 1.1rem;">46,3%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Répartition des ventes et moyenne -->
+            <div style="margin-top: 3rem;">
+                <h3 style="margin-bottom: 1.5rem;">Répartition prévisionnelle des ventes</h3>
+                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.08);">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <thead>
+                            <tr style="background: var(--turquoise-dark); color: white;">
+                                <th style="padding: 1rem; text-align: left;">Canal de vente</th>
+                                <th style="padding: 1rem; text-align: left;">Produit</th>
+                                <th style="padding: 1rem; text-align: right;">Prix HT</th>
+                                <th style="padding: 1rem; text-align: right;">Marge €</th>
+                                <th style="padding: 1rem; text-align: right;">Coût de revient</th>
+                                <th style="padding: 1rem; text-align: right; background: var(--gold);">% des ventes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem;"><span style="background: var(--turquoise); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">School Pack</span></td>
+                                <td style="padding: 1rem; font-weight: 500;">A+ Classic</td>
+                                <td style="padding: 1rem; text-align: right;">1 650 €</td>
+                                <td style="padding: 1rem; text-align: right; color: var(--turquoise); font-weight: 600;">714,67 €</td>
+                                <td style="padding: 1rem; text-align: right;">905,63 €</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 700; background: var(--cream);">30%</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem;"><span style="background: var(--gold); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">B2C2B</span></td>
+                                <td style="padding: 1rem; font-weight: 500;">A+ Classic</td>
+                                <td style="padding: 1rem; text-align: right;">2 667 €</td>
+                                <td style="padding: 1rem; text-align: right; color: var(--turquoise); font-weight: 600;">1 179,71 €</td>
+                                <td style="padding: 1rem; text-align: right;">905,63 €</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 700; background: var(--cream);">20%</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem;"><span style="background: var(--gold); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">B2C2B</span></td>
+                                <td style="padding: 1rem; font-weight: 500;">B- Ultra</td>
+                                <td style="padding: 1rem; text-align: right;">3 500 €</td>
+                                <td style="padding: 1rem; text-align: right; color: var(--turquoise); font-weight: 600;">1 563,33 €</td>
+                                <td style="padding: 1rem; text-align: right;">1 173,67 €</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 700; background: var(--cream);">25%</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem;"><span style="background: var(--gold); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem;">B2C2B</span></td>
+                                <td style="padding: 1rem; font-weight: 500;">K2- Ultra</td>
+                                <td style="padding: 1rem; text-align: right;">2 333 €</td>
+                                <td style="padding: 1rem; text-align: right; color: var(--turquoise); font-weight: 600;">1 081,30 €</td>
+                                <td style="padding: 1rem; text-align: right;">743,36 €</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 700; background: var(--cream);">25%</td>
+                            </tr>
+                            <tr style="background: linear-gradient(90deg, var(--turquoise-dark) 0%, var(--black) 100%); color: white; font-weight: 600;">
+                                <td style="padding: 1.2rem;" colspan="2">MOYENNE PONDÉRÉE</td>
+                                <td style="padding: 1.2rem; text-align: right; font-size: 1.1rem;">2 486,67 €</td>
+                                <td style="padding: 1.2rem; text-align: right; font-size: 1.1rem; color: var(--gold-light);">1 111,50 €</td>
+                                <td style="padding: 1.2rem; text-align: right; font-size: 1.1rem;">932,07 €</td>
+                                <td style="padding: 1.2rem; text-align: right; font-size: 1.1rem;">100%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Synthèse marges -->
+            <div style="background: linear-gradient(135deg, var(--turquoise-dark) 0%, var(--black) 100%); border-radius: 20px; padding: 3rem; margin-top: 3rem; color: white;">
+                <h3 style="color: white; margin-bottom: 2rem; text-align: center;">Synthèse Marges — Indicateurs clés BPI</h3>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;">
+                    <div style="text-align: center; padding: 1.5rem; background: rgba(255,255,255,0.1); border-radius: 12px;">
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--gold-light);">44,7%</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8; margin-top: 0.5rem;">Marge brute moyenne</div>
+                        <div style="font-size: 0.7rem; color: var(--turquoise-light); margin-top: 0.3rem;">Pondérée par canal</div>
+                    </div>
+                    <div style="text-align: center; padding: 1.5rem; background: rgba(255,255,255,0.1); border-radius: 12px;">
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--turquoise-light);">932,07€</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8; margin-top: 0.5rem;">Coût de revient moyen</div>
+                        <div style="font-size: 0.7rem; color: var(--turquoise-light); margin-top: 0.3rem;">Usine + logistique + taxes</div>
+                    </div>
+                    <div style="text-align: center; padding: 1.5rem; background: rgba(255,255,255,0.1); border-radius: 12px;">
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--gold-light);">2 487€</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8; margin-top: 0.5rem;">Prix moyen de vente HT</div>
+                        <div style="font-size: 0.7rem; color: var(--turquoise-light); margin-top: 0.3rem;">Moyenne pondérée</div>
+                    </div>
+                    <div style="text-align: center; padding: 1.5rem; background: rgba(255,255,255,0.1); border-radius: 12px;">
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--turquoise-light);">1 112€</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8; margin-top: 0.5rem;">Marge brute unitaire</div>
+                        <div style="font-size: 0.7rem; color: var(--turquoise-light); margin-top: 0.3rem;">Par aile vendue</div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ========== SECTION 2: CHARGES FIXES ========== -->
+        <section id="bp-couts" class="bg-white">
+            <span class="section-number">02</span>
+            <h2>Charges <span class="gold">Fixes</span></h2>
+            <p>Détail des charges fixes annuelles : masse salariale, exploitation et investissement R&D</p>
+            
+            <!-- Récapitulatif général en haut -->
+            <div style="background: linear-gradient(135deg, var(--turquoise-dark) 0%, var(--black) 100%); border-radius: 20px; padding: 3rem; margin: 3rem 0; color: white;">
+                <h3 style="color: white; margin-bottom: 2rem; text-align: center;">Récapitulatif des charges fixes annuelles</h3>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; text-align: center;">
+                    <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem;">
+                        <div style="font-size: 0.8rem; opacity: 0.7; text-transform: uppercase; margin-bottom: 0.5rem;">Masse salariale</div>
+                        <div style="font-size: 1.5rem; font-weight: 700;">101 476€</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem;">
+                        <div style="font-size: 0.8rem; opacity: 0.7; text-transform: uppercase; margin-bottom: 0.5rem;">Charges exploitation</div>
+                        <div style="font-size: 1.5rem; font-weight: 700;">40 114€</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem;">
+                        <div style="font-size: 0.8rem; opacity: 0.7; text-transform: uppercase; margin-bottom: 0.5rem;">Investissement R&D</div>
+                        <div style="font-size: 1.5rem; font-weight: 700;">54 169€</div>
+                    </div>
+                    <div style="background: var(--gold); border-radius: 12px; padding: 1.5rem;">
+                        <div style="font-size: 0.8rem; text-transform: uppercase; margin-bottom: 0.5rem;">Total Charges Fixes</div>
+                        <div style="font-size: 1.8rem; font-weight: 700;">195 759€</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1. MASSE SALARIALE ANNUELLE -->
+            <div style="margin-top: 3rem;">
+                <h3 style="margin-bottom: 0.5rem; color: var(--turquoise-dark);">1. Masse Salariale Annuelle</h3>
+                <p style="font-size: 0.9rem; color: var(--gray-500); margin-bottom: 1.5rem; font-style: italic;">Note: Abattement ZFRR + ACRE appliqué</p>
+                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.08);">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <thead>
+                            <tr style="background: var(--turquoise-dark); color: white;">
+                                <th style="padding: 1rem; text-align: left;">Collaborateur</th>
+                                <th style="padding: 1rem; text-align: center;">Nb mois</th>
+                                <th style="padding: 1rem; text-align: center;">Type</th>
+                                <th style="padding: 1rem; text-align: right;">Charge annuelle (€)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem; font-weight: 500;">Manu</td>
+                                <td style="padding: 1rem; text-align: center;">10</td>
+                                <td style="padding: 1rem; text-align: center;">Prestation</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600;">10 000€</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100); background: var(--cream);">
+                                <td style="padding: 1rem; font-weight: 500;">Yann</td>
+                                <td style="padding: 1rem; text-align: center;">3</td>
+                                <td style="padding: 1rem; text-align: center;">Prestation</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600;">6 000€</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem; font-weight: 500;">Jean-Baptiste</td>
+                                <td style="padding: 1rem; text-align: center;">12</td>
+                                <td style="padding: 1rem; text-align: center;">Salaire</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600;">21 600€</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100); background: var(--cream);">
+                                <td style="padding: 1rem; font-weight: 500;">Thomas</td>
+                                <td style="padding: 1rem; text-align: center;">12</td>
+                                <td style="padding: 1rem; text-align: center;">Salaire</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600;">36 480€</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem; font-weight: 500;">Jim</td>
+                                <td style="padding: 1rem; text-align: center;">12</td>
+                                <td style="padding: 1rem; text-align: center;">Prestation</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600;">27 396€</td>
+                            </tr>
+                            <tr style="background: linear-gradient(90deg, var(--turquoise) 0%, var(--turquoise-dark) 100%); color: white; font-weight: 600;">
+                                <td style="padding: 1.2rem;" colspan="3">SOUS-TOTAL MASSE SALARIALE</td>
+                                <td style="padding: 1.2rem; text-align: right; font-size: 1.1rem;">101 476€</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 2. CHARGES D'EXPLOITATION ANNUELLES -->
+            <div style="margin-top: 3rem;">
+                <h3 style="margin-bottom: 0.5rem; color: var(--turquoise-dark);">2. Charges d'Exploitation Annuelles</h3>
+                <p style="font-size: 0.9rem; color: var(--gray-500); margin-bottom: 1.5rem; font-style: italic;">Hors masse salariale</p>
+                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.08);">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <thead>
+                            <tr style="background: var(--gold-dark); color: white;">
+                                <th style="padding: 1rem; text-align: left;">Poste</th>
+                                <th style="padding: 1rem; text-align: center;">Catégorie</th>
+                                <th style="padding: 1rem; text-align: right;">Montant (€/an)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem;">OVH Website</td>
+                                <td style="padding: 1rem; text-align: center;">License</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600;">50€</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100); background: var(--cream);">
+                                <td style="padding: 1rem;">Déplacements / Nourriture / Logement</td>
+                                <td style="padding: 1rem; text-align: center;">Déplacement</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600;">10 000€</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem;">Adobe</td>
+                                <td style="padding: 1rem; text-align: center;">Logiciel</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600;">900€</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100); background: var(--cream);">
+                                <td style="padding: 1rem;">Dropbox</td>
+                                <td style="padding: 1rem; text-align: center;">License</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600;">864€</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem;">Loyer</td>
+                                <td style="padding: 1rem; text-align: center;">Frais fixe</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600;">9 600€</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100); background: var(--cream);">
+                                <td style="padding: 1rem;">Notion</td>
+                                <td style="padding: 1rem; text-align: center;">Gestion</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600;">570€</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem;">AI Assistant</td>
+                                <td style="padding: 1rem; text-align: center;">Logiciel</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600;">4 000€</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100); background: var(--cream);">
+                                <td style="padding: 1rem;">Art List</td>
+                                <td style="padding: 1rem; text-align: center;">License</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600;">480€</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem;">Glider Plan</td>
+                                <td style="padding: 1rem; text-align: center;">Logiciel</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600;">4 650€</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100); background: var(--cream);">
+                                <td style="padding: 1rem;">Investissement matériel</td>
+                                <td style="padding: 1rem; text-align: center;">Achat</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600;">5 000€</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem;">Comptabilité</td>
+                                <td style="padding: 1rem; text-align: center;">Gestion</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600;">4 000€</td>
+                            </tr>
+                            <tr style="background: linear-gradient(90deg, var(--gold) 0%, var(--gold-dark) 100%); color: white; font-weight: 600;">
+                                <td style="padding: 1.2rem;" colspan="2">SOUS-TOTAL EXPLOITATION</td>
+                                <td style="padding: 1.2rem; text-align: right; font-size: 1.1rem;">40 114€</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 3. INVESTISSEMENT R&D ANNUEL -->
+            <div style="margin-top: 3rem;">
+                <h3 style="margin-bottom: 1.5rem; color: var(--turquoise-dark);">3. Investissement R&D Annuel</h3>
+                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.08);">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <thead>
+                            <tr style="background: var(--turquoise); color: white;">
+                                <th style="padding: 1rem; text-align: left;">Poste</th>
+                                <th style="padding: 1rem; text-align: center;">Nb protos</th>
+                                <th style="padding: 1rem; text-align: right;">Prix unitaire (€)</th>
+                                <th style="padding: 1rem; text-align: right;">Coût total (€)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem; font-weight: 500;">Proto recherche</td>
+                                <td style="padding: 1rem; text-align: center;">24</td>
+                                <td style="padding: 1rem; text-align: right;">1 118€</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600;">26 844€</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100); background: var(--cream);">
+                                <td style="padding: 1rem; font-weight: 500;">Veille concurrentielle</td>
+                                <td style="padding: 1rem; text-align: center;">2</td>
+                                <td style="padding: 1rem; text-align: right;">2 500€</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600;">5 000€</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem; font-weight: 500;">Pré-série homologation</td>
+                                <td style="padding: 1rem; text-align: center;">10</td>
+                                <td style="padding: 1rem; text-align: right;">1 118€</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600;">11 185€</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100); background: var(--cream);">
+                                <td style="padding: 1rem; font-weight: 500;">Homologation</td>
+                                <td style="padding: 1rem; text-align: center;">2</td>
+                                <td style="padding: 1rem; text-align: right;">5 570€</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600;">11 140€</td>
+                            </tr>
+                            <tr style="background: linear-gradient(90deg, var(--turquoise) 0%, var(--turquoise-dark) 100%); color: white; font-weight: 600;">
+                                <td style="padding: 1.2rem;" colspan="3">SOUS-TOTAL R&D</td>
+                                <td style="padding: 1.2rem; text-align: right; font-size: 1.1rem;">54 169€</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ========== SECTION 2B: CHARGES VARIABLES ========== -->
+        <section id="bp-variables" class="bg-cream">
+            <span class="section-number">02b</span>
+            <h2>Charges <span class="gold">Variables</span></h2>
+            <p>Charges liées au chiffre d'affaires et frais de lancement ponctuels</p>
+            
+            <!-- Grid 2 colonnes: Charges Variables et Frais de Lancement -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 3rem 0;">
+                
+                <!-- Charges Variables -->
+                <div style="background: white; border-radius: 20px; padding: 2.5rem; box-shadow: 0 8px 30px rgba(0,0,0,0.08);">
+                    <h3 style="color: var(--turquoise-dark); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                        <span style="font-size: 1.4rem;">📈</span> Charges Variables
+                    </h3>
+                    <p style="font-size: 0.9rem; color: var(--gray-600); margin-bottom: 2rem;">Charges proportionnelles à l'activité</p>
+                    
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="background: linear-gradient(90deg, var(--turquoise-dark) 0%, var(--black) 100%); color: white;">
+                                <th style="padding: 1rem; text-align: left; border-radius: 8px 0 0 0;">Poste</th>
+                                <th style="padding: 1rem; text-align: center;">Base de calcul</th>
+                                <th style="padding: 1rem; text-align: right; border-radius: 0 8px 0 0;">Pourcentage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem; font-weight: 500;">Ré-investissement 30% du bénéfice</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--gray-600);">Bénéfice</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600; color: var(--turquoise-dark);">30,0%</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100); background: var(--cream);">
+                                <td style="padding: 1rem; font-weight: 500;">Stock</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--gray-600);">Nb voiles vendues (forecast)</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600; color: var(--turquoise-dark);">50,0%</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem; font-weight: 500;">Assurance</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--gray-600);">-</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600; color: var(--turquoise-dark);">0,8%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(212, 175, 55, 0.1); border-left: 4px solid var(--gold); border-radius: 0 8px 8px 0;">
+                        <p style="font-size: 0.85rem; color: var(--gray-600); font-style: italic; margin: 0;">
+                            <strong>Note :</strong> L'assurance RC Produit (0,8% du CA) est une estimation.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Frais de Lancement -->
+                <div style="background: white; border-radius: 20px; padding: 2.5rem; box-shadow: 0 8px 30px rgba(0,0,0,0.08);">
+                    <h3 style="color: var(--gold-dark); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                        <span style="font-size: 1.4rem;">🚀</span> Frais de Lancement
+                    </h3>
+                    <p style="font-size: 0.9rem; color: var(--gray-600); margin-bottom: 2rem;">Investissements ponctuels (one-shot)</p>
+                    
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="background: linear-gradient(90deg, var(--gold) 0%, var(--gold-dark) 100%); color: var(--black);">
+                                <th style="padding: 1rem; text-align: left; border-radius: 8px 0 0 0;">Poste</th>
+                                <th style="padding: 1rem; text-align: right; border-radius: 0 8px 0 0;">Montant (€)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem; font-weight: 500;">Charte Graphique</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600;">500 €</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100); background: var(--cream);">
+                                <td style="padding: 1rem; font-weight: 500;">Création d'entreprise (Avocat)</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600;">3 303 €</td>
+                            </tr>
+                            <tr style="background: linear-gradient(90deg, var(--gold) 0%, var(--gold-dark) 100%); font-weight: 600;">
+                                <td style="padding: 1.2rem; font-weight: 700;">SOUS-TOTAL LANCEMENT</td>
+                                <td style="padding: 1.2rem; text-align: right; font-size: 1.1rem; font-weight: 700;">3 803 €</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(0, 128, 128, 0.1); border-left: 4px solid var(--turquoise); border-radius: 0 8px 8px 0;">
+                        <p style="font-size: 0.85rem; color: var(--gray-600); font-style: italic; margin: 0;">
+                            <strong>Info :</strong> Ces frais sont à engager une seule fois lors de la création de l'entreprise.
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+
+        </section>
+
+        <!-- ========== SECTION 3: EMPRUNT BANCAIRE ========== -->
+        <section id="bp-emprunt" class="bg-white">
+            <span class="section-number">03</span>
+            <h2>Emprunt <span class="gold">Bancaire</span></h2>
+            <p>Financement bancaire pour soutenir le développement et le besoin en fonds de roulement</p>
+            
+            <!-- Récapitulatif du prêt -->
+            <div style="background: linear-gradient(135deg, var(--turquoise-dark) 0%, var(--black) 100%); border-radius: 20px; padding: 3rem; margin: 3rem 0; color: white;">
+                <h3 style="color: white; margin-bottom: 2rem; text-align: center;">Caractéristiques du Prêt</h3>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; text-align: center;">
+                    <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem;">
+                        <div style="font-size: 0.8rem; text-transform: uppercase; margin-bottom: 0.5rem; opacity: 0.8;">Montant</div>
+                        <div style="font-size: 1.8rem; font-weight: 700;">189 000€</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem;">
+                        <div style="font-size: 0.8rem; text-transform: uppercase; margin-bottom: 0.5rem; opacity: 0.8;">Durée</div>
+                        <div style="font-size: 1.8rem; font-weight: 700;">4 ans</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem;">
+                        <div style="font-size: 0.8rem; text-transform: uppercase; margin-bottom: 0.5rem; opacity: 0.8;">Taux d'intérêt</div>
+                        <div style="font-size: 1.8rem; font-weight: 700;">4,50%</div>
+                    </div>
+                    <div style="background: var(--gold); border-radius: 12px; padding: 1.5rem;">
+                        <div style="font-size: 0.8rem; text-transform: uppercase; margin-bottom: 0.5rem;">Charge Annuelle</div>
+                        <div style="font-size: 1.8rem; font-weight: 700;">52 400€</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid 2 colonnes: Synthèse et Impact -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 3rem 0;">
+                
+                <!-- Synthèse sur 4 ans -->
+                <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 30px rgba(0,0,0,0.08);">
+                    <h4 style="color: var(--turquoise-dark); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="font-size: 1.2rem;">📊</span> Synthèse sur 4 ans
+                    </h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                        <div style="display: flex; justify-content: space-between; padding: 0.8rem; background: var(--gray-50); border-radius: 8px;">
+                            <span style="color: var(--gray-600);">Mensualité totale</span>
+                            <span style="font-weight: 600; color: var(--black);">4 367€</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.8rem; background: var(--gray-50); border-radius: 8px;">
+                            <span style="color: var(--gray-600);">Coût total du crédit</span>
+                            <span style="font-weight: 600; color: var(--black);">206 880€</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.8rem; background: var(--gray-50); border-radius: 8px;">
+                            <span style="color: var(--gray-600);">dont Intérêts</span>
+                            <span style="font-weight: 600; color: var(--turquoise-dark);">17 873€</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.8rem; background: var(--gray-50); border-radius: 8px;">
+                            <span style="color: var(--gray-600);">dont Assurance (0,36%)</span>
+                            <span style="font-weight: 600; color: var(--turquoise-dark);">2 722€</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Impact sur trésorerie -->
+                <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 30px rgba(0,0,0,0.08);">
+                    <h4 style="color: var(--gold-dark); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="font-size: 1.2rem;">💰</span> Impact Annuel sur Trésorerie
+                    </h4>
+                    <div style="background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%); border-radius: 12px; padding: 2rem; text-align: center; margin-bottom: 1.5rem;">
+                        <div style="font-size: 0.9rem; text-transform: uppercase; margin-bottom: 0.5rem; color: white; opacity: 0.9;">Charge de remboursement / an</div>
+                        <div style="font-size: 2.5rem; font-weight: 700; color: white;">52 400€</div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                        <div style="display: flex; justify-content: space-between; padding: 0.8rem; background: var(--gray-50); border-radius: 8px;">
+                            <span style="color: var(--gray-600);">Prêt annuel (capital + intérêts)</span>
+                            <span style="font-weight: 600; color: var(--black);">51 720€</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.8rem; background: var(--gray-50); border-radius: 8px;">
+                            <span style="color: var(--gray-600);">Assurance annuelle</span>
+                            <span style="font-weight: 600; color: var(--black);">680€</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tableau des charges financières par année -->
+            <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 30px rgba(0,0,0,0.08); margin: 3rem 0;">
+                <h4 style="color: var(--turquoise-dark); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-size: 1.2rem;">📈</span> Charges Financières par Année (Compte de Résultat)
+                </h4>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+                        <thead>
+                            <tr style="background: var(--turquoise-dark); color: white;">
+                                <th style="padding: 1rem; text-align: left; border-radius: 8px 0 0 0;">Année</th>
+                                <th style="padding: 1rem; text-align: right;">Intérêts</th>
+                                <th style="padding: 1rem; text-align: right;">Assurance</th>
+                                <th style="padding: 1rem; text-align: right; border-radius: 0 8px 0 0;">Total Charges Fin.</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem; font-weight: 500;">2026</td>
+                                <td style="padding: 1rem; text-align: right;">7 602€</td>
+                                <td style="padding: 1rem; text-align: right;">681€</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600; color: var(--turquoise-dark);">8 283€</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100); background: var(--gray-50);">
+                                <td style="padding: 1rem; font-weight: 500;">2027</td>
+                                <td style="padding: 1rem; text-align: right;">5 576€</td>
+                                <td style="padding: 1rem; text-align: right;">681€</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600; color: var(--turquoise-dark);">6 257€</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem; font-weight: 500;">2028</td>
+                                <td style="padding: 1rem; text-align: right;">3 456€</td>
+                                <td style="padding: 1rem; text-align: right;">681€</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600; color: var(--turquoise-dark);">4 137€</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100); background: var(--gray-50);">
+                                <td style="padding: 1rem; font-weight: 500;">2029</td>
+                                <td style="padding: 1rem; text-align: right;">1 239€</td>
+                                <td style="padding: 1rem; text-align: right;">681€</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600; color: var(--turquoise-dark);">1 920€</td>
+                            </tr>
+                            <tr style="background: linear-gradient(90deg, var(--gold) 0%, var(--gold-dark) 100%); color: white; font-weight: 600;">
+                                <td style="padding: 1.2rem;">TOTAL</td>
+                                <td style="padding: 1.2rem; text-align: right;">17 873€</td>
+                                <td style="padding: 1.2rem; text-align: right;">2 722€</td>
+                                <td style="padding: 1.2rem; text-align: right; font-size: 1.1rem;">20 595€</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--gray-500); font-style: italic;">
+                    Note : Seuls les intérêts et l'assurance sont des charges dans le Compte de Résultat. Le remboursement du capital reste dans le Plan de Trésorerie.
+                </p>
+            </div>
+
+            <!-- Tableau d'amortissement -->
+            <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 30px rgba(0,0,0,0.08); margin: 3rem 0;">
+                <h4 style="color: var(--turquoise-dark); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-size: 1.2rem;">📋</span> Tableau d'Amortissement - Capital Restant Dû
+                </h4>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+                        <thead>
+                            <tr style="background: var(--turquoise-dark); color: white;">
+                                <th style="padding: 1rem; text-align: left; border-radius: 8px 0 0 0;">Fin d'année</th>
+                                <th style="padding: 1rem; text-align: right;">Capital remboursé</th>
+                                <th style="padding: 1rem; text-align: right;">Intérêts payés</th>
+                                <th style="padding: 1rem; text-align: right; border-radius: 0 8px 0 0;">CRD fin période</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--gray-100); background: var(--cream);">
+                                <td style="padding: 1rem; font-weight: 500;">2025 (déblocage mars)</td>
+                                <td style="padding: 1rem; text-align: right;">—</td>
+                                <td style="padding: 1rem; text-align: right;">—</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600;">189 000€</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem; font-weight: 500;">2026</td>
+                                <td style="padding: 1rem; text-align: right;">44 118€</td>
+                                <td style="padding: 1rem; text-align: right;">7 602€</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600; color: var(--turquoise-dark);">144 882€</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100); background: var(--gray-50);">
+                                <td style="padding: 1rem; font-weight: 500;">2027</td>
+                                <td style="padding: 1rem; text-align: right;">46 142€</td>
+                                <td style="padding: 1rem; text-align: right;">5 576€</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600; color: var(--turquoise-dark);">98 740€</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem; font-weight: 500;">2028</td>
+                                <td style="padding: 1rem; text-align: right;">48 262€</td>
+                                <td style="padding: 1rem; text-align: right;">3 456€</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600; color: var(--turquoise-dark);">50 478€</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100); background: var(--gray-50);">
+                                <td style="padding: 1rem; font-weight: 500;">2029</td>
+                                <td style="padding: 1rem; text-align: right;">50 478€</td>
+                                <td style="padding: 1rem; text-align: right;">1 239€</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600; color: var(--gold-dark);">0€</td>
+                            </tr>
+                            <tr style="background: linear-gradient(90deg, var(--turquoise) 0%, var(--turquoise-dark) 100%); color: white; font-weight: 600;">
+                                <td style="padding: 1.2rem;">TOTAL</td>
+                                <td style="padding: 1.2rem; text-align: right;">189 000€</td>
+                                <td style="padding: 1.2rem; text-align: right;">17 873€</td>
+                                <td style="padding: 1.2rem; text-align: right;">—</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Note de réconciliation -->
+            <div style="background: linear-gradient(135deg, var(--cream) 0%, var(--gray-50) 100%); border-radius: 12px; padding: 1.5rem; border-left: 4px solid var(--turquoise);">
+                <h4 style="color: var(--turquoise-dark); margin-bottom: 1rem;">📋 Réconciliation avec le Bilan Prévisionnel</h4>
+                <ul style="color: var(--gray-600); line-height: 1.8; margin: 0; padding-left: 1.2rem;">
+                    <li>Le CRD fin 2025 = 189 000€ (déblocage prévu mars 2026)</li>
+                    <li>Le CRD fin 2026 = 144 882€ (≈ 157 500€ avec décalage versement)</li>
+                    <li>Le bilan utilise des CRD ajustés pour le décalage comptable</li>
+                </ul>
+            </div>
+
+        </section>
+
+        <!-- ========== SECTION 3B: FINANCEMENT ========== -->
+        <section id="bp-financement" class="bg-cream">
+            <span class="section-number">03b</span>
+            <h2>Plan de <span class="gold">Financement</span></h2>
+            <p>Structure du financement initial et calendrier des apports</p>
+
+            <!-- Vue synthétique financement -->
+            <div style="background: linear-gradient(135deg, var(--turquoise-dark) 0%, var(--black) 100%); border-radius: 20px; padding: 3rem; margin: 3rem 0; color: white;">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.7;">Besoin de financement total</div>
+                    <div style="font-size: 3.5rem; font-weight: 700; margin-top: 0.5rem;">428 000€</div>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+                    <div style="background: rgba(255,255,255,0.1); border-radius: 16px; padding: 2rem; text-align: center;">
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--turquoise-light);">239 000€</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9; margin-top: 0.5rem;">Fonds propres</div>
+                        <div style="font-size: 1.5rem; font-weight: 600; color: var(--gold-light); margin-top: 0.5rem;">56%</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.1); border-radius: 16px; padding: 2rem; text-align: center;">
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--gold-light);">189 000€</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9; margin-top: 0.5rem;">Emprunt bancaire</div>
+                        <div style="font-size: 1.5rem; font-weight: 600; color: var(--gold-light); margin-top: 0.5rem;">44%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline financement -->
+            <div style="margin-top: 2rem;">
+                <h3 style="margin-bottom: 2rem;">Calendrier des apports</h3>
+                <div style="display: flex; flex-direction: column; gap: 1.5rem; max-width: 900px;">
+                    <!-- Apport 1 -->
+                    <div style="display: flex; gap: 1.5rem; align-items: center;">
+                        <div style="width: 140px; text-align: right; flex-shrink: 0;">
+                            <div style="font-weight: 600; color: var(--turquoise-dark);">15 Déc 2025</div>
+                        </div>
+                        <div style="width: 20px; height: 20px; background: var(--turquoise); border-radius: 50%; flex-shrink: 0; position: relative;">
+                            <div style="position: absolute; left: 50%; top: 100%; width: 2px; height: 40px; background: var(--gray-200); transform: translateX(-50%);"></div>
+                        </div>
+                        <div style="flex: 1; background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <div style="font-weight: 600; color: var(--black);">Capital social</div>
+                                <div style="font-size: 0.9rem; color: var(--gray-500);">Création de la société</div>
+                            </div>
+                            <div style="font-size: 1.5rem; font-weight: 700; color: var(--turquoise);">100 000€</div>
+                        </div>
+                    </div>
+                    <!-- Apport 2 -->
+                    <div style="display: flex; gap: 1.5rem; align-items: center;">
+                        <div style="width: 140px; text-align: right; flex-shrink: 0;">
+                            <div style="font-weight: 600; color: var(--turquoise-dark);">Janvier 2026</div>
+                        </div>
+                        <div style="width: 20px; height: 20px; background: var(--turquoise); border-radius: 50%; flex-shrink: 0; position: relative;">
+                            <div style="position: absolute; left: 50%; top: 100%; width: 2px; height: 40px; background: var(--gray-200); transform: translateX(-50%);"></div>
+                        </div>
+                        <div style="flex: 1; background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <div style="font-weight: 600; color: var(--black);">Comptes courants associés</div>
+                                <div style="font-size: 0.9rem; color: var(--gray-500);">Apport des associés</div>
+                            </div>
+                            <div style="font-size: 1.5rem; font-weight: 700; color: var(--turquoise);">89 000€</div>
+                        </div>
+                    </div>
+                    <!-- Apport 3 -->
+                    <div style="display: flex; gap: 1.5rem; align-items: center;">
+                        <div style="width: 140px; text-align: right; flex-shrink: 0;">
+                            <div style="font-weight: 600; color: var(--gold);">Mars 2026</div>
+                        </div>
+                        <div style="width: 20px; height: 20px; background: var(--gold); border-radius: 50%; flex-shrink: 0; position: relative;">
+                            <div style="position: absolute; left: 50%; top: 100%; width: 2px; height: 40px; background: var(--gray-200); transform: translateX(-50%);"></div>
+                        </div>
+                        <div style="flex: 1; background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%); padding: 1.5rem; border-radius: 12px; color: white; display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <div style="font-weight: 600;">Emprunt Banque Populaire</div>
+                                <div style="font-size: 0.9rem; opacity: 0.9;">Déblocage 2-3 mois après création</div>
+                            </div>
+                            <div style="font-size: 1.5rem; font-weight: 700;">189 000€</div>
+                        </div>
+                    </div>
+                    <!-- Apport 4 -->
+                    <div style="display: flex; gap: 1.5rem; align-items: center;">
+                        <div style="width: 140px; text-align: right; flex-shrink: 0;">
+                            <div style="font-weight: 600; color: var(--turquoise-dark);">Janvier 2027</div>
+                        </div>
+                        <div style="width: 20px; height: 20px; background: var(--turquoise); border-radius: 50%; flex-shrink: 0;"></div>
+                        <div style="flex: 1; background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <div style="font-weight: 600; color: var(--black);">Avoir EURL JB</div>
+                                <div style="font-size: 0.9rem; color: var(--gray-500);">Apport complémentaire prévu</div>
+                            </div>
+                            <div style="font-size: 1.5rem; font-weight: 700; color: var(--turquoise);">50 000€</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Détail emprunt -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem;">
+                <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 30px rgba(0,0,0,0.08);">
+                    <h4 style="color: var(--turquoise-dark); margin-bottom: 1.5rem;">Détail de l'emprunt bancaire</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                        <div style="display: flex; justify-content: space-between; padding: 0.8rem; background: var(--cream); border-radius: 8px;">
+                            <span style="color: var(--gray-600);">Montant emprunté</span>
+                            <span style="font-weight: 600;">189 000€</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.8rem; background: var(--cream); border-radius: 8px;">
+                            <span style="color: var(--gray-600);">Durée</span>
+                            <span style="font-weight: 600;">48 mois</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.8rem; background: var(--cream); border-radius: 8px;">
+                            <span style="color: var(--gray-600);">Mensualité</span>
+                            <span style="font-weight: 600;">4 367€</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.8rem; background: var(--cream); border-radius: 8px;">
+                            <span style="color: var(--gray-600);">Total remboursé/an</span>
+                            <span style="font-weight: 600;">52 404€</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 30px rgba(0,0,0,0.08);">
+                    <h4 style="color: var(--gold-dark); margin-bottom: 1.5rem;">Utilisation des fonds</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                        <div style="display: flex; justify-content: space-between; padding: 0.8rem; background: var(--cream); border-radius: 8px;">
+                            <span style="color: var(--gray-600);">Trésorerie de démarrage</span>
+                            <span style="font-weight: 600;">150 000€</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.8rem; background: var(--cream); border-radius: 8px;">
+                            <span style="color: var(--gray-600);">Stock initial (10 ailes)</span>
+                            <span style="font-weight: 600;">50 000€</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.8rem; background: var(--cream); border-radius: 8px;">
+                            <span style="color: var(--gray-600);">Homologations EN</span>
+                            <span style="font-weight: 600;">25 000€</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 0.8rem; background: var(--cream); border-radius: 8px;">
+                            <span style="color: var(--gray-600);">R&D / Prototypes</span>
+                            <span style="font-weight: 600;">26 000€</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SECTION 4: CROISSANCE ========== -->
+        <section id="bp-croissance" class="bg-white">
+            <span class="section-number">04</span>
+            <h2>Trajectoire de <span class="gold">Croissance</span></h2>
+            <p>Évolution des volumes de ventes et du chiffre d'affaires sur 6 ans</p>
+
+            <!-- Graphique ventes par année -->
+            <div style="background: linear-gradient(135deg, var(--turquoise-dark) 0%, var(--black) 100%); border-radius: 20px; padding: 3rem; margin: 3rem 0; color: white;">
+                <h3 style="color: white; margin-bottom: 2rem; text-align: center;">Nombre d'ailes vendues par année</h3>
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; height: 280px; padding: 0 1rem;">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; flex: 1;">
+                        <div style="font-weight: 700; font-size: 1.3rem;">75</div>
+                        <div style="width: 50px; background: var(--turquoise); border-radius: 6px 6px 0 0; height: 30px;"></div>
+                        <span style="font-size: 0.8rem; opacity: 0.8;">2026</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; flex: 1;">
+                        <div style="font-weight: 700; font-size: 1.3rem; color: var(--gold-light);">250</div>
+                        <div style="width: 50px; background: var(--gold); border-radius: 6px 6px 0 0; height: 70px;"></div>
+                        <span style="font-size: 0.8rem; opacity: 0.8;">2027</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; flex: 1;">
+                        <div style="font-weight: 700; font-size: 1.3rem; color: var(--gold-light);">550</div>
+                        <div style="width: 50px; background: var(--gold); border-radius: 6px 6px 0 0; height: 130px;"></div>
+                        <span style="font-size: 0.8rem; opacity: 0.8;">2028</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; flex: 1;">
+                        <div style="font-weight: 700; font-size: 1.3rem; color: var(--gold-light);">800</div>
+                        <div style="width: 50px; background: var(--gold); border-radius: 6px 6px 0 0; height: 180px;"></div>
+                        <span style="font-size: 0.8rem; opacity: 0.8;">2029</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; flex: 1;">
+                        <div style="font-weight: 700; font-size: 1.3rem; color: var(--gold-light);">1000</div>
+                        <div style="width: 50px; background: linear-gradient(to top, var(--gold-dark), var(--gold-light)); border-radius: 6px 6px 0 0; height: 220px;"></div>
+                        <span style="font-size: 0.8rem; opacity: 0.8;">2030</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; flex: 1;">
+                        <div style="font-weight: 700; font-size: 1.3rem; color: var(--gold-light);">1000</div>
+                        <div style="width: 50px; background: linear-gradient(to top, var(--gold-dark), var(--gold-light)); border-radius: 6px 6px 0 0; height: 220px;"></div>
+                        <span style="font-size: 0.8rem; opacity: 0.8;">2031</span>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                    <span style="background: var(--gold); padding: 0.5rem 1.5rem; border-radius: 20px; font-weight: 600; color: var(--black);">Objectif de rentabilité atteint dès 2027</span>
+                </div>
+            </div>
+
+            <!-- Tableau complet année par année -->
+            <div style="margin-top: 2rem;">
+                <h3 style="margin-bottom: 1.5rem;">Synthèse annuelle — Ventes, Production, CA</h3>
+                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.08);">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <thead>
+                            <tr style="background: var(--turquoise-dark); color: white;">
+                                <th style="padding: 1.2rem; text-align: left;">Année</th>
+                                <th style="padding: 1.2rem; text-align: right;">Production</th>
+                                <th style="padding: 1.2rem; text-align: right;">Ventes</th>
+                                <th style="padding: 1.2rem; text-align: right;">CA HT</th>
+                                <th style="padding: 1.2rem; text-align: right;">Marge brute</th>
+                                <th style="padding: 1.2rem; text-align: right; background: var(--gold);">Flux annuel</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem; font-weight: 600;">2026 <span style="font-size: 0.75rem; color: var(--turquoise); background: var(--cream); padding: 0.2rem 0.5rem; border-radius: 4px; margin-left: 0.5rem;">Lancement</span></td>
+                                <td style="padding: 1rem; text-align: right;">111 ailes</td>
+                                <td style="padding: 1rem; text-align: right;">75 ailes</td>
+                                <td style="padding: 1rem; text-align: right;">186 500€</td>
+                                <td style="padding: 1rem; text-align: right;">83 363€</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600; color: var(--turquoise); background: var(--gray-50);">+93 866€</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem; font-weight: 600;">2027</td>
+                                <td style="padding: 1rem; text-align: right;">338 ailes</td>
+                                <td style="padding: 1rem; text-align: right;">250 ailes</td>
+                                <td style="padding: 1rem; text-align: right;">621 667€</td>
+                                <td style="padding: 1rem; text-align: right;">277 875€</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600; color: var(--turquoise); background: var(--gray-50);">+20 291€</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem; font-weight: 600;">2028</td>
+                                <td style="padding: 1rem; text-align: right;">651 ailes</td>
+                                <td style="padding: 1rem; text-align: right;">550 ailes</td>
+                                <td style="padding: 1rem; text-align: right;">1 367 667€</td>
+                                <td style="padding: 1rem; text-align: right;">611 325€</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600; color: var(--turquoise); background: var(--gray-50);">+373 929€</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem; font-weight: 600;">2029</td>
+                                <td style="padding: 1rem; text-align: right;">976 ailes</td>
+                                <td style="padding: 1rem; text-align: right;">800 ailes</td>
+                                <td style="padding: 1rem; text-align: right;">1 989 333€</td>
+                                <td style="padding: 1rem; text-align: right;">889 201€</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600; color: var(--turquoise); background: var(--gray-50);">+641 514€</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100); background: var(--cream);">
+                                <td style="padding: 1rem; font-weight: 600;">2030 <span style="font-size: 0.75rem; color: white; background: var(--gold); padding: 0.2rem 0.5rem; border-radius: 4px; margin-left: 0.5rem;">Objectif</span></td>
+                                <td style="padding: 1rem; text-align: right;">1099 ailes</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 700; color: var(--gold);">1000 ailes</td>
+                                <td style="padding: 1rem; text-align: right;">2 486 667€</td>
+                                <td style="padding: 1rem; text-align: right;">1 111 501€</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600; color: var(--gold); background: var(--gray-50);">+1 002 430€</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem; font-weight: 600;">2031</td>
+                                <td style="padding: 1rem; text-align: right;">1000 ailes</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 700; color: var(--gold);">1000 ailes</td>
+                                <td style="padding: 1rem; text-align: right;">2 611 000€</td>
+                                <td style="padding: 1rem; text-align: right;">1 167 076€</td>
+                                <td style="padding: 1rem; text-align: right; font-weight: 600; color: var(--gold); background: var(--gray-50);">+1 231 736€</td>
+                            </tr>
+                            <tr style="background: linear-gradient(90deg, var(--turquoise) 0%, var(--turquoise-dark) 100%); color: white; font-weight: 600;">
+                                <td style="padding: 1.2rem;">TOTAL 2026-2031</td>
+                                <td style="padding: 1.2rem; text-align: right;">4 175 ailes</td>
+                                <td style="padding: 1.2rem; text-align: right;">3 675 ailes</td>
+                                <td style="padding: 1.2rem; text-align: right; font-size: 1.1rem;">9,26M€</td>
+                                <td style="padding: 1.2rem; text-align: right;">4,14M€</td>
+                                <td style="padding: 1.2rem; text-align: right; font-size: 1.1rem; color: var(--gold-light);">+3,36M€</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Graphique CA par année -->
+            <div style="margin-top: 3rem;">
+                <h3 style="margin-bottom: 1.5rem;">Évolution du Chiffre d'Affaires HT</h3>
+                <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem;">
+                    <div style="background: white; border-radius: 12px; padding: 1.5rem; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                        <div style="font-size: 0.75rem; color: var(--gray-500); margin-bottom: 0.5rem;">2026</div>
+                        <div style="font-size: 1.5rem; font-weight: 700; color: var(--turquoise);">187K€</div>
+                        <div style="font-size: 0.7rem; color: var(--gray-400); margin-top: 0.3rem;">Lancement</div>
+                    </div>
+                    <div style="background: white; border-radius: 12px; padding: 1.5rem; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                        <div style="font-size: 0.75rem; color: var(--gray-500); margin-bottom: 0.5rem;">2027</div>
+                        <div style="font-size: 1.5rem; font-weight: 700; color: var(--turquoise);">622K€</div>
+                        <div style="font-size: 0.7rem; color: var(--turquoise); margin-top: 0.3rem;">+233%</div>
+                    </div>
+                    <div style="background: white; border-radius: 12px; padding: 1.5rem; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                        <div style="font-size: 0.75rem; color: var(--gray-500); margin-bottom: 0.5rem;">2028</div>
+                        <div style="font-size: 1.5rem; font-weight: 700; color: var(--turquoise);">1,37M€</div>
+                        <div style="font-size: 0.7rem; color: var(--turquoise); margin-top: 0.3rem;">+120%</div>
+                    </div>
+                    <div style="background: white; border-radius: 12px; padding: 1.5rem; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                        <div style="font-size: 0.75rem; color: var(--gray-500); margin-bottom: 0.5rem;">2029</div>
+                        <div style="font-size: 1.5rem; font-weight: 700; color: var(--gold);">1,99M€</div>
+                        <div style="font-size: 0.7rem; color: var(--gold); margin-top: 0.3rem;">+45%</div>
+                    </div>
+                    <div style="background: var(--cream); border: 2px solid var(--gold); border-radius: 12px; padding: 1.5rem; text-align: center;">
+                        <div style="font-size: 0.75rem; color: var(--gold); margin-bottom: 0.5rem;">2030</div>
+                        <div style="font-size: 1.5rem; font-weight: 700; color: var(--gold);">2,49M€</div>
+                        <div style="font-size: 0.7rem; color: var(--gold); margin-top: 0.3rem;">+25%</div>
+                    </div>
+                    <div style="background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%); border-radius: 12px; padding: 1.5rem; text-align: center; color: white;">
+                        <div style="font-size: 0.75rem; opacity: 0.9; margin-bottom: 0.5rem;">2031</div>
+                        <div style="font-size: 1.5rem; font-weight: 700;">2,61M€</div>
+                        <div style="font-size: 0.7rem; opacity: 0.9; margin-top: 0.3rem;">+5%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Note stratégie prix -->
+            <div style="background: white; border-left: 4px solid var(--gold); border-radius: 0 12px 12px 0; padding: 1.5rem 2rem; margin-top: 2rem;">
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <span style="font-size: 1.5rem;">💡</span>
+                    <div>
+                        <strong style="color: var(--black);">Stratégie d'augmentation des prix :</strong>
+                        <span style="color: var(--gray-600);"> À partir du seuil de 1000 ventes/an (2030), augmentation de <strong style="color: var(--gold);">+5% par an</strong> si la demande reste forte, jusqu'à équilibre offre/demande.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SECTION 5: SEUIL DE RENTABILITÉ & BFR ========== -->
+        <section id="bp-seuil" class="bg-white">
+            <span class="section-number">05</span>
+            <h2>Seuil de <span class="gold">Rentabilité</span> & BFR</h2>
+            <p>Analyse du point mort et gestion du besoin en fonds de roulement</p>
+
+            <!-- Paramètres de base -->
+            <div style="margin-top: 2.5rem;">
+                <h3 style="background: var(--turquoise-dark); color: white; padding: 0.8rem 1.5rem; margin: 0; border-radius: 12px 12px 0 0; font-size: 1rem;">PARAMÈTRES DE BASE</h3>
+                <div style="background: white; border-radius: 0 0 12px 12px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.08);">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 0.8rem 1.5rem; color: var(--turquoise-dark); font-weight: 500;">Prix moyen HT</td>
+                                <td style="padding: 0.8rem 1.5rem; text-align: right; font-weight: 600;">2 486,67 €</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 0.8rem 1.5rem; color: var(--turquoise-dark); font-weight: 500;">Marge brute par aile</td>
+                                <td style="padding: 0.8rem 1.5rem; text-align: right; font-weight: 600;">1 111,50 €</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 0.8rem 1.5rem; color: var(--turquoise-dark); font-weight: 500;">Coût de revient par aile</td>
+                                <td style="padding: 0.8rem 1.5rem; text-align: right; font-weight: 600;">932,07 €</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 0.8rem 1.5rem; color: var(--turquoise-dark); font-weight: 500;">Assurance par aile (0.8% du prix)</td>
+                                <td style="padding: 0.8rem 1.5rem; text-align: right; font-weight: 600;">19,89 €</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 0.8rem 1.5rem; color: var(--turquoise-dark); font-weight: 500;">Marge nette par aile (marge - assurance)</td>
+                                <td style="padding: 0.8rem 1.5rem; text-align: right; font-weight: 700; color: var(--turquoise);">1 091,61 €</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 0.8rem 1.5rem; color: var(--turquoise-dark); font-weight: 500;">Stock cible (% des ventes)</td>
+                                <td style="padding: 0.8rem 1.5rem; text-align: right; font-weight: 600;">50%</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.8rem 1.5rem; color: var(--turquoise-dark); font-weight: 500;">Charges fixes annuelles (réf Charges Fixes D50)</td>
+                                <td style="padding: 0.8rem 1.5rem; text-align: right; font-weight: 600;">195 759 €</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Calcul par année -->
+            <div style="margin-top: 2.5rem;">
+                <h3 style="background: var(--turquoise-dark); color: white; padding: 0.8rem 1.5rem; margin: 0; border-radius: 12px 12px 0 0; font-size: 1rem;">CALCUL PAR ANNÉE</h3>
+                <div style="background: white; border-radius: 0 0 12px 12px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.08); overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; min-width: 800px;">
+                        <thead>
+                            <tr style="background: var(--gray-100);">
+                                <th style="padding: 1rem; text-align: left; font-weight: 600;">Année</th>
+                                <th style="padding: 1rem; text-align: right; font-weight: 600;">2025</th>
+                                <th style="padding: 1rem; text-align: right; font-weight: 600;">2026</th>
+                                <th style="padding: 1rem; text-align: right; font-weight: 600;">2027</th>
+                                <th style="padding: 1rem; text-align: right; font-weight: 600;">2028</th>
+                                <th style="padding: 1rem; text-align: right; font-weight: 600;">2029</th>
+                                <th style="padding: 1rem; text-align: right; font-weight: 600;">2030</th>
+                                <th style="padding: 1rem; text-align: right; font-weight: 600;">2031</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 0.8rem 1rem; color: var(--turquoise-dark);">Charges fixes exploitation</td>
+                                <td style="padding: 0.8rem 1rem; text-align: right;">0 €</td>
+                                <td style="padding: 0.8rem 1rem; text-align: right;">195 759 €</td>
+                                <td style="padding: 0.8rem 1rem; text-align: right;">195 759 €</td>
+                                <td style="padding: 0.8rem 1rem; text-align: right;">195 759 €</td>
+                                <td style="padding: 0.8rem 1rem; text-align: right;">195 759 €</td>
+                                <td style="padding: 0.8rem 1rem; text-align: right;">195 759 €</td>
+                                <td style="padding: 0.8rem 1rem; text-align: right;">195 759 €</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 0.8rem 1rem; color: var(--turquoise-dark);">Intérêts financiers (2026-2029)</td>
+                                <td style="padding: 0.8rem 1rem; text-align: right;">0 €</td>
+                                <td style="padding: 0.8rem 1rem; text-align: right;">7 602 €</td>
+                                <td style="padding: 0.8rem 1rem; text-align: right;">5 576 €</td>
+                                <td style="padding: 0.8rem 1rem; text-align: right;">3 456 €</td>
+                                <td style="padding: 0.8rem 1rem; text-align: right;">1 239 €</td>
+                                <td style="padding: 0.8rem 1rem; text-align: right;">0 €</td>
+                                <td style="padding: 0.8rem 1rem; text-align: right;">0 €</td>
+                            </tr>
+                            <tr style="background: var(--cream); font-weight: 700;">
+                                <td style="padding: 0.8rem 1rem; color: var(--black);">TOTAL CHARGES FIXES</td>
+                                <td style="padding: 0.8rem 1rem; text-align: right; color: var(--gray-500); font-style: italic;">0 €</td>
+                                <td style="padding: 0.8rem 1rem; text-align: right; color: var(--turquoise);">203 361 €</td>
+                                <td style="padding: 0.8rem 1rem; text-align: right; color: var(--turquoise);">201 335 €</td>
+                                <td style="padding: 0.8rem 1rem; text-align: right; color: var(--turquoise);">199 215 €</td>
+                                <td style="padding: 0.8rem 1rem; text-align: right; color: var(--turquoise);">196 998 €</td>
+                                <td style="padding: 0.8rem 1rem; text-align: right; color: var(--turquoise);">195 759 €</td>
+                                <td style="padding: 0.8rem 1rem; text-align: right; color: var(--turquoise);">195 759 €</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Seuil de rentabilité -->
+            <div style="margin-top: 2.5rem;">
+                <h3 style="background: var(--turquoise); color: white; padding: 0.8rem 1.5rem; margin: 0; border-radius: 12px 12px 0 0; font-size: 1rem;">SEUIL DE RENTABILITÉ</h3>
+                <div style="background: white; border-radius: 0 0 12px 12px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.08); overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; min-width: 800px;">
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 0.6rem 1rem; color: var(--gray-500); font-style: italic; font-size: 0.8rem;">Seuil = Charges Fixes / Marge nette par aile</td>
+                                <td colspan="7"></td>
+                            </tr>
+                            <tr style="background: var(--cream); font-weight: 700;">
+                                <td style="padding: 1rem; color: var(--black);">SEUIL (nb ailes pour équilibre exploitation)</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--gray-400);">0</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--turquoise); font-size: 1.3rem;">187</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--turquoise); font-size: 1.3rem;">185</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--turquoise); font-size: 1.3rem;">183</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--turquoise); font-size: 1.3rem;">181</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--turquoise); font-size: 1.3rem;">180</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--turquoise); font-size: 1.3rem;">180</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Comparaison avec scénarios -->
+            <div style="margin-top: 2.5rem;">
+                <h3 style="background: var(--turquoise-dark); color: white; padding: 0.8rem 1.5rem; margin: 0; border-radius: 12px 12px 0 0; font-size: 1rem;">COMPARAISON AVEC SCÉNARIOS</h3>
+                <div style="background: white; border-radius: 0 0 12px 12px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.08); overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; min-width: 800px;">
+                        <thead>
+                            <tr style="background: var(--gray-50);">
+                                <th style="padding: 0.8rem 1rem; text-align: left; font-weight: 500;"></th>
+                                <th style="padding: 0.8rem 1rem; text-align: center; font-weight: 500;">2025</th>
+                                <th style="padding: 0.8rem 1rem; text-align: center; font-weight: 500;">2026</th>
+                                <th style="padding: 0.8rem 1rem; text-align: center; font-weight: 500;">2027</th>
+                                <th style="padding: 0.8rem 1rem; text-align: center; font-weight: 500;">2028</th>
+                                <th style="padding: 0.8rem 1rem; text-align: center; font-weight: 500;">2029</th>
+                                <th style="padding: 0.8rem 1rem; text-align: center; font-weight: 500;">2030</th>
+                                <th style="padding: 0.8rem 1rem; text-align: center; font-weight: 500;">2031</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 0.8rem 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                                    <span style="width: 10px; height: 10px; background: var(--turquoise); border-radius: 50%;"></span>
+                                    Seuil de rentabilité
+                                </td>
+                                <td style="padding: 0.8rem 1rem; text-align: center; color: var(--gray-400);">0</td>
+                                <td style="padding: 0.8rem 1rem; text-align: center; color: var(--turquoise);">187</td>
+                                <td style="padding: 0.8rem 1rem; text-align: center; color: var(--turquoise);">185</td>
+                                <td style="padding: 0.8rem 1rem; text-align: center; color: var(--turquoise);">183</td>
+                                <td style="padding: 0.8rem 1rem; text-align: center; color: var(--turquoise);">181</td>
+                                <td style="padding: 0.8rem 1rem; text-align: center; color: var(--turquoise);">180</td>
+                                <td style="padding: 0.8rem 1rem; text-align: center; color: var(--turquoise);">180</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 0.8rem 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                                    <span style="width: 10px; height: 10px; background: var(--gold); border-radius: 50%;"></span>
+                                    Scénario Réaliste
+                                </td>
+                                <td style="padding: 0.8rem 1rem; text-align: center; color: var(--gray-400);">0</td>
+                                <td style="padding: 0.8rem 1rem; text-align: center; color: var(--gray-600);">75</td>
+                                <td style="padding: 0.8rem 1rem; text-align: center; color: var(--gray-600);">250</td>
+                                <td style="padding: 0.8rem 1rem; text-align: center; color: var(--gold);">550</td>
+                                <td style="padding: 0.8rem 1rem; text-align: center; color: var(--gold);">800</td>
+                                <td style="padding: 0.8rem 1rem; text-align: center; color: var(--gold);">1000</td>
+                                <td style="padding: 0.8rem 1rem; text-align: center; color: var(--gold);">1000</td>
+                            </tr>
+                            <tr style="background: var(--gray-50);">
+                                <td style="padding: 1rem; font-weight: 600;">Écart Réaliste vs Seuil</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--gray-400);">0</td>
+                                <td style="padding: 1rem; text-align: center; color: #dc3545; font-weight: 600;">-112</td>
+                                <td style="padding: 1rem; text-align: center; color: #28a745; font-weight: 600;">+65</td>
+                                <td style="padding: 1rem; text-align: center; color: #28a745; font-weight: 600;">+367</td>
+                                <td style="padding: 1rem; text-align: center; color: #28a745; font-weight: 600;">+619</td>
+                                <td style="padding: 1rem; text-align: center; color: #28a745; font-weight: 600;">+820</td>
+                                <td style="padding: 1rem; text-align: center; color: #28a745; font-weight: 600;">+820</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- BFR - Gestion du Stock -->
+            <div style="margin-top: 2.5rem;">
+                <h3 style="background: var(--gold); color: white; padding: 0.8rem 1.5rem; margin: 0; border-radius: 12px 12px 0 0; font-size: 1rem;">BFR - GESTION DU STOCK (Scénario Réaliste)</h3>
+                <div style="background: white; border-radius: 0 0 12px 12px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.08); overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; min-width: 800px;">
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td colspan="8" style="padding: 0.6rem 1rem; color: var(--gray-500); font-style: italic; font-size: 0.8rem;">Stock = 50% des ventes. Variation = achat ou vente de stock.</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 0.8rem 1rem; color: var(--gold-dark);">Stock cible (nb ailes = 50% ventes)</td>
+                                <td style="padding: 0.8rem 1rem; text-align: center;">0</td>
+                                <td style="padding: 0.8rem 1rem; text-align: center;">38</td>
+                                <td style="padding: 0.8rem 1rem; text-align: center;">125</td>
+                                <td style="padding: 0.8rem 1rem; text-align: center;">275</td>
+                                <td style="padding: 0.8rem 1rem; text-align: center;">400</td>
+                                <td style="padding: 0.8rem 1rem; text-align: center;">500</td>
+                                <td style="padding: 0.8rem 1rem; text-align: center;">500</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 0.8rem 1rem; color: var(--gold-dark);">Stock cible (€ = nb ailes × coût)</td>
+                                <td style="padding: 0.8rem 1rem; text-align: center;">0 €</td>
+                                <td style="padding: 0.8rem 1rem; text-align: center;">34 953 €</td>
+                                <td style="padding: 0.8rem 1rem; text-align: center;">116 509 €</td>
+                                <td style="padding: 0.8rem 1rem; text-align: center;">256 320 €</td>
+                                <td style="padding: 0.8rem 1rem; text-align: center;">372 829 €</td>
+                                <td style="padding: 0.8rem 1rem; text-align: center;">466 036 €</td>
+                                <td style="padding: 0.8rem 1rem; text-align: center;">466 036 €</td>
+                            </tr>
+                            <tr style="background: var(--cream); font-weight: 600;">
+                                <td style="padding: 1rem; color: var(--black);">Variation stock (+ = investir / - = récupérer)</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--gray-400); font-style: italic;">0 €</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--turquoise);">+34 953 €</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--turquoise);">+81 556 €</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--turquoise);">+139 811 €</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--turquoise);">+116 509 €</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--turquoise);">+93 207 €</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--gray-400);">0 €</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Notes explicatives -->
+            <div style="margin-top: 2rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--gold-dark); font-size: 0.85rem; font-style: italic;">
+                    <span>💡</span>
+                    <span>Si ventes baissent → stock cible baisse → on revend du stock → tréso +</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--gold-dark); font-size: 0.85rem; font-style: italic;">
+                    <span>💡</span>
+                    <span>Si ventes augmentent → stock cible augmente → on achète du stock → tréso -</span>
+                </div>
+            </div>
+
+            <!-- Synthèse visuelle -->
+            <div style="background: linear-gradient(135deg, var(--turquoise-dark) 0%, var(--black) 100%); border-radius: 20px; padding: 2.5rem; margin-top: 3rem; color: white;">
+                <h3 style="color: white; margin-bottom: 2rem; text-align: center;">Quand l'entreprise devient rentable ?</h3>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; text-align: center;">
+                    <div style="background: rgba(255,255,255,0.1); border-radius: 16px; padding: 1.5rem;">
+                        <div style="font-size: 2.5rem; font-weight: 700; color: #dc3545;">2026</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9; margin-top: 0.5rem;">Sous le seuil</div>
+                        <div style="font-size: 0.8rem; opacity: 0.7; margin-top: 0.3rem;">75 ventes vs 187 nécessaires</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.1); border-radius: 16px; padding: 1.5rem; border: 2px solid var(--gold);">
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--gold);">2027</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9; margin-top: 0.5rem;">Rentabilité atteinte</div>
+                        <div style="font-size: 0.8rem; opacity: 0.7; margin-top: 0.3rem;">250 ventes vs 185 nécessaires</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.1); border-radius: 16px; padding: 1.5rem;">
+                        <div style="font-size: 2.5rem; font-weight: 700; color: #28a745;">2028+</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9; margin-top: 0.5rem;">Marge confortable</div>
+                        <div style="font-size: 0.8rem; opacity: 0.7; margin-top: 0.3rem;">+367 à +820 ailes au-dessus du seuil</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <!-- FIN TAB: Business Plan -->
+
+    <!-- Contact Section (visible sur tous les onglets) -->
     <section id="contact">
         <h2 class="fade-in">Contact</h2>
         <p class="fade-in">PLUME Paragliders</p>
@@ -4021,11 +5720,13 @@
         const subNavbar = document.getElementById('sub-navbar');
         const subNavBanque = document.querySelector('.sub-nav-banque');
         const subNavInnovation = document.querySelector('.sub-nav-innovation');
+        const subNavBusinessplan = document.querySelector('.sub-nav-businessplan');
         const subNavItems = document.querySelectorAll('.sub-nav-item');
         
         // Sections for each tab
         const banqueSections = ['presentation', 'marche', 'avantages', 'innovation', 'production', 'gamme', 'business', 'chiffres', 'financement', 'communication', 'roadmap'];
         const innovationSections = ['innovation-logiciels', 'innovation-design', 'innovation-nouveau-concept', 'innovation-site-internet', 'innovation-acs', 'innovation-budget'];
+        const businessplanSections = ['bp-produits', 'bp-couts', 'bp-variables', 'bp-emprunt', 'bp-financement', 'bp-croissance'];
         
         let currentTab = 'banque';
 
@@ -4062,6 +5763,14 @@
                     }
                 }
                 updateActiveSection(innovationSections);
+            } else if (currentTab === 'businessplan') {
+                // Show after 300px for business plan tab
+                if (scrollY > 300) {
+                    subNavbar.classList.add('visible');
+                } else {
+                    subNavbar.classList.remove('visible');
+                }
+                updateActiveSection(businessplanSections);
             }
         }
 
@@ -4092,12 +5801,16 @@
         // Switch sub-nav content when tab changes
         function switchSubNav(tab) {
             currentTab = tab;
+            subNavBanque.classList.remove('active');
+            subNavInnovation.classList.remove('active');
+            subNavBusinessplan.classList.remove('active');
+            
             if (tab === 'banque') {
                 subNavBanque.classList.add('active');
-                subNavInnovation.classList.remove('active');
-            } else {
-                subNavBanque.classList.remove('active');
+            } else if (tab === 'innovation') {
                 subNavInnovation.classList.add('active');
+            } else if (tab === 'businessplan') {
+                subNavBusinessplan.classList.add('active');
             }
             subNavbar.classList.remove('visible');
             updateSubNavbar();
@@ -4132,4 +5845,3 @@
     </script>
 </body>
 </html>
-
