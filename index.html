@@ -712,6 +712,265 @@
 
         .gamme-table td { font-size: 0.9rem; color: var(--gray-600); }
 
+        /* Risques Section */
+        .risques-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .risques-table th, .risques-table td {
+            padding: 1rem 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid var(--gray-100);
+            font-size: 0.85rem;
+        }
+
+        .risques-table th {
+            font-weight: 600;
+            color: var(--white);
+            background: var(--turquoise-dark);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .risques-table td { color: var(--gray-600); vertical-align: top; }
+        .risques-table td strong { color: var(--gray-800); }
+        .risques-table tbody tr:hover { background: var(--gray-50); }
+        .risques-table tbody tr:last-child td { border-bottom: none; }
+
+        .risques-table.synthese th { background: var(--gold-dark); }
+
+        .prob-faible { color: #22c55e; font-weight: 600; }
+        .prob-moyen { color: var(--gold); font-weight: 600; }
+        .prob-fort { color: #ef4444; font-weight: 600; }
+
+        .impact-box, .note-box {
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            margin: 1.5rem 0 2.5rem 0;
+        }
+
+        .impact-box {
+            background: linear-gradient(135deg, rgba(201, 125, 24, 0.08) 0%, rgba(237, 140, 12, 0.05) 100%);
+            border-left: 4px solid var(--gold);
+        }
+
+        .impact-box h4 {
+            font-size: 0.9rem;
+            color: var(--gold-dark);
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .impact-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .impact-box li {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            margin-bottom: 0.5rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .impact-box li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+        }
+
+        .impact-box p { font-size: 0.9rem; color: var(--gray-600); max-width: 100%; }
+
+        .note-box {
+            background: linear-gradient(135deg, rgba(85, 136, 166, 0.08) 0%, rgba(12, 74, 110, 0.05) 100%);
+            border-left: 4px solid var(--turquoise);
+        }
+
+        .note-box p {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            max-width: 100%;
+            margin: 0;
+        }
+
+        .note-box strong { color: var(--turquoise-dark); }
+
+        /* Facteurs Clés de Succès Section */
+        .facteur-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-left: 4px solid var(--turquoise);
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .facteur-card:hover {
+            box-shadow: 0 8px 25px rgba(85, 136, 166, 0.1);
+            border-left-color: var(--gold);
+        }
+
+        .facteur-card h4 {
+            font-size: 1.15rem;
+            color: var(--turquoise-dark);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .facteur-card h4 .emoji {
+            font-size: 1.4rem;
+        }
+
+        .facteur-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .facteur-card li {
+            font-size: 0.95rem;
+            color: var(--gray-600);
+            padding: 0.4rem 0 0.4rem 1.5rem;
+            position: relative;
+        }
+
+        .facteur-card li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--turquoise);
+            font-weight: 600;
+        }
+
+        .facteur-card li strong { color: var(--gray-800); }
+
+        .facteur-card ul ul {
+            margin-top: 0.5rem;
+            margin-left: 1rem;
+        }
+
+        .facteur-card ul ul li::before {
+            content: "•";
+        }
+
+        .facteurs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 900px) {
+            .facteurs-grid { grid-template-columns: 1fr; }
+        }
+
+        .conditions-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .conditions-table th, .conditions-table td {
+            padding: 1rem 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .conditions-table th {
+            font-weight: 600;
+            color: var(--white);
+            background: var(--turquoise-dark);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .conditions-table td { color: var(--gray-600); }
+        .conditions-table td strong { color: var(--gray-800); }
+        .conditions-table tbody tr:hover { background: var(--gray-50); }
+        .conditions-table tbody tr:last-child td { border-bottom: none; }
+
+        /* Status badges */
+        .badge {
+            display: inline-block;
+            padding: 0.35rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .badge.in-progress {
+            background: linear-gradient(135deg, rgba(201, 125, 24, 0.15) 0%, rgba(237, 140, 12, 0.1) 100%);
+            color: var(--gold-dark);
+            border: 1px solid var(--gold);
+        }
+
+        .badge.pending {
+            background: linear-gradient(135deg, rgba(85, 136, 166, 0.15) 0%, rgba(12, 74, 110, 0.1) 100%);
+            color: var(--turquoise-dark);
+            border: 1px solid var(--turquoise);
+        }
+
+        .badge.done {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.15) 0%, rgba(22, 163, 74, 0.1) 100%);
+            color: #166534;
+            border: 1px solid #22c55e;
+        }
+
+        .synthese-box {
+            background: linear-gradient(135deg, rgba(12, 74, 110, 0.08) 0%, rgba(85, 136, 166, 0.05) 100%);
+            border: 1px solid var(--turquoise);
+            border-left: 4px solid var(--turquoise);
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .synthese-box h4 {
+            color: var(--turquoise-dark);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .synthese-box p {
+            color: var(--gray-600);
+            max-width: 100%;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .risques-category {
+            margin-top: 2.5rem;
+        }
+
+        .risques-category h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.3rem;
+            color: var(--turquoise-dark);
+            margin-bottom: 1rem;
+        }
+
+        .risques-category h3 .emoji {
+            font-size: 1.5rem;
+        }
+
         .production-info {
             margin-top: 1.5rem;
             padding: 1rem;
@@ -1845,7 +2104,7 @@
     <nav id="navbar">
         <div class="nav-logo"><img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/LOGO%20V3%20bi%20color.png" alt="PLUME"></div>
         <ul class="nav-links">
-            <li><a href="#" class="tab-link active" data-tab="banque">Présentation Banque</a></li>
+            <li><a href="#" class="tab-link active" data-tab="banque">Présentation PLUME</a></li>
             <li><a href="#" class="tab-link" data-tab="innovation">Présentation Innovation</a></li>
             <li><a href="#" class="tab-link" data-tab="businessplan">Business Plan</a></li>
         </ul>
@@ -1866,6 +2125,8 @@
             <span class="sub-nav-item" data-target="financement">Business Plan</span>
             <span class="sub-nav-item" data-target="communication">Communication</span>
             <span class="sub-nav-item" data-target="roadmap">Roadmap</span>
+            <span class="sub-nav-item" data-target="risques">Risques</span>
+            <span class="sub-nav-item" data-target="facteurs-succes">Clés du Succès</span>
         </div>
         <!-- Innovation sub-nav -->
         <div class="sub-nav-content sub-nav-innovation">
@@ -1875,6 +2136,7 @@
             <span class="sub-nav-item" data-target="innovation-site-internet">PLUME Connect</span>
             <span class="sub-nav-item" data-target="innovation-acs">ACS</span>
             <span class="sub-nav-item" data-target="innovation-budget">Budget</span>
+            <span class="sub-nav-item" data-target="innovation-risques">Risques</span>
         </div>
         <!-- Business Plan sub-nav -->
         <div class="sub-nav-content sub-nav-businessplan">
@@ -1980,7 +2242,30 @@
             </div>
         </div>
 
-        <p class="fade-in" style="margin-top: 2rem;"><strong>Collaborateurs :</strong> Jim Nougarolles, Manu Laly, Yann Freund (pilote drone/vidéo)</p>
+        <h3 class="fade-in" style="margin-top: 2.5rem;">Collaborateurs</h3>
+        <div class="fade-in" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 1.5rem;">
+            <div style="background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                <h4 style="color: var(--turquoise-dark); margin-bottom: 0.5rem;">Jim Nougarolles</h4>
+                <p style="font-size: 0.85rem; color: var(--gray-600); margin: 0;">
+                    <strong>Pilote test & Communication</strong><br>
+                    25+ ans de vol, 15 ans de collaboration, 8 ans d'expérience pilote test. Référence dans le pilotage et l'enseignement, spécialiste des stages SIV (Simulation d'Incident de Vol). Savoir-faire en couture pour le prototypage.
+                </p>
+            </div>
+            <div style="background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                <h4 style="color: var(--turquoise-dark); margin-bottom: 0.5rem;">Manu Laly</h4>
+                <p style="font-size: 0.85rem; color: var(--gray-600); margin: 0;">
+                    <strong>Pilote test</strong><br>
+                    8 ans de collaboration. Grande expérience dans le test et le réglage d'ailes. Expertise reconnue dans le monde du parapente.
+                </p>
+            </div>
+            <div style="background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                <h4 style="color: var(--turquoise-dark); margin-bottom: 0.5rem;">Yann Freund</h4>
+                <p style="font-size: 0.85rem; color: var(--gray-600); margin: 0;">
+                    <strong>Conception accessoires & Vidéo</strong><br>
+                    10 ans de collaboration sur tous les films. Concepteur des accessoires (sacs, housses). Expert drone, logiciel CAD et couture technique.
+                </p>
+            </div>
+        </div>
 
         <div class="team-stats fade-in">
             <div class="stat"><div class="stat-number">15</div><div class="stat-label">ans de conception</div></div>
@@ -2129,10 +2414,74 @@
                 
                 <div class="production-info" style="margin-top: 1.5rem;">
                     <strong>Délai de production :</strong> 1 mois<br>
+                    <strong>Délai de paiement :</strong> 3 semaines<br>
                     <strong>Capacité :</strong> Accepte une production de 0 à +1 000 voiles par an<br>
                     <strong>Qualité :</strong> Contrôle qualité rigoureux, certification EN
                 </div>
             </div>
+        </div>
+
+        <!-- Partenaire Tissus -->
+        <div class="production-content fade-in" style="margin-top: 3rem;">
+            <div class="production-details" style="order: 1;">
+                <h4>Porcher Sport — France</h4>
+                <p>Partenariat privilégié avec <strong>Porcher Sport</strong>, le fabricant de tissus le plus réputé dans l'industrie du parapente. Une collaboration de plus de 10 ans qui nous offre un avantage concurrentiel majeur.</p>
+                
+                <div class="production-info" style="margin-top: 1.5rem;">
+                    <strong>Accès exclusif :</strong> Nouveaux produits en avant-première<br>
+                    <strong>Avantage concurrentiel :</strong> Produits les plus légers du marché<br>
+                    <strong>Qualité :</strong> La plus grande qualité de l'industrie
+                </div>
+            </div>
+            <img src="https://raw.githubusercontent.com/jbintheair/NeawBrand/refs/heads/main/porcher%20industie.jpeg" alt="Porcher Industries" class="production-image" style="order: 2;">
+        </div>
+
+        <!-- Partenaires Logistique -->
+        <h3 class="fade-in" style="margin-top: 4rem; margin-bottom: 1.5rem;">Partenaires Logistique</h3>
+        <p class="fade-in" style="margin-bottom: 2rem;">Une chaîne logistique optimisée pour minimiser les coûts et garantir des délais rapides.</p>
+
+        <div class="fade-in" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+            <!-- A&C Stock -->
+            <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 30px rgba(0,0,0,0.08); border-top: 4px solid var(--turquoise);">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <span style="font-size: 2rem;">🏭</span>
+                    <div>
+                        <h4 style="margin: 0; color: var(--turquoise-dark);">A&C — Stock</h4>
+                        <span style="font-size: 0.8rem; color: var(--gray-500);">Thaïlande & Europe</span>
+                    </div>
+                </div>
+                <p style="font-size: 0.9rem; color: var(--gray-600); margin: 0;">L'usine A&C assure également le stockage des produits finis en Thaïlande et en Europe, permettant une flexibilité maximale et des expéditions rapides selon la zone de destination.</p>
+            </div>
+
+            <!-- Futurlog -->
+            <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 30px rgba(0,0,0,0.08); border-top: 4px solid var(--gold);">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <span style="font-size: 2rem;">📦</span>
+                    <div>
+                        <h4 style="margin: 0; color: var(--gold-dark);">Futurlog</h4>
+                        <span style="font-size: 0.8rem; color: var(--gray-500);">Gestion de stock Europe</span>
+                    </div>
+                </div>
+                <p style="font-size: 0.9rem; color: var(--gray-600); margin: 0;">Partenaire logistique pour la gestion du stock européen. Futurlog assure la réception, le stockage et la préparation des commandes avec des tarifs transporteurs négociés.</p>
+            </div>
+
+            <!-- DHL -->
+            <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 30px rgba(0,0,0,0.08); border-top: 4px solid var(--turquoise);">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <span style="font-size: 2rem;">🚚</span>
+                    <div>
+                        <h4 style="margin: 0; color: var(--turquoise-dark);">DHL</h4>
+                        <span style="font-size: 0.8rem; color: var(--gray-500);">Transport Europe</span>
+                    </div>
+                </div>
+                <p style="font-size: 0.9rem; color: var(--gray-600); margin: 0;">Transporteur dédié aux voiles démo qui circulent régulièrement entre les écoles partenaires. Ces ailes de démonstration nécessitent des envois fréquents. Grâce au partenariat Futurlog, nous bénéficions de tarifs préférentiels sur ces expéditions récurrentes.</p>
+            </div>
+        </div>
+
+        <div class="business-numbers fade-in" style="margin-top: 2.5rem;">
+            <div class="business-number"><div class="value">2</div><div class="label">Zones de stockage</div></div>
+            <div class="business-number"><div class="value">24h</div><div class="label">Livraison Europe</div></div>
+            <div class="business-number"><div class="value">100%</div><div class="label">Automatisé</div></div>
         </div>
     </section>
 
@@ -2147,6 +2496,7 @@
             <div class="production-details">
                 <h4>100% Light — Un positionnement unique</h4>
                 <p>PLUME est la première marque à se positionner exclusivement sur les voiles légères. Deux gammes complémentaires : <span class="highlight">Light</span> pour l'accessibilité et <span class="highlight">Ultra Light</span> pour les voiles les plus légères du monde. Un ADN unique qui n'existe chez aucun concurrent.</p>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--gray-500);"><strong>Note :</strong> Toutes les voiles PLUME seront homologuées <strong>EN 926-1</strong> (tests de charge) et <strong>EN 926-2</strong> (tests en vol), à l'exception du Mix Parakite qui sera homologué EN 926-1 uniquement.</p>
                 
 <table class="gamme-table" style="width: 100%;">
                                     <thead>
@@ -2158,9 +2508,9 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><strong>mix Parakite</strong></td>
-                                            <td>Pk Light</td>
-                                            <td>Pk Ultra</td>
+                                            <td><strong>Dual</strong></td>
+                                            <td>—</td>
+                                            <td>Dual Ultra</td>
                                         </tr>
                                         <tr>
                                             <td><strong>EN-A hybrid</strong></td>
@@ -2194,7 +2544,7 @@
 
         <div class="business-numbers fade-in" style="margin-top: 2.5rem;">
             <div class="business-number"><div class="value">100%</div><div class="label">Voiles légères uniquement</div></div>
-            <div class="business-number"><div class="value">800gr</div><div class="label">Voile la plus légère au monde</div></div>
+            <div class="business-number"><div class="value">840gr</div><div class="label">Voile la plus légère au monde</div></div>
             <div class="business-number"><div class="value">+75%</div><div class="label">Croissance segment Light en 5 ans</div></div>
             <div class="business-number"><div class="value">Unique</div><div class="label">Positionnement sur le marché</div></div>
         </div>
@@ -2574,40 +2924,395 @@
                 </div>
             </div>
             <div class="timeline-item">
-                <div class="timeline-date">T2-T3 2026</div>
+                <div class="timeline-date">T2 2026</div>
                 <div class="timeline-content">
-                    <h4>Lancement commercial — Gamme Classic</h4>
-                    <p>Sortie de la gamme Classic. Premières ventes, déploiement du réseau d'écoles partenaires. Plateforme web opérationnelle.</p>
+                    <h4>Lancement des premières ailes & Création du réseau européen</h4>
+                    <p>Sortie de l'EN-A+ Light et de l'EN-B Ultra. Premières ventes. En parallèle, création du réseau de vente dans toute l'Europe avec les écoles partenaires. Plateforme web opérationnelle.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">T3 2026</div>
+                <div class="timeline-content">
+                    <h4>Renforcement et Communication</h4>
+                    <p>Une fois le réseau de base créé, déploiement d'une communication plus massive. Production de contenu vidéo et campagnes marketing ciblées pour renforcer la notoriété de la marque.</p>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-date">T4 2026</div>
                 <div class="timeline-content">
-                    <h4>Sortie Gamme Ultra</h4>
-                    <p>Lancement de la gamme Ultra Light. Extension de l'offre vers les pratiquants exigeants. Objectif 75 ailes sur l'année.</p>
+                    <h4>Sortie Single Skin & Dual</h4>
+                    <p>Lancement de la Single Skin et du PLUME Dual (géométrie variable). Extension de l'offre vers les pratiquants exigeants. Objectif 75 ailes sur l'année.</p>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-date">2027</div>
                 <div class="timeline-content">
                     <h4>Extension de la gamme</h4>
-                    <p>Sorties de produits complémentaires à différents niveaux de performance (EN-B, EN-C). Objectif 250 ailes. Apport EURL JB Chandelier.</p>
+                    <p>Sortie de la PLUME Hybrid et de produits complémentaires à différents niveaux de performance (EN-B, EN-C). Objectif 250 ailes. Apport EURL JB Chandelier.</p>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-date">2028</div>
                 <div class="timeline-content">
-                    <h4>Réseau européen complet</h4>
-                    <p>100% du réseau d'écoles partenaires déployé en Europe. Consolidation des ventes. Objectif 550 ailes.</p>
+                    <h4>Réseau européen complet & Projet ACS</h4>
+                    <p>100% du réseau d'écoles partenaires déployé en Europe. Consolidation des ventes. Objectif 550 ailes. Récupération de la trésorerie pour injection dans le projet ACS (système anti-collision).</p>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-date">2029-2030</div>
                 <div class="timeline-content">
                     <h4>Montée en gamme & Leadership</h4>
-                    <p>Positionnement haut de gamme, augmentation des prix et des marges. Montée vers 1000 ailes/an. Position de leader sur le segment léger premium en Europe.</p>
+                    <p>Positionnement haut de gamme, augmentation des prix et des marges. Lancement de l'ACS (Anti Collapse System). Montée vers 1000 ailes/an. Position de leader sur le segment léger premium en Europe.</p>
                 </div>
             </div>
+        </div>
+
+        <!-- État de l'avancée du projet -->
+        <h3 class="fade-in" style="margin-top: 3rem;">État de l'avancée du projet</h3>
+        <a href="https://band-era-f13.notion.site/Suivit-de-projet-231020b3360f802a9eb7fa0bd19ea9c7?source=copy_link" target="_blank" class="btn-primary fade-in" style="display: inline-block; margin-bottom: 1.5rem; text-decoration: none;">→ Voir la timeline détaillée en direct</a>
+        
+        <table class="conditions-table fade-in">
+            <thead>
+                <tr>
+                    <th style="width: 45%;">Jalon</th>
+                    <th style="width: 35%;">Statut au 29/01/2026</th>
+                    <th style="width: 20%;">Échéance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Finalisation des prototypes EN-A+ et EN-B</strong></td>
+                    <td><span class="badge in-progress">80%</span></td>
+                    <td>T1 2026</td>
+                </tr>
+                <tr>
+                    <td><strong>Obtention des homologations EN 926-1 et EN 926-2</strong></td>
+                    <td><span class="badge pending">À venir</span></td>
+                    <td>T1-T2 2026</td>
+                </tr>
+                <tr>
+                    <td><strong>Création du réseau d'écoles partenaires</strong></td>
+                    <td><span class="badge in-progress">5%</span></td>
+                    <td>T2 2026</td>
+                </tr>
+                <tr>
+                    <td><strong>Mise en place du système d'ailes démo</strong></td>
+                    <td><span class="badge in-progress">95%</span></td>
+                    <td>T2 2026</td>
+                </tr>
+                <tr>
+                    <td><strong>Lancement de la plateforme PLUME Connect</strong></td>
+                    <td><span class="badge in-progress">85%</span></td>
+                    <td>T2 2026</td>
+                </tr>
+                <tr>
+                    <td><strong>Stratégie de communication PLUME Paragliders</strong></td>
+                    <td><span class="badge in-progress">20%</span></td>
+                    <td>T3 2026</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Section Risques -->
+    <section id="risques" class="bg-cream">
+        <span class="section-number">12</span>
+        <h2 class="fade-in">Risques Identifiés</h2>
+        <p class="fade-in" style="max-width: 100%;">Une analyse complète des risques a été réalisée pour anticiper les obstacles potentiels et mettre en place des stratégies de mitigation adaptées.</p>
+
+        <!-- Risques Techniques -->
+        <div class="risques-category fade-in">
+            <h3><span class="emoji">🔧</span> Risques Techniques</h3>
+            <table class="risques-table">
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Risque</th>
+                        <th style="width: 12%;">Probabilité</th>
+                        <th style="width: 10%;">Impact</th>
+                        <th style="width: 53%;">Mitigation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Retard de finalisation des prototypes</strong></td>
+                        <td class="prob-faible">Faible</td>
+                        <td class="prob-moyen">Moyen</td>
+                        <td>Prototypes en phase finale de réglage. Grâce au logiciel PLUME Mind et au recrutement d'un ingénieur dédié, les cycles de test sont considérablement accélérés. <strong>Lancement avancé au printemps 2026 (avril-mai)</strong> au lieu de l'automne initialement prévu. Organisation optimisée : local à 500m de la remontée mécanique permettant des tests quotidiens et une réactivité maximale. Volume de prototypes négocié avec l'usine pour des itérations rapides.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Retard d'homologation EN</strong></td>
+                        <td class="prob-moyen">Faible à Moyen</td>
+                        <td class="prob-moyen">Moyen</td>
+                        <td>Risque plus élevé sur la gamme Ultra (tests en charge proches des limites). Mitigé par le logiciel PLUME Mind qui intègre les pré-calculs de certification.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Qualité des tissus (fournisseur)</strong></td>
+                        <td class="prob-faible">Faible</td>
+                        <td class="prob-fort">Fort</td>
+                        <td>Partenariat avec Porcher Sport, leader français reconnu depuis des années, relation de confiance établie.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Qualité de production (usine)</strong></td>
+                        <td class="prob-faible">Faible</td>
+                        <td class="prob-fort">Fort</td>
+                        <td>Collaboration depuis 5 ans avec A&C, meilleur contrôle qualité constaté. Garantie contractuelle : reprise et refabrication en cas de défaut.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="impact-box">
+                <h4>Impact en cas de réalisation</h4>
+                <ul>
+                    <li><strong>Retard prototype/homologation</strong> → Retard de rentabilité, mais pas de mise en danger de la société</li>
+                    <li><strong>Défaut fournisseur/production</strong> → Risque d'image de marque au lancement, scénario le plus critique (probabilité très faible)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Risques Commerciaux -->
+        <div class="risques-category fade-in">
+            <h3><span class="emoji">📈</span> Risques Commerciaux</h3>
+            <table class="risques-table">
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Risque</th>
+                        <th style="width: 12%;">Probabilité</th>
+                        <th style="width: 10%;">Impact</th>
+                        <th style="width: 53%;">Mitigation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Construction lente du réseau d'écoles partenaires</strong></td>
+                        <td class="prob-faible">Faible</td>
+                        <td class="prob-moyen">Moyen</td>
+                        <td>Notoriété existante auprès de toutes les écoles du secteur. Modèle commercial co-construit avec les feedbacks des écoles. 5 écoles partenaires déjà impliquées (dont certaines parmi les plus grandes de France). <strong>Trois leviers d'attractivité :</strong> (1) Marges supérieures à celles proposées par les marques concurrentes. (2) Système simplifiant la gestion quotidienne des écoles. (3) Approche sélective avec exclusivité territoriale — les écoles sont incitées à nous solliciter pour intégrer le réseau.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ventes inférieures aux prévisions</strong></td>
+                        <td class="prob-faible">Faible</td>
+                        <td class="prob-moyen">Moyen</td>
+                        <td>Vente en ligne directe accessible à tous, même sans réseau de partenaires développé. Forte capacité de promotion via les réseaux sociaux (500K abonnés).</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="impact-box">
+                <h4>Impact en cas de réalisation</h4>
+                <p>Démarrage des ventes plus lent que prévu, délai pour atteindre le seuil de rentabilité, mais pas de mise en péril de l'entreprise.</p>
+            </div>
+        </div>
+
+        <!-- Risques Financiers -->
+        <div class="risques-category fade-in">
+            <h3><span class="emoji">💰</span> Risques Financiers</h3>
+            <table class="risques-table">
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Risque</th>
+                        <th style="width: 12%;">Probabilité</th>
+                        <th style="width: 10%;">Impact</th>
+                        <th style="width: 53%;">Mitigation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Trésorerie insuffisante</strong></td>
+                        <td class="prob-faible">Faible</td>
+                        <td class="prob-moyen">Moyen</td>
+                        <td>Trésorerie initiale dimensionnée pour tenir 18 mois sans vente. <strong>Quatre leviers de sécurité (par ordre de priorité) :</strong> (1) Emprunts bancaires complémentaires. (2) Ouverture du capital aux collaborateurs clés — actuellement prestataires, souhaitant s'investir durablement (horizon 9-18 mois). (3) Apport personnel du fondateur : plusieurs centaines de milliers d'euros mobilisables. (4) En dernier recours, entrée d'investisseurs extérieurs identifiés.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Risque Homme-Clé -->
+        <div class="risques-category fade-in">
+            <h3><span class="emoji">👤</span> Risque Homme-Clé</h3>
+            <table class="risques-table">
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Risque</th>
+                        <th style="width: 12%;">Probabilité</th>
+                        <th style="width: 10%;">Impact</th>
+                        <th style="width: 53%;">Mitigation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Indisponibilité de Jean-Baptiste Chandelier</strong></td>
+                        <td class="prob-faible">Très faible</td>
+                        <td class="prob-fort">Fort</td>
+                        <td>Risque principal identifié : JB concentre le réseau de communication et l'expertise en conception. Thomas Pierre-Bes formé depuis plusieurs années, capable d'assurer la continuité. Transfert progressif des compétences en cours.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="note-box">
+                <p><strong>Note :</strong> Une blessure n'empêcherait pas la poursuite de l'activité (travail intellectuel, réseau intact). Seul un événement grave constituerait un risque critique pour les premières années.</p>
+            </div>
+        </div>
+
+        <!-- Synthèse -->
+        <div class="risques-category fade-in">
+            <h3>Synthèse des Risques</h3>
+            <table class="risques-table synthese">
+                <thead>
+                    <tr>
+                        <th style="width: 20%;">Catégorie</th>
+                        <th style="width: 40%;">Risque principal</th>
+                        <th style="width: 20%;">Probabilité</th>
+                        <th style="width: 20%;">Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="emoji">🔧</span> <strong>Technique</strong></td>
+                        <td>Défaut qualité production/tissu</td>
+                        <td class="prob-faible">Très faible</td>
+                        <td class="prob-fort">Fort</td>
+                    </tr>
+                    <tr>
+                        <td><span class="emoji">📈</span> <strong>Commercial</strong></td>
+                        <td>Réseau partenaires lent à construire</td>
+                        <td class="prob-faible">Faible</td>
+                        <td class="prob-moyen">Moyen</td>
+                    </tr>
+                    <tr>
+                        <td><span class="emoji">💰</span> <strong>Financier</strong></td>
+                        <td>Trésorerie insuffisante</td>
+                        <td class="prob-faible">Faible</td>
+                        <td class="prob-moyen">Moyen</td>
+                    </tr>
+                    <tr>
+                        <td><span class="emoji">👤</span> <strong>Homme-clé</strong></td>
+                        <td>Indisponibilité JB Chandelier</td>
+                        <td class="prob-faible">Très faible</td>
+                        <td class="prob-fort">Fort</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Section Conditions et Facteurs Clés de Succès -->
+    <section id="facteurs-succes" class="bg-white">
+        <span class="section-number">13</span>
+        <h2 class="fade-in">Conditions et Facteurs Clés de <span class="gold">Succès</span></h2>
+        <p class="fade-in" style="max-width: 100%;">Les éléments déterminants pour la réussite de PLUME Paragliders sur le marché du parapente léger.</p>
+
+        <!-- Facteurs Clés de Succès -->
+        <h3 class="fade-in" style="margin-top: 2.5rem;">Facteurs Clés de Succès</h3>
+
+        <div class="facteurs-grid fade-in">
+            <!-- 1. Expertise technique -->
+            <div class="facteur-card">
+                <h4><span class="emoji">🎯</span> 1. Expertise technique unique</h4>
+                <ul>
+                    <li>15 ans d'expérience en conception de parapentes (Dudek, Skywalk)</li>
+                    <li>Détenteur du record mondial de l'aile la plus légère (986g)</li>
+                    <li>Logiciel propriétaire PLUME Mind pour une précision de conception inégalée</li>
+                    <li>Brevet ACS déposé (sécurité active)</li>
+                </ul>
+            </div>
+
+            <!-- 2. Construire la confiance -->
+            <div class="facteur-card">
+                <h4><span class="emoji">🤝</span> 2. Construire la confiance rapidement</h4>
+                <ul>
+                    <li>Notoriété existante : 500 000 abonnés, 60+ millions de vues</li>
+                    <li>Reconnaissance immédiate dans le milieu du parapente mondial</li>
+                    <li>Track record prouvé : conception des ailes les plus légères du marché depuis 8 ans</li>
+                    <li>Communication transparente sur le processus de conception et les tests</li>
+                </ul>
+            </div>
+
+            <!-- 3. Faciliter l'accès -->
+            <div class="facteur-card">
+                <h4><span class="emoji">✈️</span> 3. Faciliter l'accès au produit</h4>
+                <ul>
+                    <li><strong>Demo Center autonome</strong> : permettre aux pilotes d'essayer les ailes facilement et rapidement</li>
+                    <li>Système digitalisé : réservation, caution, expédition, retour — sans friction</li>
+                    <li>Lever le frein n°1 à l'achat : "je veux tester avant d'acheter"</li>
+                </ul>
+            </div>
+
+            <!-- 4. Positionnement -->
+            <div class="facteur-card">
+                <h4><span class="emoji">📍</span> 4. Positionnement de gamme stratégique</h4>
+                <ul>
+                    <li><strong>Contre-pied du marché</strong> : les concurrents font du médium ou du lourd, PLUME fait du light et ultra-light</li>
+                    <li>Deux segments où PLUME a un avantage concurrentiel clair :
+                        <ul>
+                            <li><strong>Light</strong> (au-dessus du médium) : meilleur que les versions "classiques" des concurrents</li>
+                            <li><strong>Ultra Light</strong> : les voiles les plus légères du monde, segment où personne ne peut rivaliser</li>
+                        </ul>
+                    </li>
+                    <li>Éviter la confrontation directe sur le médium "classique" où la concurrence est établie</li>
+                </ul>
+            </div>
+
+            <!-- 5. Partenaires stratégiques -->
+            <div class="facteur-card">
+                <h4><span class="emoji">🤝</span> 5. Partenaires stratégiques de qualité</h4>
+                <ul>
+                    <li><strong>Porcher Sport</strong> (tissus) : leader français, relation de confiance établie</li>
+                    <li><strong>A&C</strong> (production) : 5 ans de collaboration, meilleur contrôle qualité du marché</li>
+                    <li><strong>Benjamin Védrines</strong> (ambassadeur) : alpiniste le plus rapide en très haute altitude, Piolet d'Or 2025, incarnation parfaite de la synergie alpinisme-voile légère</li>
+                </ul>
+            </div>
+
+            <!-- 6. Stratégie FOMO -->
+            <div class="facteur-card">
+                <h4><span class="emoji">⚡</span> 6. Stratégie FOMO pour le réseau de partenaires</h4>
+                <ul>
+                    <li><strong>Exclusivité géographique</strong> : chaque école verrouille son secteur</li>
+                    <li><strong>Fear of missing out</strong> : si une école ne s'engage pas maintenant, un concurrent local prendra sa place</li>
+                    <li><strong>Produits uniques</strong> : des ailes que les autres marques ne proposent pas → avantage commercial pour les partenaires</li>
+                    <li><strong>Effet de rareté</strong> : opportunité limitée dans le temps, impossible à récupérer une fois le secteur attribué</li>
+                </ul>
+            </div>
+
+            <!-- 7. Modèle commercial -->
+            <div class="facteur-card">
+                <h4><span class="emoji">💼</span> 7. Modèle commercial innovant</h4>
+                <ul>
+                    <li>B2B2C unique dans le secteur : réconcilie vente en ligne et réseau d'écoles</li>
+                    <li><strong>Livraison express</strong> : ailes disponibles en 24h si en stock</li>
+                    <li><strong>Personnalisation accessible</strong> : couleurs sur mesure en 6 semaines pour seulement 150€ de plus</li>
+                    <li><strong>Cycle de trésorerie favorable</strong> :
+                        <ul>
+                            <li>Clients : paiement immédiat sur le site</li>
+                            <li>Fournisseurs : paiement à 3 semaines</li>
+                            <li>Partenaires : versement de leur marge à 1 mois</li>
+                        </ul>
+                    </li>
+                    <li>Coût d'acquisition client quasi nul grâce à la communauté existante</li>
+                </ul>
+            </div>
+
+            <!-- 8. Équipe Business -->
+            <div class="facteur-card">
+                <h4><span class="emoji">👥</span> 8. Équipe Business complémentaire</h4>
+                <ul>
+                    <li><strong>JB Chandelier</strong> : conception, communication, réseau, business</li>
+                    <li><strong>Thomas Pierre-Bes</strong> : conception, logistique, web</li>
+                    <li>5 écoles partenaires pilotes déjà impliquées dans la co-construction</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 9. Solidité financière (full width) -->
+        <div class="facteur-card fade-in" style="margin-top: 1.5rem;">
+            <h4><span class="emoji">💰</span> 9. Solidité financière</h4>
+            <ul>
+                <li>Trésorerie dimensionnée pour 18 mois sans vente</li>
+                <li>Capacité d'apport personnel complémentaire</li>
+                <li>Seuil de rentabilité atteignable à 187 ailes/an</li>
+            </ul>
+        </div>
+
+        <!-- Synthèse -->
+        <div class="synthese-box fade-in">
+            <h4>Synthèse</h4>
+            <p>Le succès de PLUME repose sur une stratégie claire : <strong>construire la confiance</strong> grâce à l'expertise prouvée et la communication, <strong>faciliter l'essai</strong> via le Demo Center, <strong>se positionner intelligemment</strong> sur le light/ultra-light où la concurrence ne peut pas suivre, et <strong>créer l'urgence</strong> auprès des partenaires via l'exclusivité géographique (FOMO).</p>
         </div>
     </section>
 
@@ -3871,6 +4576,274 @@
                 <div class="business-number"><div class="value">6 000€</div><div class="label">Homologation</div></div>
                 <div class="business-number"><div class="value">2 000€</div><div class="label">Logiciels IA</div></div>
             </div>
+        </section>
+
+        <!-- Section Risques par Innovation -->
+        <section id="innovation-risques" class="bg-white">
+            <span class="section-number" style="display: none;">08</span>
+            <h2 class="fade-in">Risques par <span class="gold">Innovation</span></h2>
+            <p class="fade-in">Chaque projet d'innovation comporte ses propres défis. Voici une analyse détaillée des risques identifiés et des stratégies pour les surmonter.</p>
+
+            <!-- PLUME Mind -->
+            <div style="margin-top: 3rem;">
+                <h3 style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.5rem;">
+                    <span style="font-size: 1.5rem;">🧠</span> PLUME Mind — Logiciel propriétaire
+                </h3>
+                
+                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.08);">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <thead>
+                            <tr style="background: var(--turquoise-dark); color: white;">
+                                <th style="padding: 1rem; text-align: left; width: 25%;">Risque</th>
+                                <th style="padding: 1rem; text-align: center; width: 15%;">Probabilité</th>
+                                <th style="padding: 1rem; text-align: center; width: 15%;">Impact</th>
+                                <th style="padding: 1rem; text-align: left; width: 45%;">Mitigation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem; font-weight: 600;">Erreur de calcul dans les algorithmes</td>
+                                <td style="padding: 1rem; text-align: center;"><span style="background: #22c55e; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Très faible</span></td>
+                                <td style="padding: 1rem; text-align: center;"><span style="background: var(--gold); color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Moyen</span></td>
+                                <td style="padding: 1rem; color: var(--gray-600);">Vérification systématique de chaque calcul avant utilisation en conception. Validation croisée avec les résultats terrain.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div style="background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(34, 197, 94, 0.05) 100%); border-left: 4px solid #22c55e; border-radius: 8px; padding: 1.2rem 1.5rem; margin-top: 1.5rem;">
+                    <p style="margin: 0; color: var(--gray-600);"><strong style="color: var(--black);">Synthèse :</strong> Innovation à risque très faible. Le logiciel est déjà opérationnel et n'apporte que des bénéfices (gain de temps, précision, réduction des itérations).</p>
+                </div>
+            </div>
+
+            <!-- PLUME Hybrid -->
+            <div style="margin-top: 3rem;">
+                <h3 style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.5rem;">
+                    <span style="font-size: 1.5rem;">🪶</span> PLUME Hybrid — Architecture aérodynamique
+                </h3>
+                
+                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.08);">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <thead>
+                            <tr style="background: var(--turquoise-dark); color: white;">
+                                <th style="padding: 1rem; text-align: left; width: 25%;">Risque</th>
+                                <th style="padding: 1rem; text-align: center; width: 15%;">Probabilité</th>
+                                <th style="padding: 1rem; text-align: center; width: 15%;">Impact</th>
+                                <th style="padding: 1rem; text-align: left; width: 45%;">Mitigation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem; font-weight: 600;">Feeling de pilotage inhabituel</td>
+                                <td style="padding: 1rem; text-align: center;"><span style="background: var(--gold); color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Moyen</span></td>
+                                <td style="padding: 1rem; text-align: center;"><span style="background: #22c55e; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Faible</span></td>
+                                <td style="padding: 1rem; color: var(--gray-600);">Manoeuvrabilité différente des voiles classiques, peut déstabiliser les habitudes de certains pilotes. Accompagnement pédagogique et communication sur les spécificités du concept.</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem; font-weight: 600;">Aspect esthétique</td>
+                                <td style="padding: 1rem; text-align: center;"><span style="background: #22c55e; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Faible</span></td>
+                                <td style="padding: 1rem; text-align: center;"><span style="background: #22c55e; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Faible</span></td>
+                                <td style="padding: 1rem; color: var(--gray-600);">Le design hybride (mono/double surface) est visuellement différent. Mise en avant des bénéfices concrets : -20% sur le poids, -20% sur le prix, sécurité passive augmentée.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div style="background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(34, 197, 94, 0.05) 100%); border-left: 4px solid #22c55e; border-radius: 8px; padding: 1.2rem 1.5rem; margin-top: 1.5rem;">
+                    <p style="margin: 0; color: var(--gray-600);"><strong style="color: var(--black);">Synthèse :</strong> Les bénéfices (légèreté, prix accessible, sécurité) compensent largement les freins potentiels. La voile la plus saine du marché sera un argument fort, particulièrement auprès des élèves et pilotes prudents.</p>
+                </div>
+            </div>
+
+            <!-- PLUME Dual -->
+            <div style="margin-top: 3rem;">
+                <h3 style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.5rem;">
+                    <span style="font-size: 1.5rem;">⚡</span> PLUME Dual — Géométrie variable
+                </h3>
+                
+                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.08);">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <thead>
+                            <tr style="background: var(--turquoise-dark); color: white;">
+                                <th style="padding: 1rem; text-align: left; width: 25%;">Risque</th>
+                                <th style="padding: 1rem; text-align: center; width: 15%;">Probabilité</th>
+                                <th style="padding: 1rem; text-align: center; width: 15%;">Impact</th>
+                                <th style="padding: 1rem; text-align: left; width: 45%;">Mitigation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem; font-weight: 600;">Sensation de pilotage particulière</td>
+                                <td style="padding: 1rem; text-align: center;"><span style="background: var(--gold); color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Moyen</span></td>
+                                <td style="padding: 1rem; text-align: center;"><span style="background: var(--gold); color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Moyen</span></td>
+                                <td style="padding: 1rem; color: var(--gray-600);">Le concept mixe deux mondes (parapente et parakite), créant un feeling inhabituel. Formation et communication adaptées pour accompagner les utilisateurs.</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem; font-weight: 600;">Élévateur complexe</td>
+                                <td style="padding: 1rem; text-align: center;"><span style="background: var(--gold); color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Moyen</span></td>
+                                <td style="padding: 1rem; text-align: center;"><span style="background: var(--gold); color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Moyen</span></td>
+                                <td style="padding: 1rem; color: var(--gray-600);">Le système de géométrie variable ajoute de la complexité. Conception intuitive du système "Lock & Fly" et documentation claire.</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem; font-weight: 600;">Stabilité en roulis à optimiser</td>
+                                <td style="padding: 1rem; text-align: center;"><span style="background: var(--gold); color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Moyen</span></td>
+                                <td style="padding: 1rem; text-align: center;"><span style="background: var(--gold); color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Moyen</span></td>
+                                <td style="padding: 1rem; color: var(--gray-600);">Prototype actuel fonctionnel mais perfectible. Quelques itérations supplémentaires prévues pour atteindre le confort optimal. Phase finale de développement.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.05) 100%); border-left: 4px solid var(--gold); border-radius: 8px; padding: 1.2rem 1.5rem; margin-top: 1.5rem;">
+                    <p style="margin: 0; color: var(--gray-600);"><strong style="color: var(--black);">Synthèse :</strong> Innovation à risque modéré. Les bénéfices (fenêtre de vol élargie de +50% pour les alpinistes) compensent largement la courbe d'apprentissage. Concept validé, derniers réglages en cours.</p>
+                </div>
+            </div>
+
+            <!-- PLUME Connect -->
+            <div style="margin-top: 3rem;">
+                <h3 style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.5rem;">
+                    <span style="font-size: 1.5rem;">🔗</span> PLUME Connect — Plateforme digitale B2B2C
+                </h3>
+                
+                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.08);">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <thead>
+                            <tr style="background: var(--turquoise-dark); color: white;">
+                                <th style="padding: 1rem; text-align: left; width: 25%;">Risque</th>
+                                <th style="padding: 1rem; text-align: center; width: 15%;">Probabilité</th>
+                                <th style="padding: 1rem; text-align: center; width: 15%;">Impact</th>
+                                <th style="padding: 1rem; text-align: left; width: 45%;">Mitigation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem; font-weight: 600;">Perception "trop automatisé"</td>
+                                <td style="padding: 1rem; text-align: center;"><span style="background: #22c55e; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Faible</span></td>
+                                <td style="padding: 1rem; text-align: center;"><span style="background: #22c55e; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Faible</span></td>
+                                <td style="padding: 1rem; color: var(--gray-600);">Certains utilisateurs peuvent trouver le système trop numérique, pas assez humain. Maintien d'un contact humain disponible en parallèle de l'IA.</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem; font-weight: 600;">Résistance idéologique à l'IA</td>
+                                <td style="padding: 1rem; text-align: center;"><span style="background: #22c55e; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Faible</span></td>
+                                <td style="padding: 1rem; text-align: center;"><span style="background: #22c55e; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Faible</span></td>
+                                <td style="padding: 1rem; color: var(--gray-600);">Une partie de la population peut être réticente à l'automatisation et à l'IA. Communication transparente sur l'usage de l'IA comme outil d'assistance, pas de remplacement.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div style="background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(34, 197, 94, 0.05) 100%); border-left: 4px solid #22c55e; border-radius: 8px; padding: 1.2rem 1.5rem; margin-top: 1.5rem;">
+                    <p style="margin: 0; color: var(--gray-600);"><strong style="color: var(--black);">Synthèse :</strong> Innovation à risque faible. La plateforme simplifie tellement la vie des écoles et des clients que les bénéfices l'emportent largement sur les réticences potentielles.</p>
+                </div>
+            </div>
+
+            <!-- ACS -->
+            <div style="margin-top: 3rem;">
+                <h3 style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.5rem;">
+                    <span style="font-size: 1.5rem;">🛡️</span> ACS — Anti Collapse System (DeepTech)
+                </h3>
+                
+                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.08);">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <thead>
+                            <tr style="background: var(--turquoise-dark); color: white;">
+                                <th style="padding: 1rem; text-align: left; width: 25%;">Risque</th>
+                                <th style="padding: 1rem; text-align: center; width: 15%;">Probabilité</th>
+                                <th style="padding: 1rem; text-align: center; width: 15%;">Impact</th>
+                                <th style="padding: 1rem; text-align: left; width: 45%;">Mitigation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem; font-weight: 600;">Acceptation du milieu</td>
+                                <td style="padding: 1rem; text-align: center;"><span style="background: var(--gold); color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Moyen</span></td>
+                                <td style="padding: 1rem; text-align: center;"><span style="background: #dc3545; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Fort</span></td>
+                                <td style="padding: 1rem; color: var(--gray-600);">Première introduction d'électro-mécanique sous un parapente. Rupture culturelle pour la communauté. Intégration discrète du système dans la sellette, efficacité irréprochable pour convaincre par la preuve.</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem; font-weight: 600;">Complexité technique et financière</td>
+                                <td style="padding: 1rem; text-align: center;"><span style="background: #dc3545; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Élevé</span></td>
+                                <td style="padding: 1rem; text-align: center;"><span style="background: #dc3545; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Fort</span></td>
+                                <td style="padding: 1rem; color: var(--gray-600);">Investissement important (~300K€), temps de développement long (horizon 2027-2029), équipe spécialisée à constituer. Approche progressive : prototypage V3 en 2026, industrialisation ensuite.</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem; font-weight: 600;">Nouveau domaine d'expertise</td>
+                                <td style="padding: 1rem; text-align: center;"><span style="background: #dc3545; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Élevé</span></td>
+                                <td style="padding: 1rem; text-align: center;"><span style="background: var(--gold); color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Moyen</span></td>
+                                <td style="padding: 1rem; color: var(--gray-600);">Électronique, moteurs, fournisseurs : un monde moins maîtrisé que le textile. Constitution d'une équipe dédiée avec compétences complémentaires. Partenariats avec experts du domaine.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div style="background: linear-gradient(135deg, rgba(220, 53, 69, 0.1) 0%, rgba(220, 53, 69, 0.05) 100%); border-left: 4px solid #dc3545; border-radius: 8px; padding: 1.2rem 1.5rem; margin-top: 1.5rem;">
+                    <p style="margin: 0; color: var(--gray-600);"><strong style="color: var(--black);">⚠️ Synthèse :</strong> Innovation de rupture à risque élevé, mais à potentiel transformationnel majeur. L'ACS pourrait révolutionner la sécurité en parapente (70% des accidents mortels sont causés par des fermetures). Le verrou technologique est important, mais le bénéfice pour la sécurité des pilotes justifie pleinement l'investissement.</p>
+                </div>
+            </div>
+
+            <!-- Matrice de Synthèse -->
+            <div style="margin-top: 4rem;">
+                <h3 style="margin-bottom: 1.5rem;">Matrice de Synthèse — Risques par Innovation</h3>
+                
+                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.08);">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <thead>
+                            <tr style="background: linear-gradient(90deg, var(--turquoise-dark) 0%, var(--black) 100%); color: white;">
+                                <th style="padding: 1rem; text-align: left;">Innovation</th>
+                                <th style="padding: 1rem; text-align: center;">Type</th>
+                                <th style="padding: 1rem; text-align: center;">Risque global</th>
+                                <th style="padding: 1rem; text-align: center;">Maturité</th>
+                                <th style="padding: 1rem; text-align: center;">Horizon</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem; font-weight: 600;">🧠 PLUME Mind</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--gray-600);">Logiciel</td>
+                                <td style="padding: 1rem; text-align: center;"><span style="background: #22c55e; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Très faible</span></td>
+                                <td style="padding: 1rem; text-align: center; color: var(--gray-600);">Opérationnel</td>
+                                <td style="padding: 1rem; text-align: center; font-weight: 600; color: var(--turquoise-dark);">2026</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100); background: var(--cream);">
+                                <td style="padding: 1rem; font-weight: 600;">🔗 PLUME Connect</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--gray-600);">Plateforme digitale</td>
+                                <td style="padding: 1rem; text-align: center;"><span style="background: #22c55e; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Faible</span></td>
+                                <td style="padding: 1rem; text-align: center; color: var(--gray-600);">En production</td>
+                                <td style="padding: 1rem; text-align: center; font-weight: 600; color: var(--turquoise-dark);">2026</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100);">
+                                <td style="padding: 1rem; font-weight: 600;">🪶 PLUME Hybrid</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--gray-600);">Conception aérodynamique</td>
+                                <td style="padding: 1rem; text-align: center;"><span style="background: var(--gold); color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Moyen</span></td>
+                                <td style="padding: 1rem; text-align: center; color: var(--gray-600);">9 prototypes validés</td>
+                                <td style="padding: 1rem; text-align: center; font-weight: 600; color: var(--turquoise-dark);">Printemps 2027</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--gray-100); background: var(--cream);">
+                                <td style="padding: 1rem; font-weight: 600;">⚡ PLUME Dual</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--gray-600);">Conception mécanique</td>
+                                <td style="padding: 1rem; text-align: center;"><span style="background: var(--gold); color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Moyen</span></td>
+                                <td style="padding: 1rem; text-align: center; color: var(--gray-600);">Phase finale</td>
+                                <td style="padding: 1rem; text-align: center; font-weight: 600; color: var(--turquoise-dark);">Automne 2026</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 1rem; font-weight: 600;">🛡️ ACS</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--gray-600);">DeepTech — Électro-mécanique</td>
+                                <td style="padding: 1rem; text-align: center;"><span style="background: #dc3545; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Élevé</span></td>
+                                <td style="padding: 1rem; text-align: center; color: var(--gray-600);">Prototype V2 validé</td>
+                                <td style="padding: 1rem; text-align: center; font-weight: 600; color: var(--gold);">2027-2029</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Conclusion / Stratégie -->
+            <div style="background: linear-gradient(135deg, var(--turquoise-dark) 0%, var(--black) 100%); border-radius: 20px; padding: 2.5rem; margin-top: 3rem; color: white;">
+                <h4 style="color: white; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem;">
+                    <span style="font-size: 1.5rem;">🎯</span> Stratégie de gestion des risques
+                </h4>
+                <p style="color: rgba(255,255,255,0.9); margin: 0; line-height: 1.8; max-width: none;">Notre approche consiste à <strong>sécuriser d'abord les finances</strong> avec les innovations à faible risque (Mind, Connect, puis les ailes classiques EN-A+ et EN-B), avant de développer les concepts plus innovants (Hybrid, Dual) et enfin la rupture technologique (ACS). Cette progression maîtrisée permet d'autofinancer les projets les plus ambitieux tout en limitant l'exposition au risque.</p>
+            </div>
+
         </section>
 
     </div>
@@ -5724,8 +6697,8 @@
         const subNavItems = document.querySelectorAll('.sub-nav-item');
         
         // Sections for each tab
-        const banqueSections = ['presentation', 'marche', 'avantages', 'innovation', 'production', 'gamme', 'business', 'chiffres', 'financement', 'communication', 'roadmap'];
-        const innovationSections = ['innovation-logiciels', 'innovation-design', 'innovation-nouveau-concept', 'innovation-site-internet', 'innovation-acs', 'innovation-budget'];
+        const banqueSections = ['presentation', 'marche', 'avantages', 'innovation', 'production', 'gamme', 'business', 'chiffres', 'financement', 'communication', 'roadmap', 'risques', 'facteurs-succes'];
+        const innovationSections = ['innovation-logiciels', 'innovation-design', 'innovation-nouveau-concept', 'innovation-site-internet', 'innovation-acs', 'innovation-budget', 'innovation-risques'];
         const businessplanSections = ['bp-produits', 'bp-couts', 'bp-variables', 'bp-emprunt', 'bp-financement', 'bp-croissance'];
         
         let currentTab = 'banque';
